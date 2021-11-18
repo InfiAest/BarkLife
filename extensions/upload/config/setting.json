@@ -1,0 +1,8 @@
+{
+    "provider": "cloudinary",
+    "providerOptions": {
+        "cloud_name": "dearmbwfa",
+        "api_key": "266912168578421",
+        "api_secret": "TPrJAJmqLtqmNS9m1SD2_fL2ol4"
+    }
+}
