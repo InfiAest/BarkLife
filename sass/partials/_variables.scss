@@ -1,0 +1,16 @@
+$font-primary: "Karla", sans-serif;
+$font-headings: "Bodoni Moda", serif;
+
+$tablet-width: 768px;
+
+$colours: (
+  primary: #bb9d88,
+  secondary: #3d3c3c,
+  tertiary: #a89e9d,
+  input: #ded6d3,
+  highlight: #d1c3ba,
+);
+
+@function getColour($colour) {
+  @return map-get($colours, $colour);
+}

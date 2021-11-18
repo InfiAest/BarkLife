@@ -1,0 +1,24 @@
+.logo-container {
+  width: 280px;
+  margin: 0 auto;
+}
+.nav-logo {
+  width: 280px;
+}
+
+.fa-bars {
+  font-size: 1.8rem;
+  color: map-get($colours, secondary);
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+@media (min-width: 768px) {
+  .logo-container {
+    width: 350px;
+    margin: 0 auto;
+  }
+  .nav-logo {
+    width: 350px;
+  }
+}

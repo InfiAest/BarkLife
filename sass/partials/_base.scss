@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+//text styling -----
+h1 {
+  font-family: $font-headings;
+  color: map-get($colours, secondary);
+  font-size: 3rem;
+}
+
+//header image -----
+
+.header-img-container {
+  width: 100%;
+}
+
+.header-img {
+  min-height: 670px;
+  width: 100%;
+  overflow: hidden;
+  background-position: top;
+}
+
+@media (min-width: 768px) {
+  .header-img {
+    min-height: 1040px;
+  }
+}
