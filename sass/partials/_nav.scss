@@ -1,3 +1,62 @@
+nav,
+#hamburger-menu {
+  display: none;
+}
+nav ul {
+  padding: 10px 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+nav li {
+  display: block;
+  padding: 10px 20px;
+}
+nav a {
+  text-decoration: none;
+  font-family: $font-primary;
+  font-size: 1.4rem;
+  color: map-get($colours, secondary);
+  display: block;
+}
+nav a:hover,
+.current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+nav i {
+  color: map-get($colours, secondary);
+  padding: 0 10px;
+}
+
+.hamburger-label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  color: map-get($colours, secondary);
+  padding: 35px 20px;
+}
+#hamburger-menu:checked ~ .nav {
+  display: block;
+}
+
+.nav-block {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.nav {
+  height: 100vh;
+  padding-top: 100px;
+  background: linear-gradient(
+    0.25turn,
+    #ded6d3,
+    rgba(222, 214, 211, 0.9),
+    rgba(222, 214, 211, 0.3)
+  );
+}
+
 .logo-container {
   width: 280px;
   margin: 0 auto;
@@ -6,19 +65,9 @@
   width: 280px;
 }
 
-.fa-bars {
-  font-size: 1.8rem;
-  color: map-get($colours, secondary);
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-@media (min-width: 768px) {
-  .logo-container {
-    width: 350px;
-    margin: 0 auto;
-  }
-  .nav-logo {
-    width: 350px;
-  }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: map-get($colours, input);
 }

@@ -1,9 +1,8 @@
 {
-  "kind": "singleType",
-  "collectionName": "homes",
+  "kind": "collectionType",
+  "collectionName": "social_media_attests",
   "info": {
-    "name": "banner",
-    "description": ""
+    "name": "Social Media Attests"
   },
   "options": {
     "increments": true,
@@ -12,7 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "hero_banner_image": {
+    "username": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "insta_image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -23,9 +28,6 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
-    },
-    "hero_banner_alt_text": {
-      "type": "string"
     }
   }
 }

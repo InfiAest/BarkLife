@@ -4,6 +4,8 @@
 
 body {
   margin: 0;
+  font-family: $font-primary;
+  color: map-get($colours, secondary);
 }
 
 header {
@@ -14,12 +16,25 @@ header {
   display: flex;
   flex-direction: row;
 }
+.container {
+  max-width: 1400px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
 
 //text styling -----
 h1 {
   font-family: $font-headings;
-  color: map-get($colours, secondary);
-  font-size: 3rem;
+  font-size: 2rem;
+}
+h2 {
+  font-family: $font-headings;
+  font-size: 1.4rem;
+}
+h3 {
+  font-family: $font-primary;
+  font-size: 1.3rem;
+  font-weight: normal;
 }
 
 //header image -----
