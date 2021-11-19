@@ -70,4 +70,5 @@ nav i {
   top: 0;
   width: 100%;
   background: map-get($colours, input);
+  z-index: 10;
 }

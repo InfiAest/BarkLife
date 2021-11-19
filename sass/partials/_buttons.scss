@@ -1,0 +1,29 @@
+.cta-button-container {
+  width: 100%;
+  display: flex;
+}
+.cta-button {
+  width: 100%;
+  font-family: $font-primary;
+  color: #ffffff;
+  background-color: map-get($colours, primary);
+  border: 3px solid map-get($colours, primary);
+  font-size: 1.2rem;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.cta-button:hover span {
+  display: none;
+}
+.cta-button:hover:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f5d7";
+}
+.cta-button:hover {
+  background-color: #ffffff;
+  border: 3px solid map-get($colours, primary);
+  color: map-get($colours, primary);
+}

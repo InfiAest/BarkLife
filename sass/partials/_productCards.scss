@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-height: 600px;
+  max-height: 500px;
 }
 .product-img-container {
   overflow: hidden;
@@ -17,17 +17,18 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  height: 55px;
 }
 
 .product-name-container h3,
 .product-name-container p {
-  margin-top: 0;
+  margin: 5px 0;
 }
 
 .featured-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
 }
 
 @media (min-width: 641px) {

@@ -24,7 +24,7 @@ header {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1350px;
   padding: 0 1.5rem;
   margin: 0 auto;
 }
@@ -43,6 +43,17 @@ h3 {
   font-family: "Karla", sans-serif;
   font-size: 1.3rem;
   font-weight: normal;
+}
+
+h4 {
+  font-family: "Bodoni Moda", serif;
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-family: "Karla", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .header-img-container {
@@ -140,6 +151,7 @@ nav i {
   top: 0;
   width: 100%;
   background: #ded6d3;
+  z-index: 10;
 }
 
 .product-card {
@@ -153,7 +165,7 @@ nav i {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-height: 600px;
+  max-height: 500px;
 }
 
 .product-img-container {
@@ -177,11 +189,12 @@ nav i {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  height: 55px;
 }
 
 .product-name-container h3,
 .product-name-container p {
-  margin-top: 0;
+  margin: 5px 0;
 }
 
 .featured-grid {
@@ -189,7 +202,7 @@ nav i {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
 }
 
 @media (min-width: 641px) {
@@ -203,6 +216,189 @@ nav i {
   .featured-grid {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.instagram-attests-section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 1.5rem;
+  margin: 6rem 0;
+}
+
+.small-insta-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 1.5rem;
+  -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.attest1 {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+}
+
+.heading-container h4 {
+  margin-top: 0;
+}
+
+.insta-img-container {
+  overflow: hidden;
+}
+
+.insta-img-lrg {
+  width: 100%;
+  height: 435px;
+  background-position: center;
+  background-size: cover;
+}
+
+.insta-img-sm {
+  width: 100%;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+}
+
+.attest {
+  position: relative;
+}
+
+.insta-info-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(222, 214, 211, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 5px;
+}
+
+.insta-username {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.instagram-tag {
+  text-align: right;
+  color: #a89e9d;
+}
+
+.fa-instagram {
+  margin-right: 1rem;
+}
+
+@media (min-width: 961px) {
+  .instagram-attests-section {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .insta-img-lrg {
+    height: 558px;
+  }
+  .insta-img-sm {
+    height: 350px;
+  }
+  .attest1 {
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+  }
+}
+
+.cta-button-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cta-button {
+  width: 100%;
+  font-family: "Karla", sans-serif;
+  color: #ffffff;
+  background-color: #bb9d88;
+  border: 3px solid #bb9d88;
+  font-size: 1.2rem;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.cta-button:hover span {
+  display: none;
+}
+
+.cta-button:hover:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f5d7";
+}
+
+.cta-button:hover {
+  background-color: #ffffff;
+  border: 3px solid #bb9d88;
+  color: #bb9d88;
+}
+
+footer {
+  background-color: #ded6d3;
+  padding: 1.5rem 0;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer-logo-container {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  width: 200px;
+}
+
+.fa-instagram,
+.fa-facebook {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+.logo-social-links,
+.customer-links,
+.business-links {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 /*# sourceMappingURL=style.css.map */
