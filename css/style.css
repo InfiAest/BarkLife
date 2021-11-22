@@ -61,16 +61,10 @@ h5 {
 }
 
 .header-img {
-  min-height: 670px;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   background-position: top;
-}
-
-@media (min-width: 768px) {
-  .header-img {
-    min-height: 1040px;
-  }
 }
 
 nav,
@@ -168,6 +162,11 @@ nav i {
   max-height: 500px;
 }
 
+.product-card-link {
+  text-decoration: none;
+  color: #3d3c3c;
+}
+
 .product-img-container {
   overflow: hidden;
 }
@@ -197,23 +196,43 @@ nav i {
   margin: 5px 0;
 }
 
-.featured-grid {
+.featured-grid,
+.product-grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   grid-gap: 1.5rem;
+  margin-bottom: 6rem;
+}
+
+.product-card-link:hover ~ .cta-button-container .cta-button {
+  background-color: #ffffff;
+  border: 3px solid #bb9d88;
+  color: #bb9d88;
+}
+
+.product-card-link:hover ~ .cta-button-container .cta-button span {
+  display: none;
+}
+
+.product-card-link:hover ~ .cta-button-container .cta-button:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f5d7";
 }
 
 @media (min-width: 641px) {
-  .featured-grid {
+  .featured-grid,
+  .product-grid {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 961px) {
-  .featured-grid {
+  .featured-grid,
+  .product-grid {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
   }
@@ -400,5 +419,41 @@ footer {
         -ms-flex-align: center;
             align-items: center;
   }
+}
+
+.search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.search-bar label {
+  color: #3d3c3c;
+}
+
+.search {
+  height: 40px;
+  width: 272px;
+  border: 3px solid #ded6d3;
+  background-color: white;
+  margin: 1rem 0 1rem 1rem;
+  padding: 10px;
+  font-family: "Karla", sans-serif;
+  color: #3d3c3c;
+  font-size: 1rem;
+}
+
+.search:focus-visible {
+  outline: none;
+  border: 3px solid #bb9d88;
 }
 /*# sourceMappingURL=style.css.map */

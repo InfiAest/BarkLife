@@ -53,14 +53,8 @@ h5 {
 }
 
 .header-img {
-  min-height: 670px;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   background-position: top;
-}
-
-@media (min-width: 768px) {
-  .header-img {
-    min-height: 1040px;
-  }
 }

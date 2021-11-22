@@ -1,0 +1,25 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+.search-bar label {
+  color: map-get($colours, secondary);
+}
+.search {
+  height: 40px;
+  width: 272px;
+  border: 3px solid map-get($colours, input);
+  background-color: white;
+  margin: 1rem 0 1rem 1rem;
+  padding: 10px;
+  font-family: $font-primary;
+  color: map-get($colours, secondary);
+  font-size: 1rem;
+}
+.search:focus-visible {
+  outline: none;
+  border: 3px solid map-get($colours, primary);
+}
