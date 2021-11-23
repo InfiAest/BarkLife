@@ -21,7 +21,7 @@ nav a {
 nav a:hover,
 .current {
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 5px;
 }
 nav i {
   color: map-get($colours, secondary);

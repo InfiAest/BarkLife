@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Karla:wght@300;400&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
-    <title>Bark Life | Home</title>
+    <title>Bark Life | Add product</title>
 </head>
 <body>
     <header>
@@ -25,25 +25,32 @@
         </div>
     </header>
     <main>
-        <div class="header-img-container"></div>
         <div class="container">
-            <h2>Featured products</h2>
-            <div class="featured-grid"></div>
-
-            <div class="instagram-attests-section">
-                <div class="attest1"></div>
-                <div class="attest-container">
-                    <div class="heading-container">
-                        <h4>Check out our happy four-legged friends on Instagram.</h4>
-                        <h4 class="instagram-tag"><i class="fab fa-instagram"></i>barklifedogboutique</h4>
-                        <div class="small-insta-container">
-                            <div class="attest2"></div>
-                            <div class="attest3"></div>
-                        </div>
-                    </div>
+            <form>
+                <h1>Add product</h1>
+                <div class="message-container"></div>
+                <div>
+                    <label for="name">Name</label>
+                    <input id="name"/>
                 </div>
-            </div>
-
+                <div>
+                    <label for="image">Image</label>
+                    <input id="image"/>
+                </div>
+                <div>
+                    <label for="description">Description</label>
+                    <textarea id="description"></textarea>
+                </div>
+                <div>
+                    <label for="price">Price</label>
+                    <input id="price"/>
+                </div>
+                <div>
+                    <label for="featured">Featured?</label>
+                    <input id="featured"/>
+                </div>
+                <button class="formButton">Add Product</button>
+            </form>
         </div>
         
     </main>
@@ -71,6 +78,6 @@
         </div>
     </footer>
 
-    <script src="js/index.js" type="module"></script>
+    <script src="js/add.js" type="module"></script>
 </body>
 </html>

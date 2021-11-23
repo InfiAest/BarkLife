@@ -13,7 +13,7 @@ export function renderFeaturedProducts(products) {
 
         if (products[i].featured === true) {
             featuredContainer.innerHTML += `<div class="product-card">
-                                            <a href="#" class="product-card-link">
+                                            <a href="details.html?id=${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
                                                 <div class="product-img-container">
                                                     <div class="card-img" style="background-image: url('${product.image.url}');">
                                                 </div>
@@ -23,7 +23,7 @@ export function renderFeaturedProducts(products) {
                                                 </div>
                                             </a>
                                             <div class="cta-button-container">
-                                                <a href="#" class="cta-button"><span>View product</span></a>
+                                                <a href="details.html?id=${product.id}" class="cta-button"><span>View product</span></a>
                                             </div>
                                         </div>`;
         }
@@ -44,7 +44,7 @@ export function renderAllProducts(productsToRender) {
 
     productsToRender.forEach(function (product) {
         productContainer.innerHTML += `<div class="product-card">
-                                            <a href="#" class="product-card-link">
+                                            <a href="details.html?id=${product.id}" class="product-card-link">
                                                 <div class="product-img-container">
                                                     <div class="card-img" style="background-image: url('${product.image.url}');">
                                                 </div>
@@ -54,7 +54,7 @@ export function renderAllProducts(productsToRender) {
                                                 </div>
                                             </a>
                                             <div class="cta-button-container">
-                                                <a href="#" class="cta-button"><span>View product</span></a>
+                                                <a href="details.html?id=${product.id}" class="cta-button"><span>View product</span></a>
                                             </div>
                                         </div>`
     });

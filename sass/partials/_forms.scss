@@ -1,0 +1,30 @@
+/*form styles ----*/
+label {
+  display: block;
+  color: map-get($colours, secondary);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+form {
+  max-width: 900px;
+  margin: 10rem auto;
+}
+form > div {
+  margin-bottom: 1.5rem;
+}
+form input,
+textarea {
+  width: 100%;
+  padding: 0.4rem;
+  font-family: $font-primary;
+  font-size: 1rem;
+  border: 3px solid map-get($colours, input);
+}
+form input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border: 3px solid map-get($colours, primary);
+}
+#description {
+  height: 100px;
+}

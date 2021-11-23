@@ -4,6 +4,9 @@ import { productsUrl } from "./data/URLs.js";
 import { renderFeaturedProducts } from "./components/renderProductCards.js";
 import renderHeaderImage from "./components/renderHeaderImage.js";
 import getSocialMediaAttests from "./components/getSocialAttests.js";
+import createNavBar from "./components/createMenu.js";
+
+createNavBar();
 
 //Sticky nav
 window.onscroll = function() {stickyNav()};

@@ -4,6 +4,9 @@ import { productsUrl } from "./data/URLs.js";
 import { renderAllProducts } from "./components/renderProductCards.js";
 import displayMessage from "./components/displayMessage.js";
 import { searchProducts } from "./components/searchProducts.js";
+import createNavBar from "./components/createMenu.js";
+
+createNavBar();
 
 //Sticky nav
 window.onscroll = function() {stickyNav()};

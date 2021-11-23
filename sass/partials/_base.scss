@@ -58,3 +58,23 @@ h5 {
   overflow: hidden;
   background-position: top;
 }
+
+/*message styling ----*/
+.message {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 3px solid map-get($colours, secondary);
+  color: map-get($colours, secondary);
+}
+.message.error {
+  border-color: darkred;
+  color: darkred;
+}
+.message.warning {
+  border-color: rgb(214, 139, 0);
+  color: rgb(214, 139, 0);
+}
+.message.success {
+  border-color: rgb(1, 94, 1);
+  color: rgb(1, 94, 1);
+}
