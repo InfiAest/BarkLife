@@ -15,7 +15,7 @@ export function renderFeaturedProducts(products) {
             featuredContainer.innerHTML += `<div class="product-card">
                                             <a href="details.html?id=${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
                                                 <div class="product-img-container">
-                                                    <div class="card-img" style="background-image: url('${product.image.url}');">
+                                                    <div class="card-img" style="background-image: url('${product.image_URL}');">
                                                 </div>
                                                 <div class="product-name-container">
                                                     <h3>${product.name}</h3>
@@ -33,20 +33,21 @@ export function renderFeaturedProducts(products) {
 
 //Render all product cards
 
-export function renderAllProducts(productsToRender) {
+export function renderAllProducts(products) {
     
     const productContainer = document.querySelector(".product-grid");
     productContainer.innerHTML = "";
 
-    if (productsToRender.length === 0) {
+    if (products.length === 0) {
         displayMessage("", EMPTY_RESULTS, ".product-grid");
     }
 
-    productsToRender.forEach(function (product) {
+    for (var i = 0; i < products.length; i++) {
+        const product = products[i];
         productContainer.innerHTML += `<div class="product-card">
                                             <a href="details.html?id=${product.id}" class="product-card-link">
                                                 <div class="product-img-container">
-                                                    <div class="card-img" style="background-image: url('${product.image.url}');">
+                                                    <div class="card-img" style="background-image: url('${product.image_URL}');">
                                                 </div>
                                                 <div class="product-name-container">
                                                     <h3>${product.name}</h3>
@@ -57,6 +58,7 @@ export function renderAllProducts(productsToRender) {
                                                 <a href="details.html?id=${product.id}" class="cta-button"><span>View product</span></a>
                                             </div>
                                         </div>`
-    });
+
+    }
 
 };

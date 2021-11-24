@@ -1,10 +1,13 @@
 export default function renderProductDetails(product) {
 
     const productContainer = document.querySelector(".product-container");
+    const pageTitle = document.querySelector("title");
+
+    pageTitle.innerHTML += `${product.name}`;
 
     productContainer.innerHTML += `<h1 class="product-name">${product.name}</h1>
                                     <div class="img-container">
-                                        <div class="product-image" style="background-image: url('${product.image.url}');"></div>
+                                        <div class="product-image" style="background-image: url('${product.image_URL}');"></div>
                                     </div>
                                     <div class="description-price-container">
                                         <div class="description-container">

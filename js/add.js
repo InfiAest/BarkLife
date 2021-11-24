@@ -11,6 +11,8 @@ if(!token) {
 
 createNavBar();
 
+
+
 const form = document.querySelector("form");
 const name = document.querySelector("#name");
 const image = document.querySelector("#image");
@@ -18,6 +20,7 @@ const description = document.querySelector("#description");
 const price = document.querySelector("#price");
 const featured = document.querySelector("#featured");
 const messageContainer = document.querySelector(".message-container");
+
 
 form.addEventListener("submit", submitNewProduct);
 
@@ -40,9 +43,9 @@ function submitNewProduct(event) {
 
 }
 
-async function addProduct(name, image, description, price) {
+async function addProduct(name, imageValue, description, price) {
 
-    const data = JSON.stringify({ name: name, image: image, description: description, price: price});
+    const data = JSON.stringify({ name: name, image_URL: imageValue, description: description, price: price});
 
     const options = {
         method: "POST",
