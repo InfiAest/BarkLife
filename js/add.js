@@ -30,19 +30,19 @@ function submitNewProduct(event) {
     const imageValue = image.value.trim();
     const descriptionValue = description.value.trim();
     const priceValue = price.value.trim();
-    const featuredValue = featured.value.trim();
+    // const featuredValue = featured.value.trim();
 
-    if (nameValue.length === 0 || imageValue.length === 0 || descriptionValue.length === 0 || priceValue.length === 0 || featuredValue.length === 0) {
+    if (nameValue.length === 0 || imageValue.length === 0 || descriptionValue.length === 0 || priceValue.length === 0 ) {
         return displayMessage("warning", "Supply proper values", ".message-container");
     }
 
-    addProduct(nameValue, imageValue, descriptionValue, priceValue, featuredValue);
+    addProduct(nameValue, imageValue, descriptionValue, priceValue);
 
 }
 
-async function addProduct(name, image, description, price, featured) {
+async function addProduct(name, image, description, price) {
 
-    const data = JSON.stringify({ name: name, image: image, description: description, price: price, featured: featured});
+    const data = JSON.stringify({ name: name, image: image, description: description, price: price});
 
     const options = {
         method: "POST",
