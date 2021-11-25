@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Karla:wght@300;400&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
-    <title>Bark Life | Add product</title>
+    <title>Bark Life | Shopping Basket </title>
 </head>
 <body>
     <header>
@@ -25,41 +25,23 @@
         </div>
     </header>
     <main>
-        <div class="page-wrapper">
-            <div class="container">
-                <form>
-                    <h1>Add product</h1>
-                    <div class="message-container"></div>
-                    <div>
-                        <label for="name">Name</label>
-                        <input id="name"/>
+        <div class="container">
+            <div class="page-wrapper">
+                <h1>Shopping basket</h1>
+                <div class="basket-container">
+                    
+                </div>
+                <div class="basket-products"></div>
+                    <div class="total-price-container">
+                        <h5>Total price in basket</h5>
+                        <p class="total-price"></p>
                     </div>
-                    <div>
-                        <label for="image">Image URL</label>
-                        <input id="image"/>
+                    <div class="cart-button-container">
+                        <a href="products.html" class="cta-button delete"><span>Continue shopping</span></a>
+                        <a href="#" class="cta-button"><span>Checkout</span></a>
                     </div>
-                    <div>
-                        <label for="description">Description</label>
-                        <textarea id="description"></textarea>
-                    </div>
-                    <div>
-                        <label for="price">Price</label>
-                        <input id="price"/>
-                    </div>
-                    <div>
-                        <p class="featured-label">Featured?</p>
-                        <label class="featured-switch" for="featured">
-                            <input class="featured-checkbox" type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                        
-                        
-                    </div>
-                    <button class="cta-button formButton"><span>Add Product</span></button>
-                </form>
             </div>
         </div>
-        
     </main>
     <footer>
         <div class="container footer">
@@ -85,7 +67,6 @@
         </div>
     </footer>
 
-    <script src="js/add.js" type="module"></script>
-    
+    <script src="js/basket.js" type="module"></script>
 </body>
 </html>

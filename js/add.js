@@ -12,13 +12,12 @@ if(!token) {
 createNavBar();
 
 
-
 const form = document.querySelector("form");
 const name = document.querySelector("#name");
 const image = document.querySelector("#image");
 const description = document.querySelector("#description");
 const price = document.querySelector("#price");
-const featured = document.querySelector("#featured");
+const featured = document.querySelector(".featured-checkbox");
 const messageContainer = document.querySelector(".message-container");
 
 
@@ -33,19 +32,19 @@ function submitNewProduct(event) {
     const imageValue = image.value.trim();
     const descriptionValue = description.value.trim();
     const priceValue = price.value.trim();
-    // const featuredValue = featured.value.trim();
+    const featuredValue = featured.checked;
 
-    if (nameValue.length === 0 || imageValue.length === 0 || descriptionValue.length === 0 || priceValue.length === 0 ) {
+    if (nameValue.length === 0 || imageValue.length === 0 || descriptionValue.length === 0 || priceValue.length === 0 || validateURL(imageValue) === false ) {
         return displayMessage("warning", "Supply proper values", ".message-container");
     }
 
-    addProduct(nameValue, imageValue, descriptionValue, priceValue);
+    addNewProduct(nameValue, imageValue, descriptionValue, priceValue, featuredValue);
 
 }
 
-async function addProduct(name, imageValue, description, price) {
+async function addNewProduct(name, imageValue, description, price, featured) {
 
-    const data = JSON.stringify({ name: name, image_URL: imageValue, description: description, price: price});
+    const data = JSON.stringify({ name: name, image_URL: imageValue, description: description, price: price, featured: featured });
 
     const options = {
         method: "POST",
@@ -61,7 +60,7 @@ async function addProduct(name, imageValue, description, price) {
         const json = await response.json();
 
         if(json.created_at) {
-            displayMessage("success", "Article created", ".message-container");
+            displayMessage("success", "Product created", ".message-container");
             form.reset();
         }
         if(json.error) {
@@ -75,4 +74,13 @@ async function addProduct(name, imageValue, description, price) {
         console.log(error);
     }
 
+}
+
+
+//validate url (ref:https://digitalfortress.tech/tips/top-15-commonly-used-regex/ & https://www.regexpal.com/?fam=104034)
+
+function validateURL(url) {
+    const regEx = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#()?&//=]*)/;
+    const patternMatches = regEx.test(url);
+    return patternMatches;
 }

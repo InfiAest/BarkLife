@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Karla:wght@300;400&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
-    <title>Bark Life | Add product</title>
+    <title>Bark Life | Edit </title>
 </head>
 <body>
     <header>
@@ -27,8 +27,8 @@
     <main>
         <div class="page-wrapper">
             <div class="container">
-                <form>
-                    <h1>Add product</h1>
+                <form class="edit-product-form">
+                    <h1>Edit product</h1>
                     <div class="message-container"></div>
                     <div>
                         <label for="name">Name</label>
@@ -51,15 +51,14 @@
                         <label class="featured-switch" for="featured">
                             <input class="featured-checkbox" type="checkbox">
                             <span class="slider"></span>
-                        </label>
-                        
-                        
+                        </label> 
                     </div>
-                    <button class="cta-button formButton"><span>Add Product</span></button>
+                    <input id="id" />
+                    <button id="update" class="cta-button formButton"><span>Update Product</span></button>
+                    <div class="delete-container"></div>
                 </form>
             </div>
         </div>
-        
     </main>
     <footer>
         <div class="container footer">
@@ -85,7 +84,6 @@
         </div>
     </footer>
 
-    <script src="js/add.js" type="module"></script>
-    
+    <script src="js/edit.js" type="module"></script>
 </body>
 </html>

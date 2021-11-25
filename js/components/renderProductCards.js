@@ -1,5 +1,16 @@
 import { EMPTY_RESULTS } from "../settings/messages.js";
 import displayMessage from "./displayMessage.js";
+import { getToken } from "../utils/storage.js";
+
+//if logged in as admin go to edit page instead of products details page
+const token = getToken();
+
+if (token) {
+    var productLink = "edit.html?id=";
+}
+else if(!token) {
+    var productLink = "details.html?id=";
+}
 
 //Render featured product cards
 
@@ -13,7 +24,7 @@ export function renderFeaturedProducts(products) {
 
         if (products[i].featured === true) {
             featuredContainer.innerHTML += `<div class="product-card">
-                                            <a href="details.html?id=${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
+                                            <a href="${productLink}${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
                                                 <div class="product-img-container">
                                                     <div class="card-img" style="background-image: url('${product.image_URL}');">
                                                 </div>
@@ -23,7 +34,7 @@ export function renderFeaturedProducts(products) {
                                                 </div>
                                             </a>
                                             <div class="cta-button-container">
-                                                <a href="details.html?id=${product.id}" class="cta-button"><span>View product</span></a>
+                                                <a href="${productLink}${product.id}" class="cta-button"><span>View product</span></a>
                                             </div>
                                         </div>`;
         }
@@ -45,7 +56,7 @@ export function renderAllProducts(products) {
     for (var i = 0; i < products.length; i++) {
         const product = products[i];
         productContainer.innerHTML += `<div class="product-card">
-                                            <a href="details.html?id=${product.id}" class="product-card-link">
+                                            <a href="${productLink}${product.id}" class="product-card-link">
                                                 <div class="product-img-container">
                                                     <div class="card-img" style="background-image: url('${product.image_URL}');">
                                                 </div>
@@ -55,7 +66,7 @@ export function renderAllProducts(products) {
                                                 </div>
                                             </a>
                                             <div class="cta-button-container">
-                                                <a href="details.html?id=${product.id}" class="cta-button"><span>View product</span></a>
+                                                <a href="${productLink}${product.id}" class="cta-button"><span>View product</span></a>
                                             </div>
                                         </div>`
 

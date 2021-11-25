@@ -37,6 +37,9 @@
   grid-gap: 1.5rem;
   margin-bottom: 6rem;
 }
+.product-name-container p {
+  margin-left: 10px;
+}
 
 //hover on image and activate hover effect on button
 .product-card-link:hover ~ .cta-button-container .cta-button {

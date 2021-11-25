@@ -29,6 +29,3 @@ async function getProductDetails() {
 }
 
 getProductDetails();
-
-
-//add to cart button

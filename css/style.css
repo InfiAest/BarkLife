@@ -29,6 +29,10 @@ header {
   margin: 0 auto;
 }
 
+.page-wrapper {
+  margin-top: 130px;
+}
+
 h1 {
   font-family: "Bodoni Moda", serif;
   font-size: 2rem;
@@ -229,6 +233,10 @@ nav i {
   margin-bottom: 6rem;
 }
 
+.product-name-container p {
+  margin-left: 10px;
+}
+
 .product-card-link:hover ~ .cta-button-container .cta-button {
   background-color: #ffffff;
   border: 3px solid #bb9d88;
@@ -357,7 +365,8 @@ nav i {
   }
 }
 
-.cta-button-container {
+.cta-button-container,
+.cart-button-container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -398,7 +407,7 @@ nav i {
 }
 
 .formButton {
-  margin: 2.5rem 0;
+  margin: 1.5rem 0 2.5rem 0;
 }
 
 #logout {
@@ -415,6 +424,34 @@ nav i {
 #logout:hover {
   text-decoration: underline;
   text-underline-offset: 5px;
+}
+
+.delete {
+  background-color: #ded6d3;
+  border-color: #ded6d3;
+  color: #3d3c3c;
+  margin-top: 0;
+}
+
+.delete:hover {
+  border-color: #ded6d3;
+  color: #3d3c3c;
+}
+
+.cart-button-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .cart-button-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
 }
 
 footer {
@@ -506,7 +543,7 @@ footer {
 }
 
 .product-container {
-  margin: 130px 0 4rem 0;
+  margin-bottom: 5rem;
 }
 
 .img-container {
@@ -571,7 +608,8 @@ footer {
 }
 
 /*form styles ----*/
-label {
+label,
+.featured-label {
   display: block;
   color: #3d3c3c;
   font-size: 1.2rem;
@@ -580,7 +618,7 @@ label {
 
 form {
   max-width: 900px;
-  margin: 10rem auto;
+  margin: 2rem auto;
 }
 
 form > div {
@@ -604,5 +642,142 @@ textarea:focus-visible {
 
 #description {
   height: 100px;
+}
+
+.featured-label {
+  margin-bottom: 0;
+}
+
+.featured-switch {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+}
+
+.featured-checkbox {
+  opacity: 0;
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ded6d3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 56px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  text-align: center;
+  padding-top: 4px;
+  content: "No";
+}
+
+.featured-checkbox:checked + .slider {
+  background-color: #bb9d88;
+}
+
+.featured-checkbox:checked + .slider:before {
+  -webkit-transform: translateX(56px);
+          transform: translateX(56px);
+  content: "Yes";
+}
+
+#id {
+  display: none;
+}
+
+.basket-container {
+  margin-bottom: 5rem;
+}
+
+.cart-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 2rem 0;
+}
+
+.cart-img-container {
+  overflow: hidden;
+  margin-right: 0.5rem;
+}
+
+.cart-img {
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+}
+
+.cart-product h3,
+.cart-product p {
+  margin: 0;
+}
+
+.cart-name-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.cart-name-container p {
+  text-align: right;
+}
+
+.total-price-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-top: 3px solid #ded6d3;
+}
+
+@media (min-width: 768px) {
+  .cart-img {
+    width: 150px;
+    height: 150px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

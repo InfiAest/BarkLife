@@ -1,4 +1,5 @@
-.cta-button-container {
+.cta-button-container,
+.cart-button-container {
   width: 100%;
   display: flex;
 }
@@ -33,7 +34,7 @@
   color: map-get($colours, primary);
 }
 .formButton {
-  margin: 2.5rem 0;
+  margin: 1.5rem 0 2.5rem 0;
 }
 
 #logout {
@@ -50,4 +51,29 @@
 #logout:hover {
   text-decoration: underline;
   text-underline-offset: 5px;
+}
+
+.delete {
+  background-color: map-get($colours, input);
+  border-color: map-get($colours, input);
+  color: map-get($colours, secondary);
+  margin-top: 0;
+}
+
+.delete:hover {
+  border-color: map-get($colours, input);
+  color: map-get($colours, secondary);
+}
+
+.cart-button-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .cart-button-container {
+    grid-template-columns: 1fr 1fr;
+  }
 }
