@@ -2,6 +2,8 @@ import displayMessage from "./components/displayMessage.js";
 import createNavBar from "./components/createMenu.js";
 import { getToken } from "./utils/storage.js";
 import { productsUrl } from "./data/URLs.js";
+import renderImagePreview from "./components/renderImagePreview.js";
+import { validateURL } from "./utils/regexValidations.js";
 
 const token = getToken();
 
@@ -10,6 +12,7 @@ if(!token) {
 }
 
 createNavBar();
+renderImagePreview();
 
 
 const form = document.querySelector("form");
@@ -76,11 +79,3 @@ async function addNewProduct(name, imageValue, description, price, featured) {
 
 }
 
-
-//validate url (ref:https://digitalfortress.tech/tips/top-15-commonly-used-regex/ & https://www.regexpal.com/?fam=104034)
-
-function validateURL(url) {
-    const regEx = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#()?&//=]*)/;
-    const patternMatches = regEx.test(url);
-    return patternMatches;
-}
