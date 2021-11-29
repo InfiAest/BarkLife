@@ -34,7 +34,7 @@ function submitNewProduct(event) {
     const priceValue = price.value.trim();
     const featuredValue = featured.checked;
 
-    if (nameValue.length === 0 || imageValue.length === 0 || descriptionValue.length === 0 || priceValue.length === 0 || validateURL(imageValue) === false ) {
+    if (nameValue.length === 0 || imageValue.length === 0 || descriptionValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || validateURL(imageValue) === false ) {
         return displayMessage("warning", "Supply proper values", ".message-container");
     }
 

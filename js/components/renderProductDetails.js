@@ -2,17 +2,6 @@ import { getExistingCartProducts, saveToCart } from "../utils/storage.js";
 
 export default function renderProductDetails(product) {
 
-    let cssClass = "";
-
-    const cart = getExistingCartProducts();
-    const doesObjectExist = cart.find(function(product) {
-        return parseInt(product.id) === product.id;
-    });
-
-    if(doesObjectExist) {
-        cssClass = "delete";
-    }
-
     const productContainer = document.querySelector(".product-container");
     const pageTitle = document.querySelector("title");
 
@@ -32,7 +21,7 @@ export default function renderProductDetails(product) {
                                         </div>
                                     </div>
                                     <div class="cta-button-container">
-                                        <button type="button" class="add-to-cart-button cta-button ${cssClass}" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}">
+                                        <button type="button" class="add-to-cart-button cta-button" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}">
                                             <span>Add to cart</span>
                                         </button>
                                     </div>`
@@ -43,7 +32,6 @@ export default function renderProductDetails(product) {
     addButton.addEventListener("click", toggleCartItem);
 
     function toggleCartItem() {
-        this.classList.toggle("delete");
 
         const id = this.dataset.id;
         const name = this.dataset.name;

@@ -609,11 +609,16 @@ footer {
 
 /*form styles ----*/
 label,
-.featured-label {
+.featured-label,
+.img-preview-label {
   display: block;
   color: #3d3c3c;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+}
+
+.img-preview-label {
+  margin-top: 0;
 }
 
 form {
@@ -621,7 +626,8 @@ form {
   margin: 2rem auto;
 }
 
-form > div {
+form > div,
+.url-container {
   margin-bottom: 1.5rem;
 }
 
@@ -642,10 +648,6 @@ textarea:focus-visible {
 
 #description {
   height: 100px;
-}
-
-.featured-label {
-  margin-bottom: 0;
 }
 
 .featured-switch {
@@ -702,8 +704,62 @@ textarea:focus-visible {
   content: "Yes";
 }
 
+.image-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.preview-img-container {
+  overflow: hidden;
+}
+
+.preview-container {
+  width: 100%;
+}
+
+.preview-image {
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+}
+
 #id {
-  display: none;
+  display: block;
+}
+
+.url-container {
+  width: 100%;
+}
+
+@media (min-width: 641px) {
+  .url-container {
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+    margin-right: 1rem;
+  }
+  .preview-container {
+    width: auto;
+  }
+  .image-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .preview-image {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 .basket-container {
@@ -757,6 +813,7 @@ textarea:focus-visible {
 
 .cart-name-container p {
   text-align: right;
+  margin-left: 10px;
 }
 
 .total-price-container {

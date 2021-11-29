@@ -5,6 +5,7 @@ export default function createNavBar() {
     const { pathname } = document.location;
 
     const menuContainer = document.querySelector(".navigation");
+    // const userNavContainer = document.querySelector(".user-navigation");
 
     const username = getUsername();
 
@@ -19,6 +20,8 @@ export default function createNavBar() {
                                 <li><a href="/products.html" class="${pathname === "/products.html" ? "current" : ""}">Products</a></li>
                                 <li><a href="/basket.html" class="${pathname === "/basket.html" ? "current" : ""}">Basket<i class="fas fa-shopping-bag"></i></a></li>
                                 <li>${authLink}</li>`;
+
+    
 
     logout();
 }

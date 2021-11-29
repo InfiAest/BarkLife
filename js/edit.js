@@ -4,12 +4,12 @@ import displayMessage from "./components/displayMessage.js";
 import createNavBar from "./components/createMenu.js";
 import deleteProductButton from "./components/deleteProductButton.js";
 
-// const token = getToken();
-// console.log(token);
+const token = getToken();
+console.log(token);
 
-// if(!token) {
-//     location.href = "/";
-// }
+if(!token) {
+    location.href = "/";
+}
 
 createNavBar();
 
@@ -21,9 +21,12 @@ if (!id) {
     document.location.href = "/";
 }
 
+const detailsUrl = productsUrl + id;
+
 const form = document.querySelector("form");
 const name = document.querySelector("#name");
 const image = document.querySelector("#image");
+const imagePreview = document.querySelector(".preview-img-container");
 const description = document.querySelector("#description");
 const price = document.querySelector("#price");
 const featured = document.querySelector(".featured-checkbox");
@@ -32,8 +35,9 @@ const messageContainer = document.querySelector(".message-container");
 const pageTitle = document.querySelector("title");
 
 (async function() {
+
     try {
-        const response = await fetch(productsUrl + id);
+        const response = await fetch(detailsUrl);
         const details = await response.json();
 
         pageTitle.innerHTML += `${details.name}`;
@@ -45,17 +49,22 @@ const pageTitle = document.querySelector("title");
         featured.checked = details.featured;
         idInput.value = details.id;
 
+        imagePreview.innerHTML = `<div class="preview-image" style="background-image: url('${image.value}');"></div>`;
+
+
         console.log(details);
         deleteProductButton(details.id);
     }
-    catch(error) {
+    catch (error) {
         console.log(error);
     }
+
 })();
 
-form.addEventListener("submit", submitUpdateForm);
 
-function submitUpdateForm(event) {
+form.addEventListener("submit", editProduct);
+
+function editProduct(event) {
     event.preventDefault();
 
     messageContainer.innerHTML = "";
@@ -66,22 +75,18 @@ function submitUpdateForm(event) {
     const priceValue = price.value.trim();
     const featuredValue = featured.checked;
     const idValue = idInput.value;
-
-    if (nameValue.length === 0 || imageValue.length === 0 || descriptionValue.length === 0 || priceValue.length === 0) {
+    
+    if (nameValue.length === 0 || imageValue.length === 0 || descriptionValue.length === 0 || priceValue.length === 0 || isNaN(priceValue)) {
         return displayMessage("warning", "Supply proper values", ".message-container");
     }
 
     updateProduct(nameValue, imageValue, descriptionValue, priceValue, featuredValue, idValue);
-
 }
 
-async function updateProduct(name, image, price, description, featured, id) {
-    
-    const url = productsUrl + id;
+async function updateProduct(name, imageValue, price, description, featured, id) {
 
-    const data = JSON.stringify({ name: name, image_URL: image, description: description, price: price, featured: featured });
-    
-    const token = getToken();
+    const url = productsUrl + id;
+    const data = JSON.stringify({ name: name, image_URL: imageValue, price: price, description: description, featured: featured });
 
     const options = {
         method: "PUT",
@@ -94,19 +99,18 @@ async function updateProduct(name, image, price, description, featured, id) {
 
     try {
         const response = await fetch(url, options);
-        const json = await response.json(); 
+        const json = await response.json();
 
-        console.log(json);
-
-        if(json.updated_at) {
-            displayMessage("success", "Product updated", ".message-container");
+        if (json.updated_at) {
+            displayMessage("success", "Article updated", ".message-container");
         }
 
-        if(json.error) {
+        if (json.error) {
             displayMessage("error", json.message, ".message-container");
         }
     }
-    catch(error) {
+    catch (error) {
         console.log(error);
     }
+
 }

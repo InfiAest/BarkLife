@@ -7,9 +7,11 @@ const token = getToken();
 
 if (token) {
     var productLink = "edit.html?id=";
+    var buttonLabel = "Edit product";
 }
 else if(!token) {
     var productLink = "details.html?id=";
+    var buttonLabel = "View product";
 }
 
 //Render featured product cards
@@ -34,7 +36,7 @@ export function renderFeaturedProducts(products) {
                                                 </div>
                                             </a>
                                             <div class="cta-button-container">
-                                                <a href="${productLink}${product.id}" class="cta-button"><span>View product</span></a>
+                                                <a href="${productLink}${product.id}" class="cta-button"><span>${buttonLabel}</span></a>
                                             </div>
                                         </div>`;
         }
@@ -66,7 +68,7 @@ export function renderAllProducts(products) {
                                                 </div>
                                             </a>
                                             <div class="cta-button-container">
-                                                <a href="${productLink}${product.id}" class="cta-button"><span>View product</span></a>
+                                                <a href="${productLink}${product.id}" class="cta-button"><span>${buttonLabel}</span></a>
                                             </div>
                                         </div>`
 

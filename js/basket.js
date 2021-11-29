@@ -24,14 +24,17 @@ let sum = 0.00;
 // console.log(sum);
 
 products.forEach(product => {
-    basketProducts.innerHTML += `<div class="cart-product">
-                                    <div class="cart-img-container">
-                                        <div class="cart-img" style="background-image: url('${product.image}');"></div>
+    basketProducts.innerHTML += `<a href="details.html?id=${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
+                                    <div class="cart-product">    
+                                        <div class="cart-img-container">
+                                            <div class="cart-img" style="background-image: url('${product.image}');"></div>
+                                        </div>
+                                        <div class="cart-name-container">
+                                            <h3>${product.name}</h3>
+                                            <p>£${product.price}</p>
+                                        </div>    
                                     </div>
-                                    <div class="cart-name-container">
-                                        <h3>${product.name}</h3>
-                                        <p>£${product.price}</p>
-                                    </div>`
+                                </a>`
 
     totalPrice.innerHTML = `£${sum}`;
 });
