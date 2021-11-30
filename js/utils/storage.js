@@ -1,6 +1,21 @@
 const tokenKey = "token";
 const userKey = "user";
 export const cartKey = "Cart";
+export const favouritesKey = "Favourite";
+
+export function getExistingFavouriteProducts() {
+    const favourites = localStorage.getItem(favouritesKey);
+
+    if(!favourites) {
+        return [];
+    }
+    else {
+        return JSON.parse(favourites);
+    }
+}
+export function saveToFavouriteProducts(favourites) {
+    localStorage.setItem(favouritesKey, JSON.stringify(favourites));
+};
 
 export function getExistingCartProducts() {
     const cart = localStorage.getItem(cartKey);

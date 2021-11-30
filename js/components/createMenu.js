@@ -18,6 +18,7 @@ export default function createNavBar() {
 
     menuContainer.innerHTML = ` <li><a href="/" class="${pathname === "/" || pathname === "/index.html" ? "current" : ""}">Home</a></li>
                                 <li><a href="/products.html" class="${pathname === "/products.html" ? "current" : ""}">Products</a></li>
+                                <li><a href="/favourites.html" class="${pathname === "/favourites.html" ? "current" : ""}">Favourites<i class="fas fa-heart"></i></a></li>
                                 <li><a href="/basket.html" class="${pathname === "/basket.html" ? "current" : ""}">Basket<i class="fas fa-shopping-bag"></i></a></li>
                                 <li>${authLink}</li>`;
 
