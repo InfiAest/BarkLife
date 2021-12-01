@@ -1,8 +1,8 @@
-import stickyNav from "./utils/stickyNav.js";
-import { productsUrl } from "./data/URLs.js";
-import displayMessage from "./components/displayMessage.js";
-import renderProductDetails from "./components/renderProductDetails.js";
-import createNavBar from "./components/createMenu.js";
+import stickyNav from "../utils/stickyNav.js";
+import { productsUrl } from "../data/URLs.js";
+import displayMessage from "../components/renderMessage/displayMessage.js";
+import renderProductDetails from "../components/renderHtml/renderProductDetails.js";
+import createNavBar from "../components/menu/createMenu.js";
 
 createNavBar();
 

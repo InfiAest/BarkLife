@@ -1,5 +1,5 @@
-import { productsUrl } from "../data/URLs.js";
-import { getToken } from "../utils/storage.js";
+import { productsUrl } from "../../data/URLs.js";
+import { getToken } from "../../utils/storage.js";
 
 export default function deleteProductButton(id) {
     const container = document.querySelector(".delete-container");

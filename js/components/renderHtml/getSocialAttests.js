@@ -1,4 +1,4 @@
-import { socialMediaUrl } from "../data/URLs.js";
+import { socialMediaUrl } from "../../data/URLs.js";
 
 //social media attests
 

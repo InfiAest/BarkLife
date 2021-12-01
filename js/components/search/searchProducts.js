@@ -1,4 +1,4 @@
-import { renderAllProducts } from "./renderProductCards.js";
+import renderAllProducts from "../renderHtml/renderAllProducts.js";
 
 export function searchProducts(products) {
     const searchBar = document.querySelector(".search");

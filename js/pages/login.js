@@ -1,6 +1,6 @@
-import displayMessage from "./components/displayMessage.js";
-import completeLogin from "./components/completeLogin.js";
-import createNavBar from "./components/createMenu.js";
+import displayMessage from "../components/renderMessage/displayMessage.js";
+import completeLogin from "../components/menu/loginFunction/completeLogin.js";
+import createNavBar from "../components/menu/createMenu.js";
 
 createNavBar();
 

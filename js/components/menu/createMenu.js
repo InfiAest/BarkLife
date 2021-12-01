@@ -1,5 +1,5 @@
-import { getUsername } from "../utils/storage.js";
-import logout from "./logout.js";
+import { getUsername } from "../../utils/storage.js";
+import logout from "../buttons/logout.js";
 
 export default function createNavBar() {
     const { pathname } = document.location;

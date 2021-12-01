@@ -1,6 +1,6 @@
-import { baseUrl } from "../data/URLs.js";
-import displayMessage from "./displayMessage.js";
-import { saveToken , saveUser } from "../utils/storage.js";
+import { baseUrl } from "../../../data/URLs.js";
+import displayMessage from "../../renderMessage/displayMessage.js";
+import { saveToken , saveUser } from "../../../utils/storage.js";
 
 export default async function completeLogin(username, password) {
     const url = baseUrl + "auth/local";

@@ -1,5 +1,6 @@
-import { getExistingCartProducts, getExistingFavouriteProducts, saveToCart } from "../utils/storage.js";
-import { addProductToFavourites } from "./addToFavourites.js";
+import { getExistingFavouriteProducts } from "../../utils/storage.js";
+import { addProductToFavourites } from "../buttons/addToFavourites.js";
+import addProductToCart from "../buttons/addProductToCart.js";
 
 export default function renderProductDetails(product) {
 
@@ -43,37 +44,6 @@ export default function renderProductDetails(product) {
 
     addProductToFavourites();
 
-    const addButton = document.querySelector(".add-to-cart-button");
-
-    addButton.addEventListener("click", addProductToCart);
-
-    function addProductToCart() {
-
-        const id = this.dataset.id;
-        const name = this.dataset.name;
-        const price = this.dataset.price;
-        const image = this.dataset.image;
-
-        const currentCart = getExistingCartProducts();
-
-        const product = { id: id, name: name, price: price, image: image };
-        currentCart.push(product);
-        saveToCart(currentCart);
-
-        // const productExists = currentCart.find(function(product) {
-        //     return product.id === id;
-        // });
-
-        // if(!productExists) {
-        //     const product = { id: id, name: name, price: price, image: image };
-        //     currentCart.push(product);
-        //     saveToCart(currentCart);
-        // }
-        // else {
-        //     const newCart = currentCart.filter(product => product.id !== id);
-        //     saveToCart(newCart);
-        // }
-
-    };
+    addProductToCart();
 };
 

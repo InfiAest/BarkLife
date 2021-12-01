@@ -1,4 +1,4 @@
-import { headerUrl } from "../data/URLs.js";
+import { headerUrl } from "../../data/URLs.js";
 
 export default async function renderHeaderImage() {
     try {

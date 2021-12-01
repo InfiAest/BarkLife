@@ -1,10 +1,10 @@
-import stickyNav from "./utils/stickyNav.js";
-import displayMessage from "./components/displayMessage.js";
-import { productsUrl } from "./data/URLs.js";
-import { renderFeaturedProducts } from "./components/renderProductCards.js";
-import renderHeaderImage from "./components/renderHeaderImage.js";
-import getSocialMediaAttests from "./components/getSocialAttests.js";
-import createNavBar from "./components/createMenu.js";
+import stickyNav from "../utils/stickyNav.js";
+import displayMessage from "../components/renderMessage/displayMessage.js";
+import { productsUrl } from "../data/URLs.js";
+import renderFeaturedProducts from "../components/renderHtml/renderFeaturedProducts.js";
+import renderHeaderImage from "../components/renderHtml/renderHeaderImage.js";
+import getSocialMediaAttests from "../components/renderHtml/getSocialAttests.js";
+import createNavBar from "../components/menu/createMenu.js";
 
 createNavBar();
 

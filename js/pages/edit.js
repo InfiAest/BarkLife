@@ -1,10 +1,10 @@
-import createNavBar from "./components/createMenu.js";
-import { getToken } from "./utils/storage.js";
-import { baseUrl } from "./data/URLs.js";
-import displayMessage from "./components/displayMessage.js";
-import renderImagePreview from "./components/renderImagePreview.js";
-import deleteProductButton from "./components/deleteProductButton.js";
-import { validateURL } from "./utils/regexValidations.js";
+import createNavBar from "../components/menu/createMenu.js";
+import { getToken } from "../utils/storage.js";
+import { baseUrl } from "../data/URLs.js";
+import displayMessage from "../components/renderMessage/displayMessage.js";
+import renderImagePreview from "../components/renderHtml/renderImagePreview.js";
+import deleteProductButton from "../components/buttons/deleteProductButton.js";
+import { validateURL } from "../utils/regexValidations.js";
 
 const token = getToken();
 console.log(token);

@@ -1,4 +1,4 @@
-import { logoutUser } from "../utils/storage.js";
+import { logoutUser } from "../../utils/storage.js";
 
 export default function logout() {
     const logoutButton = document.querySelector("#logout");
