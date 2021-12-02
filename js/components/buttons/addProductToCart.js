@@ -11,26 +11,27 @@ export default function addProductToCart() {
         const name = this.dataset.name;
         const price = this.dataset.price;
         const image = this.dataset.image;
+        let itemCount = 1;
 
         const currentCart = getExistingCartProducts();
 
-        const product = { id: id, name: name, price: price, image: image };
-        currentCart.push(product);
-        saveToCart(currentCart);
+        const doesProductExist = currentCart.find(function(product) {
+            return product.id === id;
+        });
 
-        // const productExists = currentCart.find(function(product) {
-        //     return product.id === id;
-        // });
+        //If product is already in the cart then up the quantity of that product instead
+        if(doesProductExist) {
+            const thatProduct = currentCart.find(function(product) {
+                return product.id === id;
+            });
+            thatProduct.quantity ++;
+            saveToCart(currentCart);
+        } else {
+            const product = { id: id, name: name, price: price, image: image, quantity: itemCount };
+            currentCart.push(product);
+            saveToCart(currentCart);
+        }
 
-        // if(!productExists) {
-        //     const product = { id: id, name: name, price: price, image: image };
-        //     currentCart.push(product);
-        //     saveToCart(currentCart);
-        // }
-        // else {
-        //     const newCart = currentCart.filter(product => product.id !== id);
-        //     saveToCart(newCart);
-        // }
 
     };
 }
