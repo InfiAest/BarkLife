@@ -85,9 +85,13 @@ function minusProduct() {
     } 
     else if(doesProductExist.quantity === 1) {
         console.log("delete product");
-        const newCartList = currentCart.filter(doesProductExist => doesProductExist.id !== id);
-        saveToCart(newCartList);
-        renderCartProducts();
+        const completeDelete = confirm(`Are you sure you want to delete this ${doesProductExist.name} from your basket?`);
+
+        if(completeDelete) {
+            const newCartList = currentCart.filter(doesProductExist => doesProductExist.id !== id);
+            saveToCart(newCartList);
+            renderCartProducts();
+        }
         
     }
 

@@ -15,6 +15,17 @@
 .price-container {
   text-align: right;
 }
+.back-link {
+  text-decoration: none;
+  color: map-get($colours, primary);
+}
+.back-link:hover {
+  color: map-get($colours, secondary);
+}
+.fa-chevron-left {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
 
 @media (min-width: 768px) {
   .product-container {

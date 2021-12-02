@@ -19,9 +19,14 @@ export default function deleteProductInCart() {
         });
 
         if(productExists) {
-            const newCartList = currentCartProducts.filter(product => product.id !== id);
-            saveToCart(newCartList);
-            renderCartProducts();
+
+            const completeDelete = confirm(`Are you sure you want to delete ${productExists.quantity} x ${productExists.name} from your basket?`);
+
+            if(completeDelete) {
+                const newCartList = currentCartProducts.filter(product => product.id !== id);
+                saveToCart(newCartList);
+                renderCartProducts();
+            }
         }
 
     }
