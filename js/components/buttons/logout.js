@@ -1,10 +1,13 @@
 import { logoutUser } from "../../utils/storage.js";
 
 export default function logout() {
-    const logoutButton = document.querySelector("#logout");
+    const logoutButtons = document.querySelectorAll(".logout");
 
-    if(logoutButton) {
-        logoutButton.onclick = function() {
+    if(logoutButtons) {
+        logoutButtons.forEach((logoutButton) => {
+            logoutButton.addEventListener("click", doLogout);
+        })
+        function doLogout() {
             const completeLogout = confirm("Are you sure you want to logout?");
 
             if (completeLogout) {

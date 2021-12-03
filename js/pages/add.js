@@ -1,5 +1,6 @@
 import displayMessage from "../components/renderMessage/displayMessage.js";
 import createNavBar from "../components/menu/createMenu.js";
+import stickyNav from "../utils/stickyNav.js";
 import { getToken } from "../utils/storage.js";
 import { productsUrl } from "../data/URLs.js";
 import renderImagePreview from "../components/renderHtml/renderImagePreview.js";
@@ -12,6 +13,10 @@ if(!token) {
 }
 
 createNavBar();
+
+//Sticky nav
+window.onscroll = function() {stickyNav()};
+
 renderImagePreview();
 
 

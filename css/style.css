@@ -110,23 +110,30 @@ nav ul {
 nav li {
   display: block;
   padding: 10px 20px;
+  font-size: 1.4rem;
 }
 
-nav a {
+nav a,
+.extra-navigation a {
   text-decoration: none;
   font-family: "Karla", sans-serif;
-  font-size: 1.4rem;
   color: #3d3c3c;
   display: block;
 }
 
+.extra-navigation a {
+  font-size: 1.3rem;
+}
+
 nav a:hover,
+.extra-navigation a:hover,
 .current {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
 
-nav i {
+nav i,
+.extra-navigation i {
   color: #3d3c3c;
   padding: 0 10px;
 }
@@ -160,12 +167,13 @@ nav i {
 }
 
 .logo-container {
-  width: 280px;
+  width: 220px;
   margin: 0 auto;
 }
 
 .nav-logo {
-  width: 280px;
+  width: 220px;
+  margin-top: 0.5rem;
 }
 
 .sticky {
@@ -174,6 +182,53 @@ nav i {
   width: 100%;
   background: #ded6d3;
   z-index: 10;
+}
+
+.extra-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .extra-nav {
+    display: block;
+    margin: 0;
+  }
+  .extra-navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style: none;
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
+  }
+  .extra-navigation li {
+    padding: 35px 0;
+  }
+  .extra-navigation i:hover {
+    color: #bb9d88;
+  }
+}
+
+@media (min-width: 961px) {
+  .logo-container {
+    width: 250px;
+    margin: 0 auto;
+  }
+  .nav-logo {
+    width: 250px;
+    margin-top: 0;
+  }
+  .extra-navigation li {
+    padding: 35px 10px;
+  }
+  .extra-navigation {
+    padding-right: 20px;
+  }
 }
 
 .product-card {
@@ -306,6 +361,14 @@ nav i {
       grid-row-start: 2;
 }
 
+.attest-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 .heading-container h4 {
   margin-top: 0;
 }
@@ -319,6 +382,8 @@ nav i {
   height: 435px;
   background-position: center;
   background-size: cover;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .insta-img-sm {
@@ -326,6 +391,18 @@ nav i {
   height: 250px;
   background-position: center;
   background-size: cover;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.insta-img-lrg:hover,
+.insta-img-sm:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.insta-links {
+  color: #3d3c3c;
 }
 
 .attest {
@@ -348,17 +425,43 @@ nav i {
 }
 
 .insta-username {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-right: 1rem;
 }
 
 .instagram-tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 2rem;
+  font-family: "Bodoni Moda", serif;
+  font-size: 1.6rem;
+  text-decoration: none;
   text-align: right;
   color: #a89e9d;
 }
 
+.instagram-tag:hover {
+  letter-spacing: 1px;
+}
+
 .fa-instagram {
   margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .attest-container {
+    display: block;
+  }
+  .insta-username {
+    font-size: 1.2rem;
+  }
 }
 
 @media (min-width: 961px) {
@@ -375,6 +478,11 @@ nav i {
   .attest1 {
     -ms-grid-row: 1;
         grid-row-start: 1;
+  }
+  .attest-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -434,9 +542,17 @@ nav i {
   padding: 10px 20px;
 }
 
+.extra-navigation #logout {
+  font-size: 1.1rem;
+  width: auto;
+  height: auto;
+  padding: 10px 5px;
+}
+
 #logout:hover {
   text-decoration: underline;
   text-underline-offset: 5px;
+  cursor: pointer;
 }
 
 .delete {
@@ -497,11 +613,37 @@ footer {
   font-size: 2rem;
 }
 
+.fa-instagram:hover,
+.fa-facebook:hover {
+  color: #a89e9d;
+}
+
 .logo-social-links,
 .customer-links,
 .business-links {
   text-align: center;
   padding: 0.5rem 0;
+}
+
+.customer-links,
+.business-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer-links {
+  text-decoration: none;
+  color: #3d3c3c;
+  margin: 0.5rem 0;
+}
+
+.footer-links:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 768px) {
@@ -650,7 +792,7 @@ label,
 }
 
 form {
-  max-width: 900px;
+  max-width: 1350px;
   margin: 2rem auto;
 }
 

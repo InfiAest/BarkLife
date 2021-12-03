@@ -13,7 +13,10 @@
 .attest1 {
   grid-row-start: 2;
 }
-
+.attest-container {
+  display: flex;
+  align-self: flex-end;
+}
 .heading-container h4 {
   margin-top: 0;
 }
@@ -25,12 +28,21 @@
   height: 435px;
   background-position: center;
   background-size: cover;
+  transition: 1s;
 }
 .insta-img-sm {
   width: 100%;
   height: 250px;
   background-position: center;
   background-size: cover;
+  transition: 1s;
+}
+.insta-img-lrg:hover,
+.insta-img-sm:hover {
+  transform: scale(1.1);
+}
+.insta-links {
+  color: map-get($colours, secondary);
 }
 .attest {
   position: relative;
@@ -46,17 +58,34 @@
   padding: 5px;
 }
 .insta-username {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-right: 1rem;
 }
 .instagram-tag {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+  font-family: $font-headings;
+  font-size: 1.6rem;
+  text-decoration: none;
   text-align: right;
   color: map-get($colours, tertiary);
+}
+.instagram-tag:hover {
+  letter-spacing: 1px;
 }
 .fa-instagram {
   margin-right: 1rem;
 }
-
+@media (min-width: 768px) {
+  .attest-container {
+    display: block;
+  }
+  .insta-username {
+    font-size: 1.2rem;
+  }
+}
 @media (min-width: 961px) {
   .instagram-attests-section {
     grid-template-columns: 1fr 1fr;
@@ -69,5 +98,8 @@
   }
   .attest1 {
     grid-row-start: 1;
+  }
+  .attest-container {
+    display: flex;
   }
 }

@@ -1,4 +1,5 @@
 import createNavBar from "../components/menu/createMenu.js";
+import stickyNav from "../utils/stickyNav.js";
 import { getToken } from "../utils/storage.js";
 import { baseUrl } from "../data/URLs.js";
 import displayMessage from "../components/renderMessage/displayMessage.js";
@@ -15,6 +16,8 @@ if (!token) {
 
 createNavBar();
 
+//Sticky nav
+window.onscroll = function() {stickyNav()};
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);

@@ -47,10 +47,17 @@
   font-size: 1.4rem;
   padding: 10px 20px;
 }
+.extra-navigation #logout {
+  font-size: 1.1rem;
+  width: auto;
+  height: auto;
+  padding: 10px 5px;
+}
 
 #logout:hover {
   text-decoration: underline;
   text-underline-offset: 5px;
+  cursor: pointer;
 }
 
 .delete {

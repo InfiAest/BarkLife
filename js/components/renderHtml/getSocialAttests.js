@@ -14,31 +14,37 @@ export default async function getSocialMediaAttests() {
         for (var i = 0; i < instaMentions.length; i++) {
             
             attest1.innerHTML = `<div class="attest">
+                                            <a href="#" class="insta-links">
                                                 <div class="insta-img-container">
                                                     <div class="insta-img-lrg" style="background-image: url('${instaMentions[0].insta_image.url}');">
                                                 </div>
                                                 <div class="insta-info-container">
                                                     <p class="insta-username">${instaMentions[0].username} - ${instaMentions[0].comment}</p>
                                                 </div>
-                                            </div>`;
+                                            </a>
+                                        </div>`;
         
             attest2.innerHTML = `<div class="attest">
+                                        <a href="#" class="insta-links">
                                             <div class="insta-img-container">
                                                 <div class="insta-img-sm" style="background-image: url('${instaMentions[1].insta_image.url}');">
                                             </div>
                                             <div class="insta-info-container">
                                                 <p class="insta-username">${instaMentions[1].username}</p>
                                             </div>
-                                        </div>`;
+                                        </a>
+                                    </div>`;
 
             attest3.innerHTML = `<div class="attest">
+                                            <a href="#" class="insta-links">
                                                 <div class="insta-img-container">
                                                     <div class="insta-img-sm" style="background-image: url('${instaMentions[2].insta_image.url}');">
                                                 </div>
                                                 <div class="insta-info-container">
                                                     <p class="insta-username">${instaMentions[2].username}</p>
                                                 </div>
-                                            </div>`;
+                                            </a>
+                                        </div>`;
         }
     }
     catch(error) {

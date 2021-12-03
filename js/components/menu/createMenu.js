@@ -2,26 +2,36 @@ import { getUsername } from "../../utils/storage.js";
 import logout from "../buttons/logout.js";
 
 export default function createNavBar() {
+
     const { pathname } = document.location;
 
     const menuContainer = document.querySelector(".navigation");
-    // const userNavContainer = document.querySelector(".user-navigation");
+    const extraNavContainer = document.querySelector(".extra-navigation");
 
     const username = getUsername();
 
-    let authLink = `<a href="login.html" class="${pathname === "/login.html" ? "active" : ""}">Login<i class="fas fa-user"></i></a>`;
+    let authLink = `<li><a href="login.html" class="${pathname === "/login.html" ? "active" : ""}">Login<i class="fas fa-user"></i></a></li>`;
+    let extraAuthLink = `<li><a href="login.html" class="${pathname === "/login.html" ? "active" : ""}"><i class="fas fa-user"></i></a></li>`;
 
     if (username) {
         authLink = `<li><a href="/add.html" class="${pathname === "/add.html" ? "active" : ""}">Add Product<i class="fas fa-plus"></i></a></li>
-                    <button id="logout">Logout ${username}<i class="fas fa-user"></i></button>`;
+                    <button id="logout" class="logout">Logout ${username}<i class="fas fa-user"></i></button>`;
+
+        extraAuthLink = `<li><a href="/add.html" class="${pathname === "/add.html" ? "active" : ""}"><i class="fas fa-plus"></i></a></li>
+                        <button id="logout" class="logout">Logout ${username}<i class="fas fa-user"></i></button>`;
     }
 
     menuContainer.innerHTML = ` <li><a href="/" class="${pathname === "/" || pathname === "/index.html" ? "current" : ""}">Home</a></li>
                                 <li><a href="/products.html" class="${pathname === "/products.html" ? "current" : ""}">Products</a></li>
                                 <li><a href="/favourites.html" class="${pathname === "/favourites.html" ? "current" : ""}">Favourites<i class="fas fa-heart"></i></a></li>
                                 <li><a href="/basket.html" class="${pathname === "/basket.html" ? "current" : ""}">Basket<i class="fas fa-shopping-bag"></i></a></li>
-                                <li>${authLink}</li>`;
+                                ${authLink}`;
 
+    
+    extraNavContainer.innerHTML = `<li><a href="/favourites.html" class="${pathname === "/favourites.html" ? "current" : ""}"><i class="fas fa-heart"></i></a></li>
+                                    <li><a href="/basket.html" class="${pathname === "/basket.html" ? "current" : ""}"><i class="fas fa-shopping-bag"></i></a></li>
+                                    ${extraAuthLink}`;
+    
     
 
     logout();

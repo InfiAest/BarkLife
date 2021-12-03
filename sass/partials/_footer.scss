@@ -21,11 +21,29 @@ footer {
   margin-top: 1.5rem;
   font-size: 2rem;
 }
+.fa-instagram:hover,
+.fa-facebook:hover {
+  color: map-get($colours, tertiary);
+}
 .logo-social-links,
 .customer-links,
 .business-links {
   text-align: center;
   padding: 0.5rem 0;
+}
+
+.customer-links,
+.business-links {
+  display: flex;
+  flex-direction: column;
+}
+.footer-links {
+  text-decoration: none;
+  color: map-get($colours, secondary);
+  margin: 0.5rem 0;
+}
+.footer-links:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 768px) {
