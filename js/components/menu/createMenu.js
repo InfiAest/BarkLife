@@ -31,8 +31,7 @@ export default function createNavBar() {
     extraNavContainer.innerHTML = `<li><a href="/favourites.html" class="${pathname === "/favourites.html" ? "current" : ""}"><i class="fas fa-heart"></i></a></li>
                                     <li><a href="/basket.html" class="${pathname === "/basket.html" ? "current" : ""}"><i class="fas fa-shopping-bag"></i></a></li>
                                     ${extraAuthLink}`;
-    
-    
+
 
     logout();
 }

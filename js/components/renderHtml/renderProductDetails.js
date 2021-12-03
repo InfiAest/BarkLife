@@ -41,7 +41,7 @@ export default function renderProductDetails(product) {
                                         </button>
                                     </div>`
 
-
+    
     addProductToFavourites();
 
     addProductToCart();
