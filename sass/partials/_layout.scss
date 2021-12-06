@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: $font-primary;
+  color: map-get($colours, secondary);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.wrapper {
+  flex: 1 0 auto;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.container {
+  max-width: 1350px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+.main-content-wrapper {
+  margin-top: 130px;
+}

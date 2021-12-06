@@ -1,9 +1,12 @@
 import { getExistingCartProducts, saveToCart } from "../../utils/storage.js";
 import renderCartProducts from "../renderHtml/renderCartProducts.js"
 
+
 export default function deleteProductInCart() {
 
     const trashButtons = document.querySelectorAll(".trashButton");
+    const removedModal = document.querySelector(".removed-modal");
+    const modalMessage = document.querySelector(".modal-message");
 
     trashButtons.forEach((button) => {
         button.addEventListener("click", removeCartProduct);
@@ -17,18 +20,26 @@ export default function deleteProductInCart() {
         const productExists = currentCartProducts.find(function(product) {
             return product.id === id;
         });
+        
 
         if(productExists) {
 
-            const completeDelete = confirm(`Are you sure you want to delete ${productExists.quantity} x ${productExists.name} from your basket?`);
+            removedModal.style.display = "block";
+            modalMessage.innerHTML = `<p>Are you sure you want to delete ${productExists.quantity} x ${productExists.name} from your basket?</p>`;
+            
+            const confirmButton = document.getElementById("confirmButton");
+            const cancelButton = document.getElementById("cancelButton");
 
-            if(completeDelete) {
+            confirmButton.addEventListener("click", () => {
+                removedModal.style.display = "none";
                 const newCartList = currentCartProducts.filter(product => product.id !== id);
                 saveToCart(newCartList);
                 renderCartProducts();
-            }
+            });
+
+            cancelButton.addEventListener("click", () => {
+                removedModal.style.display = "none";
+            });
         }
-
     }
-
 }

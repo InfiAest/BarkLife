@@ -6,6 +6,7 @@ import displayMessage from "../components/renderMessage/displayMessage.js";
 import renderImagePreview from "../components/renderHtml/renderImagePreview.js";
 import deleteProductButton from "../components/buttons/deleteProductButton.js";
 import { validateURL } from "../utils/regexValidations.js";
+import loaderAnimation from "../components/loader/loaderAnimation.js";
 
 const token = getToken();
 console.log(token);
@@ -13,6 +14,10 @@ console.log(token);
 if (!token) {
     location.href = "/";
 }
+
+//pageloader
+window.onload = loaderAnimation();
+
 
 createNavBar();
 

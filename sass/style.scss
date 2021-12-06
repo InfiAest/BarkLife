@@ -1,5 +1,8 @@
 @import "partials/variables";
-@import "partials/base";
+@import "partials/layout";
+@import "partials/typography";
+@import "partials/messages";
+@import "partials/heroBanner";
 @import "partials/nav";
 @import "partials/productCards";
 @import "partials/socialMediaAttests";
@@ -9,3 +12,5 @@
 @import "partials/productDetails";
 @import "partials/forms";
 @import "partials/basket";
+@import "partials/loader";
+@import "partials/modal";

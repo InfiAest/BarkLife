@@ -72,15 +72,20 @@
   color: map-get($colours, secondary);
 }
 
-.cart-button-container {
+.cart-button-container,
+.modal-button-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
   margin-bottom: 5rem;
 }
+.modal-button-container {
+  margin-bottom: 1rem;
+}
 
 @media (min-width: 768px) {
-  .cart-button-container {
+  .cart-button-container,
+  .modal-button-container {
     grid-template-columns: 1fr 1fr;
   }
 }

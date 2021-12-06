@@ -66,8 +66,9 @@ export default function renderCartProducts() {
 }
 
 
-
 function minusProduct() {
+    const removedModal = document.querySelector(".removed-modal");
+    const modalMessage = document.querySelector(".modal-message");
     const id = this.dataset.id;
 
     const currentCart = getExistingCartProducts();
@@ -84,15 +85,21 @@ function minusProduct() {
             saveToCart(currentCart);
     } 
     else if(doesProductExist.quantity === 1) {
-        console.log("delete product");
-        const completeDelete = confirm(`Are you sure you want to delete this ${doesProductExist.name} from your basket?`);
+        removedModal.style.display = "block";
+        modalMessage.innerHTML = `<p>Are you sure you want to delete this ${doesProductExist.name} from your basket?</p>`;
 
-        if(completeDelete) {
+        const confirmButton = document.getElementById("confirmButton");
+        const cancelButton = document.getElementById("cancelButton");
+
+        confirmButton.addEventListener("click", () => {
+            removedModal.style.display = "none";
             const newCartList = currentCart.filter(doesProductExist => doesProductExist.id !== id);
             saveToCart(newCartList);
             renderCartProducts();
-        }
-        
+        });
+        cancelButton.addEventListener("click", () => {
+            removedModal.style.display = "none";
+        });  
     }
 
     renderCartProducts();

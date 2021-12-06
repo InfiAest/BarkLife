@@ -5,6 +5,11 @@ import renderFeaturedProducts from "../components/renderHtml/renderFeaturedProdu
 import renderHeaderImage from "../components/renderHtml/renderHeaderImage.js";
 import getSocialMediaAttests from "../components/renderHtml/getSocialAttests.js";
 import createNavBar from "../components/menu/createMenu.js";
+import loaderAnimation from "../components/loader/loaderAnimation.js";
+
+//pageloader
+window.onload = loaderAnimation();
+
 
 createNavBar();
 

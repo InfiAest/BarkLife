@@ -23,6 +23,7 @@ export default function renderFavouriteProducts() {
     favouritesGrid.innerHTML = "";
 
     if (favourites.length === 0) {
+        favouritesGrid.style.gridTemplateColumns = "1fr";
         displayMessage("", EMPTY_RESULTS, ".favourites-grid");
     }
 

@@ -3,6 +3,11 @@ import { productsUrl } from "../data/URLs.js";
 import displayMessage from "../components/renderMessage/displayMessage.js";
 import renderProductDetails from "../components/renderHtml/renderProductDetails.js";
 import createNavBar from "../components/menu/createMenu.js";
+import loaderAnimation from "../components/loader/loaderAnimation.js";
+
+//pageloader
+window.onload = loaderAnimation();
+
 
 createNavBar();
 

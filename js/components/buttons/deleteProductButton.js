@@ -9,7 +9,7 @@ export default function deleteProductButton(id) {
     const deleteButton = document.querySelector("button.delete");
 
     deleteButton.onclick = async function() {
-        console.log(id);
+        
 
         const doDeleteProduct = confirm("Are you sure you want to delete this product?");
 
