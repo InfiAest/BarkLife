@@ -67,7 +67,8 @@ export default function renderCartProducts() {
 
 
 function minusProduct() {
-    const removedModal = document.querySelector(".removed-modal");
+    const modal = document.querySelector(".modal");
+    const modalHeader = document.querySelector(".modal-header");
     const modalMessage = document.querySelector(".modal-message");
     const id = this.dataset.id;
 
@@ -85,20 +86,21 @@ function minusProduct() {
             saveToCart(currentCart);
     } 
     else if(doesProductExist.quantity === 1) {
-        removedModal.style.display = "block";
+        modal.style.display = "block";
+        modalHeader.innerHTML = `<i class="fas fa-shopping-bag"></i>`;
         modalMessage.innerHTML = `<p>Are you sure you want to delete this ${doesProductExist.name} from your basket?</p>`;
 
         const confirmButton = document.getElementById("confirmButton");
         const cancelButton = document.getElementById("cancelButton");
 
         confirmButton.addEventListener("click", () => {
-            removedModal.style.display = "none";
+            modal.style.display = "none";
             const newCartList = currentCart.filter(doesProductExist => doesProductExist.id !== id);
             saveToCart(newCartList);
             renderCartProducts();
         });
         cancelButton.addEventListener("click", () => {
-            removedModal.style.display = "none";
+            modal.style.display = "none";
         });  
     }
 

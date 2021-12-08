@@ -1,6 +1,13 @@
 import { getExistingCartProducts, saveToCart } from "../../utils/storage.js";
 
-const addedModal = document.querySelector(".added-modal");
+const modal = document.querySelector(".modal");
+const modalHeader = document.querySelector(".modal-header");
+const modalButtonContainer = document.querySelector(".modal-button-container");
+
+modalHeader.innerHTML = `<i class="fas fa-shopping-bag"></i>
+                            <span class="close">&times;</span>`;
+modalButtonContainer.style.display = "none";
+
 var span = document.getElementsByClassName("close")[0];
 
 export default function addProductToCart() {
@@ -30,13 +37,13 @@ export default function addProductToCart() {
             });
             thatProduct.quantity ++;
             saveToCart(currentCart);
-            addedModal.style.display = "block";
+            modal.style.display = "block";
             modalMessage.innerHTML = `<p>1 x ${doesProductExist.name} added to cart. There is now ${thatProduct.quantity} in the cart.</p>`;
         } else {
             const product = { id: id, name: name, price: price, image: image, quantity: itemCount };
             currentCart.push(product);
             saveToCart(currentCart);
-            addedModal.style.display = "block";
+            modal.style.display = "block";
             modalMessage.innerHTML = `<p>1 x ${product.name} added to cart</p>`;
         }
 
@@ -45,11 +52,11 @@ export default function addProductToCart() {
 }
 
 window.onclick = function(event) {
-    if (event.target == addedModal) {
-        addedModal.style.display = "none";
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
   }
 
   span.onclick = function() {
-    addedModal.style.display = "none";
+    modal.style.display = "none";
   }

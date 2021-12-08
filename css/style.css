@@ -852,6 +852,10 @@ form {
   margin: 2rem auto;
 }
 
+.edit-product-form {
+  display: none;
+}
+
 form > div,
 .url-container {
   margin-bottom: 1.5rem;
@@ -1367,7 +1371,7 @@ textarea:focus-visible {
   display: none;
   position: fixed;
   z-index: 20;
-  padding-top: 300px;
+  padding-top: 200px;
   left: 0;
   top: 0;
   width: 100%;
@@ -1408,5 +1412,11 @@ textarea:focus-visible {
   color: #bb9d88;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    padding-top: 300px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

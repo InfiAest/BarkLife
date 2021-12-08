@@ -2,7 +2,7 @@
   display: none;
   position: fixed;
   z-index: 20;
-  padding-top: 300px;
+  padding-top: 200px;
   left: 0;
   top: 0;
   width: 100%;
@@ -40,4 +40,9 @@
   color: map-get($colours, primary);
   text-decoration: none;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .modal {
+    padding-top: 300px;
+  }
 }

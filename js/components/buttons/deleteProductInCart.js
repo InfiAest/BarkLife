@@ -5,7 +5,8 @@ import renderCartProducts from "../renderHtml/renderCartProducts.js"
 export default function deleteProductInCart() {
 
     const trashButtons = document.querySelectorAll(".trashButton");
-    const removedModal = document.querySelector(".removed-modal");
+    const modal = document.querySelector(".modal");
+    const modalHeader = document.querySelector(".modal-header");
     const modalMessage = document.querySelector(".modal-message");
 
     trashButtons.forEach((button) => {
@@ -24,21 +25,22 @@ export default function deleteProductInCart() {
 
         if(productExists) {
 
-            removedModal.style.display = "block";
+            modal.style.display = "block";
+            modalHeader.innerHTML = `<i class="fas fa-shopping-bag"></i>`;
             modalMessage.innerHTML = `<p>Are you sure you want to delete ${productExists.quantity} x ${productExists.name} from your basket?</p>`;
             
             const confirmButton = document.getElementById("confirmButton");
             const cancelButton = document.getElementById("cancelButton");
 
             confirmButton.addEventListener("click", () => {
-                removedModal.style.display = "none";
+                modal.style.display = "none";
                 const newCartList = currentCartProducts.filter(product => product.id !== id);
                 saveToCart(newCartList);
                 renderCartProducts();
             });
 
             cancelButton.addEventListener("click", () => {
-                removedModal.style.display = "none";
+                modal.style.display = "none";
             });
         }
     }

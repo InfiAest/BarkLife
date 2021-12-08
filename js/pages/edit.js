@@ -9,7 +9,6 @@ import { validateURL } from "../utils/regexValidations.js";
 import loaderAnimation from "../components/loader/loaderAnimation.js";
 
 const token = getToken();
-console.log(token);
 
 if (!token) {
     location.href = "/";
@@ -52,8 +51,6 @@ renderImagePreview();
     try {
         const response = await fetch(productUrl);
         const details = await response.json();
-
-        console.log(details);
 
         pageTitle.innerHTML += `${details.name}`;
 
@@ -119,7 +116,6 @@ async function updateProduct(name, imgValue, description, price, featured, id) {
         const response = await fetch(url, options);
         const json = await response.json();
 
-        console.log(json);
         if (json.updated_at) {
             displayMessage("success", "Product updated", ".message-container");
         }
