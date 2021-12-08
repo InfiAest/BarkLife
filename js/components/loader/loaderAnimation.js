@@ -1,5 +1,5 @@
 export default function loaderAnimation() {
-    const loaderAnimation = document.querySelector(".loader-container");
+    const loaderAnimation = document.querySelector(".page-loader-container");
 
     window.setInterval(function() {
         loaderAnimation.style.display = "none";

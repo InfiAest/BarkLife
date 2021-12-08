@@ -27,6 +27,7 @@ export default function renderAllProducts(products, targetElement) {
     }
 
     products.forEach(function(product) {
+        
         let cssClass = "far";
 
         const favourites = getExistingFavouriteProducts();

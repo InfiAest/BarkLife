@@ -35,6 +35,7 @@ if (!id) {
 const productUrl = baseUrl + "products/" + id;
 
 const form = document.querySelector(".edit-product-form");
+const loader = document.querySelector(".content-loader-container");
 const messageContainer = document.querySelector(".message-container");
 const nameInput = document.querySelector("#name");
 const imageUrlInput = document.querySelector("#image");
@@ -71,6 +72,10 @@ renderImagePreview();
     }
     catch(error) {
         console.log(error);
+    }
+    finally {
+        loader.style.display = "none";
+        form.style.display = "block";
     }
 })();
 

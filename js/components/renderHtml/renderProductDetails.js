@@ -8,6 +8,7 @@ export default function renderProductDetails(product) {
     const pageTitle = document.querySelector("title");
 
     pageTitle.innerHTML += `${product.name}`;
+    productContainer.innerHTML = "";
 
     let cssClass = "far";
 

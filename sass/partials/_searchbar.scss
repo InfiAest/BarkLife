@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   margin: 2rem 0;
 }
+
 .search-bar label {
   color: map-get($colours, secondary);
 }
@@ -22,4 +23,26 @@
 .search:focus-visible {
   outline: none;
   border: 3px solid map-get($colours, primary);
+}
+.search-button {
+  height: 40px;
+  width: 40px;
+  color: #ffffff;
+  background-color: map-get($colours, primary);
+  border: 3px solid map-get($colours, primary);
+  font-size: 1rem;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+.search-button:hover {
+  background-color: #ffffff;
+  border: 3px solid map-get($colours, primary);
+  color: map-get($colours, primary);
+}
+
+@media (min-width: 961px) {
+  .search-button {
+    display: none;
+  }
 }

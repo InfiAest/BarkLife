@@ -1,13 +1,31 @@
 import { headerUrl } from "../../data/URLs.js";
 
 export default async function renderHeaderImage() {
+
+    const headerImgContainer = document.querySelector(".header-img-container");
+
+    // headerImgContainer.innerHTML = `<div class="loading-container">
+    //                                     <div class="loader">
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
+    //                                     </div>
+    //                                 </div>`
+
     try {
         const response = await fetch(headerUrl);
         const result = await response.json();
 
-        const headerImgContainer = document.querySelector(".header-img-container");
-
-        headerImgContainer.innerHTML += `<div class="header-img" style="background-image: url('${result.hero_banner_image.url}');">`;
+        headerImgContainer.innerHTML = `<div class="header-img" style="background-image: url('${result.hero_banner_image.url}');">`;
     }
     catch(error) {
         console.log(error);
