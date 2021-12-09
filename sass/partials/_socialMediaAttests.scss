@@ -61,7 +61,8 @@
   font-size: 1rem;
   margin-right: 1rem;
 }
-.instagram-tag {
+.instagram-tag,
+.facebook-tag {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -72,10 +73,12 @@
   text-align: right;
   color: map-get($colours, tertiary);
 }
-.instagram-tag:hover {
+.instagram-tag:hover,
+.facebook-tag:hover {
   letter-spacing: 1px;
 }
-.fa-instagram {
+.fa-instagram,
+.fa-facebook {
   margin-right: 1rem;
 }
 @media (min-width: 768px) {

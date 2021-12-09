@@ -21,7 +21,14 @@ h5 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
+p {
+  margin: 1.8rem 0;
+}
 .loading-p {
   font-family: $font-brand;
   font-size: 2.4rem;
+}
+.highlighted-text {
+  line-height: 25px;
+  font-weight: bold;
 }

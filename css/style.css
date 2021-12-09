@@ -79,13 +79,25 @@ h5 {
   margin-bottom: 0.5rem;
 }
 
+p {
+  margin: 1.8rem 0;
+}
+
 .loading-p {
   font-family: "Sacramento", cursive;
   font-size: 2.4rem;
 }
 
+.highlighted-text {
+  line-height: 25px;
+  font-weight: bold;
+}
+
 /*message styling ----*/
 .message {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / span 4;
   width: 100%;
   padding: 0.5rem 1rem;
   border: 3px solid #bb9d88;
@@ -93,18 +105,18 @@ h5 {
 }
 
 .message.error {
-  border-color: darkred;
-  color: darkred;
+  border-color: #ac6b63;
+  color: #ac6b63;
 }
 
 .message.warning {
-  border-color: #d68b00;
-  color: #d68b00;
+  border-color: #c68455;
+  color: #c68455;
 }
 
 .message.success {
-  border-color: #015e01;
-  color: #015e01;
+  border-color: #698678;
+  color: #698678;
 }
 
 .header-img-container {
@@ -453,7 +465,8 @@ nav i,
   margin-right: 1rem;
 }
 
-.instagram-tag {
+.instagram-tag,
+.facebook-tag {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -471,11 +484,13 @@ nav i,
   color: #a89e9d;
 }
 
-.instagram-tag:hover {
+.instagram-tag:hover,
+.facebook-tag:hover {
   letter-spacing: 1px;
 }
 
-.fa-instagram {
+.fa-instagram,
+.fa-facebook {
   margin-right: 1rem;
 }
 
@@ -729,31 +744,6 @@ footer {
   border: 3px solid #bb9d88;
 }
 
-.search-button {
-  height: 40px;
-  width: 40px;
-  color: #ffffff;
-  background-color: #bb9d88;
-  border: 2px solid #bb9d88;
-  font-size: 1rem;
-  padding: 10px;
-  margin-left: -4px;
-  text-align: center;
-  text-decoration: none;
-}
-
-.search-button:hover {
-  background-color: #ffffff;
-  border: 3px solid #bb9d88;
-  color: #bb9d88;
-}
-
-@media (min-width: 961px) {
-  .search-button {
-    display: none;
-  }
-}
-
 .product-container {
   margin-bottom: 5rem;
 }
@@ -994,7 +984,7 @@ textarea:focus-visible {
 }
 
 .basket-container {
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .cart-product {
@@ -1418,6 +1408,42 @@ textarea:focus-visible {
 @media (min-width: 768px) {
   .modal {
     padding-top: 300px;
+  }
+}
+
+.about-img-container {
+  width: 100%;
+  height: 450px;
+  background-position: top;
+  background-size: cover;
+  background-image: url(../../images/yogi.jpg);
+  margin-bottom: 2rem;
+}
+
+.signature {
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .img-text-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .about-img-container {
+    height: 550px;
+  }
+  .about-img-container {
+    margin-right: 2rem;
+  }
+  .text-container {
+    width: 800px;
+  }
+}
+
+@media (min-width: 961px) {
+  .text-container {
+    width: 1600px;
   }
 }
 /*# sourceMappingURL=style.css.map */

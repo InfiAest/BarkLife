@@ -1,0 +1,31 @@
+.about-img-container {
+  width: 100%;
+  height: 450px;
+  background-position: top;
+  background-size: cover;
+  background-image: url(../../images/yogi.jpg);
+  margin-bottom: 2rem;
+}
+.signature {
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .img-text-container {
+    display: flex;
+  }
+  .about-img-container {
+    height: 550px;
+  }
+  .about-img-container {
+    margin-right: 2rem;
+  }
+  .text-container {
+    width: 800px;
+  }
+}
+@media (min-width: 961px) {
+  .text-container {
+    width: 1600px;
+  }
+}

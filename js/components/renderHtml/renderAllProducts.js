@@ -38,7 +38,7 @@ export default function renderAllProducts(products) {
         if(isProductFavourited) {
             cssClass = "fas";
         }
-
+        
         productGrid.innerHTML += `<div class="product-card">
                                             <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}"></i>
                                             <a href="${productLink}${product.id}" alt="Link to ${product.name} product page" class="product-card-link">

@@ -1,19 +1,20 @@
 /*message styling ----*/
 .message {
+  grid-column: 1 / span 4;
   width: 100%;
   padding: 0.5rem 1rem;
   border: 3px solid map-get($colours, primary);
   color: map-get($colours, primary);
 }
 .message.error {
-  border-color: darkred;
-  color: darkred;
+  border-color: #ac6b63;
+  color: #ac6b63;
 }
 .message.warning {
-  border-color: rgb(214, 139, 0);
-  color: rgb(214, 139, 0);
+  border-color: #c68455;
+  color: #c68455;
 }
 .message.success {
-  border-color: rgb(1, 94, 1);
-  color: rgb(1, 94, 1);
+  border-color: #698678;
+  color: #698678;
 }
