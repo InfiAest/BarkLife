@@ -1,6 +1,6 @@
 import createNavBar from "../components/menu/createMenu.js";
 import stickyNav from "../utils/stickyNav.js";
-import { getToken } from "../utils/storage.js";
+import { getExistingCartProducts, getExistingFavouriteProducts, getToken, saveToCart, saveToFavouriteProducts } from "../utils/storage.js";
 import { baseUrl } from "../data/URLs.js";
 import displayMessage from "../components/renderMessage/displayMessage.js";
 import renderImagePreview from "../components/renderHtml/renderImagePreview.js";
@@ -117,7 +117,42 @@ async function updateProduct(name, imgValue, description, price, featured, id) {
         const json = await response.json();
 
         if (json.updated_at) {
+            console.log(json)
             displayMessage("success", "Product updated", ".message-container");
+
+            //update product if it's in the favourites
+            const currentFavourites = getExistingFavouriteProducts();
+                const productExistsInFavs = currentFavourites.find(function(product) {
+                    return product.id === id;
+                });
+
+            if (productExistsInFavs) {
+                const updatedFavouriteProducts = currentFavourites.filter(product => product.id !== id);
+                saveToFavouriteProducts(updatedFavouriteProducts);
+
+                const updatedProduct = { id: id, name: name, image: imgValue, description: description, price: price, featured: featured };
+                const newFavouriteProducts = getExistingFavouriteProducts();
+                newFavouriteProducts.push(updatedProduct);
+                saveToFavouriteProducts(newFavouriteProducts);
+            }
+
+            //update product if it's in the cart
+            const currentCartProducts = getExistingCartProducts();
+            const productExistsInCart = currentCartProducts.find(function(product) {
+                return product.id === id;
+            });
+
+            if (productExistsInCart) {
+                //get quantity of that item in the cart
+                const quantityInCart = productExistsInCart.quantity;
+                const updatedCartProducts = currentCartProducts.filter(product => product.id !== id);
+                saveToCart(updatedCartProducts);
+
+                const updatedProduct = { id: id, name: name, image: imgValue, description: description, price: price, featured: featured, quantity: quantityInCart }
+                const newCartProducts = getExistingCartProducts();
+                newCartProducts.push(updatedProduct);
+                saveToCart(newCartProducts);
+            }
         }
         if(json.error) {
             displayMessage("error", json.message, ".message-container");
