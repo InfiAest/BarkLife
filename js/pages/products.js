@@ -22,7 +22,7 @@ async function getAllProducts() {
         const response = await fetch(productsUrl);
         const products = await response.json();
         
-        renderAllProducts(products, productsContainer);
+        renderAllProducts(products);
         searchProducts(products);
     }
     catch(error) {

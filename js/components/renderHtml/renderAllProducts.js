@@ -17,13 +17,13 @@ else if(!token) {
 
 //Render all product cards
 
-export default function renderAllProducts(products, targetElement) {
+export default function renderAllProducts(products) {
     
-    const element = document.querySelector(targetElement);
-    element.innerHTML = "";
+    const productGrid = document.querySelector(".product-grid");
+    productGrid.innerHTML = "";
 
     if (products.length === 0) {
-        displayMessage("", EMPTY_RESULTS, targetElement);
+        displayMessage("", EMPTY_RESULTS, ".product-grid");
     }
 
     products.forEach(function(product) {
@@ -39,7 +39,7 @@ export default function renderAllProducts(products, targetElement) {
             cssClass = "fas";
         }
 
-        element.innerHTML += `<div class="product-card">
+        productGrid.innerHTML += `<div class="product-card">
                                             <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}"></i>
                                             <a href="${productLink}${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
                                                 <div class="product-img-container">

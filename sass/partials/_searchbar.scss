@@ -11,7 +11,7 @@
 }
 .search {
   height: 40px;
-  width: 272px;
+  width: 260px;
   border: 3px solid map-get($colours, input);
   background-color: white;
   margin: 1rem 0 1rem 1rem;
@@ -29,9 +29,10 @@
   width: 40px;
   color: #ffffff;
   background-color: map-get($colours, primary);
-  border: 3px solid map-get($colours, primary);
+  border: 2px solid map-get($colours, primary);
   font-size: 1rem;
   padding: 10px;
+  margin-left: -4px;
   text-align: center;
   text-decoration: none;
 }

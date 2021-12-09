@@ -3,7 +3,7 @@ import renderAllProducts from "../renderHtml/renderAllProducts.js";
 export function searchProducts(products) {
     const searchBar = document.querySelector(".search");
 
-    searchBar.onkeyup = function(event) {
+    searchBar.oninput = function(event) {
         const searchValue = event.target.value.trim().toLowerCase();
 
         const filteredProducts = products.filter(function (product) {
