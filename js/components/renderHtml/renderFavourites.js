@@ -24,13 +24,15 @@ export default function renderFavouriteProducts() {
 
     if (favourites.length === 0) {
         favouritesGrid.style.gridTemplateColumns = "1fr";
-        displayMessage("", EMPTY_RESULTS, ".favourites-grid");
+        displayMessage("empty", EMPTY_RESULTS, ".favourites-grid");
     }
 
     favourites.forEach(favourite => {
 
         favouritesGrid.innerHTML += `<div class="product-card">
-                                        <i class="fas fa-heart favButton" data-id="${favourite.id}"></i>
+                                        <div class="icon-container">
+                                            <i class="fas fa-heart favButton" data-id="${favourite.id}"></i>
+                                        </div>
                                         <a href="${productLink}${favourite.id}" alt="Link to ${favourite.name} product page" class="product-card-link">
                                             <div class="product-img-container">
                                                 <div class="card-img" style="background-image: url('${favourite.image}');"></div>

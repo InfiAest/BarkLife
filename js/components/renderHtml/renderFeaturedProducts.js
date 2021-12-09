@@ -23,7 +23,7 @@ export default function renderFeaturedProducts(products) {
     featuredContainer.innerHTML = "";
 
     if (products.length === 0) {
-        displayMessage("", EMPTY_RESULTS, ".product-grid");
+        displayMessage("empty", EMPTY_RESULTS, ".product-grid");
     }
 
     const favourites = getExistingFavouriteProducts();
@@ -44,7 +44,9 @@ export default function renderFeaturedProducts(products) {
             if (products[i].featured === true) {  
 
                 featuredContainer.innerHTML += `<div class="product-card">
-                                                    <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}"></i>
+                                                    <div class="icon-container">
+                                                        <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}"></i>
+                                                    </div>
                                                     <a href="${productLink}${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
                                                         <div class="product-img-container">
                                                             <div class="card-img" style="background-image: url('${product.image_URL}');"></div>

@@ -13,7 +13,7 @@ export default function renderCartProducts() {
     let sum = 0.00;
 
     if(products.length === 0) {
-        displayMessage("", EMPTY_RESULTS, ".basket-products");
+        displayMessage("empty", EMPTY_RESULTS, ".basket-products");
         totalPrice.innerHTML = `£0.00`;
     };
     

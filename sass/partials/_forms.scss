@@ -11,7 +11,7 @@ label,
   margin-top: 0;
 }
 form {
-  max-width: 1350px;
+  max-width: 1000px;
   margin: 2rem auto;
 }
 .edit-product-form {
@@ -102,16 +102,20 @@ textarea:focus-visible {
 }
 .preview-image {
   width: 100%;
-  height: 350px;
+  height: fit-content;
   background-position: center;
   background-size: cover;
 }
 
 #id {
-  display: block;
+  display: none;
 }
 .url-container {
   width: 100%;
+}
+#username-error,
+#password-error {
+  display: none;
 }
 
 @media (min-width: 641px) {
@@ -126,7 +130,7 @@ textarea:focus-visible {
     flex-direction: row;
   }
   .preview-image {
-    width: 150px;
+    width: fit-content;
     height: 150px;
   }
 }

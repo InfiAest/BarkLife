@@ -24,7 +24,9 @@ export default function renderProductDetails(product) {
 
     productContainer.innerHTML += `<h1 class="product-name">${product.name}</h1>
                                     <div class="img-container">
-                                        <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}"></i>
+                                        <div class="icon-container">
+                                            <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}"></i>
+                                        </div>
                                         <div class="product-image" style="background-image: url('${product.image_URL}');"></div>
                                     </div>
                                     <div class="description-price-container">
@@ -38,7 +40,7 @@ export default function renderProductDetails(product) {
                                     </div>
                                     <div class="cta-button-container">
                                         <button type="button" class="add-to-cart-button cta-button" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}">
-                                            <span>Add to cart</span>
+                                            <span>Add to basket</span>
                                         </button>
                                     </div>`
 

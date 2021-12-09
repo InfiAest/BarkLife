@@ -43,6 +43,9 @@ nav i,
   color: map-get($colours, secondary);
   padding: 35px 20px;
 }
+.hamburger-label:hover {
+  cursor: pointer;
+}
 #hamburger-menu:checked ~ .nav {
   display: block;
 }

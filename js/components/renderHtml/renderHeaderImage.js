@@ -4,23 +4,6 @@ export default async function renderHeaderImage() {
 
     const headerImgContainer = document.querySelector(".header-img-container");
 
-    // headerImgContainer.innerHTML = `<div class="loading-container">
-    //                                     <div class="loader">
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                         <div class="paw"><i class="fas fa-paw"></i></div>
-    //                                     </div>
-    //                                 </div>`
-
     try {
         const response = await fetch(headerUrl);
         const result = await response.json();

@@ -5,6 +5,7 @@ import { getToken } from "../utils/storage.js";
 import { productsUrl } from "../data/URLs.js";
 import renderImagePreview from "../components/renderHtml/renderImagePreview.js";
 import { validateURL } from "../utils/regexValidations.js";
+import previewProductImg from "../components/renderHtml/renderImagePreview.js";
 
 const token = getToken();
 
@@ -70,6 +71,7 @@ async function addNewProduct(name, imageValue, description, price, featured) {
         if(json.created_at) {
             displayMessage("success", "Product created", ".message-container");
             form.reset();
+            previewProductImg();
         }
         if(json.error) {
             displayMessage("error", json.message, ".message-container");

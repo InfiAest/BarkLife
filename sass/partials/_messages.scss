@@ -2,19 +2,23 @@
 .message {
   grid-column: 1 / span 4;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
+  text-align: center;
   border: 3px solid map-get($colours, primary);
   color: map-get($colours, primary);
 }
-.message.error {
+.empty {
+  padding: 2rem 1rem;
+}
+.error {
   border-color: #ac6b63;
   color: #ac6b63;
 }
-.message.warning {
+.warning {
   border-color: #c68455;
   color: #c68455;
 }
-.message.success {
+.success {
   border-color: #698678;
   color: #698678;
 }

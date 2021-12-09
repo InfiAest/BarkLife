@@ -1,5 +1,5 @@
 import { productsUrl } from "../../data/URLs.js";
-import { getToken } from "../../utils/storage.js";
+import { getExistingCartProducts, getExistingFavouriteProducts, getToken, saveToCart, saveToFavouriteProducts } from "../../utils/storage.js";
 
 export default function deleteProductButton(id) {
     const container = document.querySelector(".delete-container");
@@ -38,6 +38,29 @@ export default function deleteProductButton(id) {
                 const json = await response.json();
                 location.href = "/";
                 console.log(json);
+
+                const queryString = document.location.search;
+                const params = new URLSearchParams(queryString);
+                const productId = params.get("id");
+                //remove from favourites page if product is favourited
+                const currentFavourites = getExistingFavouriteProducts();
+                const productExistsInFavs = currentFavourites.find(function(product) {
+                    return product.id === productId;
+                });
+                if (productExistsInFavs) {
+                    const newFavourites = currentFavourites.filter(product => product.id !== productId);
+                    saveToFavouriteProducts(newFavourites);
+                }
+
+                //remove from cart if product exists in cart
+                const currentCart = getExistingCartProducts();
+                const productExistsInCart = currentCart.find(function(product) {
+                    return product.id === productId;
+                });
+                if (productExistsInCart) {
+                    const newCart = currentCart.filter(product => product.id !== productId);
+                    saveToCart(newCart);
+                }
 
             } 
             catch (error) {
