@@ -41,8 +41,65 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+//image modal
+.image-pop-up {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 20;
+}
+.modal-heading {
+  display: block;
+}
+.modal-contents {
+  position: relative;
+  max-width: max-content;
+  max-height: max-content;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.image-frame-modal {
+  overflow: hidden;
+  width: 80vw;
+  max-width: 600px;
+  background-color: map-get($colours, primary);
+  padding: 5px;
+}
+.modal-image {
+  margin: 0 auto;
+  max-width: 600px;
+  height: 80vh;
+  max-height: 600px;
+  background-position: center;
+  background-size: cover;
+}
+.exit {
+  color: map-get($colours, secondary);
+  float: right;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+.exit:hover,
+.exit:focus {
+  color: map-get($colours, primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .modal {
     padding-top: 300px;
+  }
+  .image-pop-up {
+    padding-top: 125px;
   }
 }

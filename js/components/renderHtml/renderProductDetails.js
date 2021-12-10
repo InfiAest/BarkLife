@@ -1,6 +1,7 @@
 import { getExistingFavouriteProducts } from "../../utils/storage.js";
 import { addProductToFavourites } from "../buttons/addToFavourites.js";
 import addProductToCart from "../buttons/addProductToCart.js";
+import imageModalPopup from "../imageModal/imageModal.js";
 
 export default function renderProductDetails(product) {
 
@@ -48,5 +49,7 @@ export default function renderProductDetails(product) {
     addProductToFavourites();
 
     addProductToCart();
+
+    imageModalPopup(product);
 };
 

@@ -11,6 +11,9 @@
   background-position: center;
   background-size: cover;
 }
+.product-image:hover {
+  cursor: pointer;
+}
 
 .price-container {
   text-align: right;
