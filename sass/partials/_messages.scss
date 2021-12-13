@@ -1,4 +1,7 @@
 /*message styling ----*/
+.message-container {
+  margin-top: 2.5rem;
+}
 .message {
   grid-column: 1 / span 4;
   width: 100%;
@@ -13,6 +16,9 @@
 .error {
   border-color: #ac6b63;
   color: #ac6b63;
+}
+.error p {
+  margin: 0.5rem 0;
 }
 .warning {
   border-color: #c68455;

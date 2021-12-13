@@ -71,7 +71,12 @@
   border-color: map-get($colours, input);
   color: map-get($colours, secondary);
 }
-
+.card-button-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5rem;
+  margin: 0.5rem 0;
+}
 .cart-button-container,
 .modal-button-container {
   display: grid;

@@ -3,19 +3,6 @@ import displayMessage from "../renderMessage/displayMessage.js";
 import { getExistingFavouriteProducts, getToken } from "../../utils/storage.js";
 import { addProductToFavourites } from "../buttons/addToFavourites.js";
 
-//if logged in as admin go to edit page instead of products details page
-const token = getToken();
-
-if (token) {
-    var productLink = "edit.html?id=";
-    var buttonLabel = "Edit product";
-}
-else if(!token) {
-    var productLink = "details.html?id=";
-    var buttonLabel = "View product";
-}
-
-
 //Render featured product cards
 export default function renderFeaturedProducts(products) {
     
@@ -30,6 +17,16 @@ export default function renderFeaturedProducts(products) {
 
         for (var i = 0; i < products.length; i++) {
             const product = products[i];
+
+            const token = getToken();
+
+            if (token) {
+                var productButtons = `<a href="edit.html?id=${product.id}" class="cta-button delete"><span>Edit product</span></a>
+                                        <a href="details.html?id=${product.id}" class="cta-button viewButton"><span>View Product</span></a>`;
+            }
+            else if(!token) {
+                var productButtons = `<a href="details.html?id=${product.id}" class="cta-button viewButton"><span>View Product</span></a>`;
+            }
 
             let cssClass = "far";
         
@@ -47,7 +44,7 @@ export default function renderFeaturedProducts(products) {
                                                     <div class="icon-container">
                                                         <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}"></i>
                                                     </div>
-                                                    <a href="${productLink}${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
+                                                    <a href="details.html?id=${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
                                                         <div class="product-img-container">
                                                             <div class="card-img" style="background-image: url('${product.image_URL}');"></div>
                                                         </div>
@@ -56,8 +53,8 @@ export default function renderFeaturedProducts(products) {
                                                             <p>£${product.price}</p>
                                                         </div>
                                                     </a>
-                                                    <div class="cta-button-container">
-                                                        <a href="${productLink}${product.id}" class="cta-button"><span>${buttonLabel}</span></a>
+                                                    <div class="card-button-container">
+                                                        ${productButtons}
                                                     </div>
                                                 </div>`;
             }

@@ -5,3 +5,16 @@ export function validateURL(url) {
     const patternMatches = regEx.test(url);
     return patternMatches;
 }
+
+export function validateEmail(email) {
+    const regEx = /\S+@\S+\.\S+/;
+    const patternMatches = regEx.test(email);
+    return patternMatches;
+}
+
+//checks that password has 1 lowercase, 1 uppercase, 1 number and longer than 6 characters
+export function validatePassword(password) {
+    const regEx = /(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{6,}$/;
+    const patternMatches = regEx.test(password);
+    return patternMatches;
+}

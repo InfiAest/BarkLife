@@ -1,6 +1,6 @@
-import displayMessage from "../components/renderMessage/displayMessage.js";
-import completeLogin from "../components/menu/loginFunction/completeLogin.js";
+import completeLogin from "../components/forms/loginFunction/completeLogin.js";
 import createNavBar from "../components/menu/createMenu.js";
+import { validateEmail, validatePassword } from "../utils/regexValidations.js";
 
 createNavBar();
 
@@ -9,25 +9,39 @@ const username = document.querySelector("#username");
 const usernameError = document.querySelector("#username-error");
 const password = document.querySelector("#password");
 const passwordError = document.querySelector("#password-error");
-const message = document.querySelector(".message-container");
 
-form.addEventListener("submit", validateForm);
+form.addEventListener("submit", validateLoginForm);
 
-function validateForm(event) {
+function validateLoginForm(event) {
     event.preventDefault();
-
-    message.innerHTML = "";
-    usernameError.style.display = "none";
-    passwordError.style.display = "none";
 
     const usernameValue = username.value.trim();
     const passwordValue = password.value.trim();
 
-    if (usernameValue.length === 0 || passwordValue.length === 0) {
+    var formIsValid = true;
+
+    if (validateEmail(username.value) === true) {
+        usernameError.style.display = "none";
+        username.style.borderColor = "#698678";
+    } else {
         usernameError.style.display = "block";
+        username.style.borderColor = "#ac6b63";
+        formIsValid = false;
+    }
+    
+    if (validatePassword(password.value) === true) {
+        passwordError.style.display = "none";
+        password.style.borderColor = "#698678";
+    } else {
         passwordError.style.display = "block";
-        // return displayMessage("warning", "Invalid username and/or password", ".message-container");
+        password.style.borderColor = "#ac6b63";
+        formIsValid = false;
+    }
+    
+    if(formIsValid === true) {
+        console.log("congrats")
+        completeLogin(usernameValue, passwordValue);
     }
 
-    completeLogin(usernameValue, passwordValue);
+    
 }

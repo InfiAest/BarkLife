@@ -94,6 +94,10 @@ p {
 }
 
 /*message styling ----*/
+.message-container {
+  margin-top: 2.5rem;
+}
+
 .message {
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
@@ -112,6 +116,10 @@ p {
 .error {
   border-color: #ac6b63;
   color: #ac6b63;
+}
+
+.error p {
+  margin: 0.5rem 0;
 }
 
 .warning {
@@ -289,7 +297,7 @@ nav i,
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-height: 500px;
+  max-height: 550px;
 }
 
 .product-card-link {
@@ -339,7 +347,6 @@ nav i,
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  height: 55px;
 }
 
 .product-name-container h3,
@@ -362,17 +369,17 @@ nav i,
   margin-left: 10px;
 }
 
-.product-card-link:hover ~ .cta-button-container .cta-button {
+.product-card-link:hover ~ .card-button-container .viewButton {
   background-color: #ffffff;
   border: 3px solid #bb9d88;
   color: #bb9d88;
 }
 
-.product-card-link:hover ~ .cta-button-container .cta-button span {
+.product-card-link:hover ~ .card-button-container .viewButton span {
   display: none;
 }
 
-.product-card-link:hover ~ .cta-button-container .cta-button:before {
+.product-card-link:hover ~ .card-button-container .viewButton:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f5d7";
@@ -627,6 +634,15 @@ nav i,
 .delete:hover {
   border-color: #ded6d3;
   color: #3d3c3c;
+}
+
+.card-button-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 0.5rem;
+  margin: 0.5rem 0;
 }
 
 .cart-button-container,
@@ -1005,6 +1021,16 @@ textarea:focus-visible {
 
 #username-error,
 #password-error {
+  display: none;
+}
+
+.input-instructions,
+.edit-input-instructions {
+  padding: 0;
+  margin: 0;
+}
+
+.edit-input-instructions {
   display: none;
 }
 
@@ -1530,7 +1556,7 @@ textarea:focus-visible {
   overflow: hidden;
   width: 80vw;
   max-width: 600px;
-  background-color: #bb9d88;
+  background-color: #ded6d3;
   padding: 5px;
 }
 

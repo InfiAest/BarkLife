@@ -5,17 +5,6 @@ import removeFromFavourites from  "../buttons/removeProductFromFavourites.js";
 
 export default function renderFavouriteProducts() {
 
-    const token = getToken();
-
-    if (token) {
-        var productLink = "edit.html?id=";
-        var buttonLabel = "Edit product";
-    }
-    else if(!token) {
-        var productLink = "details.html?id=";
-        var buttonLabel = "View product";
-    }
-
     const favourites = getExistingFavouriteProducts();
 
     const favouritesGrid = document.querySelector(".favourites-grid");
@@ -29,11 +18,21 @@ export default function renderFavouriteProducts() {
 
     favourites.forEach(favourite => {
 
+        const token = getToken();
+
+        if (token) {
+            var productButtons = `<a href="edit.html?id=${favourite.id}" class="cta-button delete"><span>Edit product</span></a>
+                                    <a href="details.html?id=${favourite.id}" class="cta-button viewButton"><span>View Product</span></a>`;
+        }
+        else if(!token) {
+            var productButtons = `<a href="details.html?id=${favourite.id}" class="cta-button viewButton"><span>View Product</span></a>`;
+        }
+
         favouritesGrid.innerHTML += `<div class="product-card">
                                         <div class="icon-container">
                                             <i class="fas fa-heart favButton" data-id="${favourite.id}"></i>
                                         </div>
-                                        <a href="${productLink}${favourite.id}" alt="Link to ${favourite.name} product page" class="product-card-link">
+                                        <a href="details.html?id=${favourite.id}" alt="Link to ${favourite.name} product page" class="product-card-link">
                                             <div class="product-img-container">
                                                 <div class="card-img" style="background-image: url('${favourite.image}');"></div>
                                             </div>
@@ -42,8 +41,8 @@ export default function renderFavouriteProducts() {
                                                 <p>£${favourite.price}</p>
                                             </div>
                                         </a>
-                                        <div class="cta-button-container">
-                                            <a href="${productLink}${favourite.id}" class="cta-button"><span>${buttonLabel}</span></a>
+                                        <div class="card-button-container">
+                                            ${productButtons}
                                         </div>
                                     </div>`
     });

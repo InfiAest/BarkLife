@@ -15,9 +15,10 @@ export default function imageModalPopup(product) {
         imgModal.style.display = "none";
     }
 
-    window.onclick = function(event) {
+    window.addEventListener("click", function(event) {
         if (event.target === imgModal) {
             imgModal.style.display = "none";
         }
-    }
+    });
+    
 }

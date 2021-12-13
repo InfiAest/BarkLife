@@ -28,10 +28,12 @@ export default async function completeLogin(username, password) {
             location.href = "/index.html";
         }
         if (json.error) {
-            displayMessage("error", "Invalid login details", ".message-container");
+            displayMessage("error", json.message[0].messages[0].message, ".message-container");
         }
+        
     }
     catch(error) {
         console.log(error);
+        displayMessage("error", json.error, ".message-container");
     }
 }
