@@ -21,8 +21,15 @@ export default function logout() {
             const cancelButton = document.getElementById("cancelButton");
 
             confirmButton.addEventListener("click", () => {
-                logoutUser();
-                location.href = "/";
+                const currentLocation = window.location.href;
+                if (currentLocation === "/edit.html" || currentLocation === "/add.html" || currentLocation === "/") {
+                    logoutUser();
+                    location.href = "/";
+                } else {
+                    logoutUser();
+                    location.href = currentLocation;
+                }
+                
             });
 
             cancelButton.addEventListener("click", () => {
