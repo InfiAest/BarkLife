@@ -24,8 +24,6 @@ export default function removeFromFavourites() {
             const newFavourites = currentFavourites.filter(product => product.id !== id);
             saveToFavouriteProducts(newFavourites);
             renderFavouriteProducts();
-        }
-        
+        };
     };
-    
 };

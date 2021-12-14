@@ -7,6 +7,5 @@ export default function previewProductImg() {
         previewImg.src = "https://via.placeholder.com/150";
     } else {
         previewImg.src = imageUrlInput.value;
-    }
-    
-}
+    };
+};

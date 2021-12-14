@@ -65,6 +65,7 @@
   background-color: #ffffff;
   border: 3px solid map-get($colours, primary);
   color: map-get($colours, primary);
+  cursor: pointer;
 }
 .product-card-link:hover ~ .card-button-container .viewButton span {
   display: none;

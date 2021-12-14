@@ -8,7 +8,7 @@ modalHeader.innerHTML = `<i class="fas fa-shopping-bag"></i>
                             <span class="close">&times;</span>`;
 modalButtonContainer.style.display = "none";
 
-var span = document.getElementsByClassName("close")[0];
+var closeModal = document.getElementsByClassName("close")[0];
 
 export default function addProductToCart() {
     const addButton = document.querySelector(".add-to-cart-button");
@@ -45,18 +45,16 @@ export default function addProductToCart() {
             saveToCart(currentCart);
             modal.style.display = "block";
             modalMessage.innerHTML = `<p>1 x ${product.name} added to cart</p>`;
-        }
-
-
+        };
     };
-}
+};
+
 window.addEventListener("click", function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-    }
+    };
 });
 
-
-  span.onclick = function() {
+closeModal.onclick = function() {
     modal.style.display = "none";
-  }
+};

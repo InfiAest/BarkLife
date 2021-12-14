@@ -32,6 +32,7 @@
   background-color: #ffffff;
   border: 3px solid map-get($colours, primary);
   color: map-get($colours, primary);
+  cursor: pointer;
 }
 .formButton {
   margin: 1.5rem 0 2.5rem 0;

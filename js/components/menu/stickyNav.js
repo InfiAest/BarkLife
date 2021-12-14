@@ -8,5 +8,5 @@ export default function stickyNav() {
         headerSection.classList.add("sticky");
     } else {
         headerSection.classList.remove("sticky");
-    }
-}
+    };
+};

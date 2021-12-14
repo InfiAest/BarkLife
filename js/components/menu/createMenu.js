@@ -19,7 +19,7 @@ export default function createNavBar() {
 
         extraAuthLink = `<li><a href="/add.html" class="${pathname === "/add.html" ? "active" : ""}"><i class="fas fa-plus"></i></a></li>
                         <button id="logout" class="logout">Logout ${username}<i class="fas fa-user"></i></button>`;
-    }
+    };
 
     menuContainer.innerHTML = ` <li><a href="/" class="${pathname === "/" || pathname === "/index.html" ? "current" : ""}">Home</a></li>
                                 <li><a href="/products.html" class="${pathname === "/products.html" ? "current" : ""}">Products</a></li>
@@ -35,4 +35,4 @@ export default function createNavBar() {
 
 
     logout();
-}
+};

@@ -1,14 +1,13 @@
 import createNavBar from "../components/menu/createMenu.js";
-import stickyNav from "../utils/stickyNav.js";
+import stickyNav from "../components/menu/stickyNav.js";
 import { getToken } from "../utils/storage.js";
-import { baseUrl } from "../data/URLs.js";
 import validateEditProductForm from "../components/forms/validation/validateEditProductForm.js";
-import deleteProductButton from "../components/buttons/deleteProductButton.js";
 import loaderAnimation from "../components/loader/loaderAnimation.js";
 import previewProductImg from "../components/renderHtml/renderImagePreview.js";
+import getDetailsEditForm from "../components/fetch/getDetailsEditForm.js";
 
+//if not logged in don't allow access to page
 const token = getToken();
-
 if (!token) {
     location.href = "/";
 }
@@ -16,62 +15,15 @@ if (!token) {
 //pageloader
 window.onload = loaderAnimation();
 
-
+//create menu and sticky nav
 createNavBar();
-
-//Sticky nav
 window.onscroll = function() {stickyNav()};
 
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
-
-if (!id) {
-    document.location.href = "/";
-}
-
-const productUrl = baseUrl + "products/" + id;
-
+//edit product form - get details for form, 
+//add image preview and validate the form
 const form = document.querySelector(".edit-product-form");
-const loader = document.querySelector(".content-loader-container");
-const nameInput = document.querySelector("#name");
-const imageUrlInput = document.querySelector("#image");
-const descriptionInput = document.querySelector("#description");
-const priceInput = document.querySelector("#price");
-const featuredCheckbox = document.querySelector(".featured-checkbox");
-const idInput = document.querySelector("#id");
-const pageTitle = document.querySelector("title");
-
+getDetailsEditForm();
 previewProductImg();
-
 form.addEventListener("submit", validateEditProductForm);
 
-(async function() {
-    try {
-        const response = await fetch(productUrl);
-        const details = await response.json();
-
-        pageTitle.innerHTML += `${details.name}`;
-
-        nameInput.value = details.name;
-        imageUrlInput.value = details.image_URL;
-        descriptionInput.value = details.description;
-        priceInput.value = details.price;
-        featuredCheckbox.checked = details.featured;
-        idInput.value = details.id;
-        
-        previewImg.src = `${details.image_URL}`;
-
-        deleteProductButton(details.id);
-
-        
-    }
-    catch(error) {
-        console.log(error);
-    }
-    finally {
-        loader.style.display = "none";
-        form.style.display = "block";
-    }
-})();
 

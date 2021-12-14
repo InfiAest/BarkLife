@@ -4,4 +4,4 @@ export default function loaderAnimation() {
     window.setInterval(function() {
         loaderAnimation.style.display = "none";
     }, 2500);
-}
+};

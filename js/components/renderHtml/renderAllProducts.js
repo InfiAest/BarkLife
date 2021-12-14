@@ -3,10 +3,7 @@ import displayMessage from "../renderMessage/displayMessage.js";
 import { getExistingFavouriteProducts, getToken } from "../../utils/storage.js";
 import { addProductToFavourites } from "../buttons/addToFavourites.js";
 
-
-
 //Render all product cards
-
 export default function renderAllProducts(products) {
     
     const productGrid = document.querySelector(".product-grid");
@@ -14,7 +11,7 @@ export default function renderAllProducts(products) {
 
     if (products.length === 0) {
         displayMessage("empty", EMPTY_RESULTS, ".product-grid");
-    }
+    };
 
     products.forEach(function(product) {
 
@@ -23,10 +20,9 @@ export default function renderAllProducts(products) {
         if (token) {
             var productButtons = `<a href="edit.html?id=${product.id}" class="cta-button delete"><span>Edit product</span></a>
                                     <a href="details.html?id=${product.id}" class="cta-button viewButton"><span>View Product</span></a>`;
-        }
-        else if(!token) {
+        } else if(!token) {
             var productButtons = `<a href="details.html?id=${product.id}" class="cta-button viewButton"><span>View Product</span></a>`;
-        }
+        };
 
         let cssClass = "far";
 
@@ -38,7 +34,7 @@ export default function renderAllProducts(products) {
 
         if(isProductFavourited) {
             cssClass = "fas";
-        }
+        };
         
         productGrid.innerHTML += `<div class="product-card">
                                             <div class="icon-container">
@@ -57,9 +53,6 @@ export default function renderAllProducts(products) {
                                                 ${productButtons}
                                             </div>
                                         </div>`;
-
     });
-
     addProductToFavourites();
-
 };

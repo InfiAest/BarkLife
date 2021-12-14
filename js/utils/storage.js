@@ -8,11 +8,11 @@ export function getExistingFavouriteProducts() {
 
     if(!favourites) {
         return [];
-    }
-    else {
+    } else {
         return JSON.parse(favourites);
-    }
-}
+    };
+};
+
 export function saveToFavouriteProducts(favourites) {
     localStorage.setItem(favouritesKey, JSON.stringify(favourites));
 };
@@ -22,10 +22,9 @@ export function getExistingCartProducts() {
 
     if(!cart) {
         return [];
-    }
-    else {
+    } else {
         return JSON.parse(cart);
-    }
+    };
 };
 
 export function saveToCart(cart) {
@@ -47,7 +46,7 @@ export function getUsername() {
 
     if (user) {
         return user.username;
-    }
+    };
 
     return null;
 };
@@ -60,7 +59,7 @@ function getFromStorage(key) {
 
     if (!value) {
         return null;
-    }
+    };
 
     return JSON.parse(value);
 };

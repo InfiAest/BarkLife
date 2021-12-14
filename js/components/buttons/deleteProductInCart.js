@@ -1,7 +1,6 @@
 import { getExistingCartProducts, saveToCart } from "../../utils/storage.js";
 import renderCartProducts from "../renderHtml/renderCartProducts.js"
 
-
 export default function deleteProductInCart() {
 
     const trashButtons = document.querySelectorAll(".trashButton");
@@ -15,9 +14,7 @@ export default function deleteProductInCart() {
 
     function removeCartProduct() {
         const id = this.dataset.id;
-
         const currentCartProducts = getExistingCartProducts();
-
         const productExists = currentCartProducts.find(function(product) {
             return product.id === id;
         });
@@ -42,6 +39,6 @@ export default function deleteProductInCart() {
             cancelButton.addEventListener("click", () => {
                 modal.style.display = "none";
             });
-        }
-    }
-}
+        };
+    };
+};

@@ -3,9 +3,7 @@ import { getExistingCartProducts, getExistingFavouriteProducts, getToken, saveTo
 
 export default function deleteProductButton(id) {
     const container = document.querySelector(".delete-container");
-
     container.innerHTML = `<button type="button" id="delete" class="formButton delete"><span>Delete product</span></button>`;
-
     const deleteButton = document.querySelector("#delete");
 
     deleteButton.onclick = function() {
@@ -23,9 +21,7 @@ export default function deleteProductButton(id) {
         confirmButton.onclick = async function() {
             
             const url = productsUrl + id;
-
             const token = getToken();
-
             const options = {
                 method: "DELETE",
                 headers: {
@@ -42,6 +38,7 @@ export default function deleteProductButton(id) {
                 const queryString = document.location.search;
                 const params = new URLSearchParams(queryString);
                 const productId = params.get("id");
+
                 //remove from favourites page if product is favourited
                 const currentFavourites = getExistingFavouriteProducts();
                 const productExistsInFavs = currentFavourites.find(function(product) {
@@ -50,7 +47,7 @@ export default function deleteProductButton(id) {
                 if (productExistsInFavs) {
                     const newFavourites = currentFavourites.filter(product => product.id !== productId);
                     saveToFavouriteProducts(newFavourites);
-                }
+                };
 
                 //remove from cart if product exists in cart
                 const currentCart = getExistingCartProducts();
@@ -60,7 +57,7 @@ export default function deleteProductButton(id) {
                 if (productExistsInCart) {
                     const newCart = currentCart.filter(product => product.id !== productId);
                     saveToCart(newCart);
-                }
+                };
 
             } 
             catch (error) {

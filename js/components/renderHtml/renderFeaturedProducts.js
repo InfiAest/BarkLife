@@ -11,7 +11,7 @@ export default function renderFeaturedProducts(products) {
 
     if (products.length === 0) {
         displayMessage("empty", EMPTY_RESULTS, ".product-grid");
-    }
+    };
 
     const favourites = getExistingFavouriteProducts();
 
@@ -23,10 +23,9 @@ export default function renderFeaturedProducts(products) {
             if (token) {
                 var productButtons = `<a href="edit.html?id=${product.id}" class="cta-button delete"><span>Edit product</span></a>
                                         <a href="details.html?id=${product.id}" class="cta-button viewButton"><span>View Product</span></a>`;
-            }
-            else if(!token) {
+            } else if(!token) {
                 var productButtons = `<a href="details.html?id=${product.id}" class="cta-button viewButton"><span>View Product</span></a>`;
-            }
+            };
 
             let cssClass = "far";
         
@@ -36,7 +35,7 @@ export default function renderFeaturedProducts(products) {
 
             if(isProductFavourited) {
                 cssClass = "fas";
-            }  
+            };
 
             if (products[i].featured === true) {  
 
@@ -57,9 +56,7 @@ export default function renderFeaturedProducts(products) {
                                                         ${productButtons}
                                                     </div>
                                                 </div>`;
-            }
-        }
-
+            };
+        };
     addProductToFavourites();
-
 };

@@ -10,7 +10,7 @@ export default function logout() {
     if(logoutButtons) {
         logoutButtons.forEach((logoutButton) => {
             logoutButton.addEventListener("click", doLogout);
-        })
+        });
         function doLogout() {
             modal.style.display = "block";
             modalHeader.innerHTML = `<i class="fas fa-bone"></i>`;
@@ -28,14 +28,13 @@ export default function logout() {
                 } else {
                     logoutUser();
                     location.href = currentLocation;
-                }
+                };
                 
             });
 
             cancelButton.addEventListener("click", () => {
                 modal.style.display = "none";
             });
-            
-        }
-    }
-}
+        };
+    };
+};

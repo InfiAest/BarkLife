@@ -1,5 +1,5 @@
-import { validateURL, validatePrice, checkLength } from "./regexValidations.js";
-import { addNewProduct } from "../../../pages/add.js";
+import { validateURL, validatePrice, checkLength } from "./smallerValidations.js";
+import { addNewProduct } from "../addNew/addNewProduct.js";
 
 export default function validateNewProductForm(event) {
     event.preventDefault();
@@ -29,7 +29,7 @@ export default function validateNewProductForm(event) {
         nameError.style.display = "block";
         name.style.borderColor = "#ac6b63";
         formIsValid = false;
-    }
+    };
 
     if (validateURL(image.value) === true) {
         imageError.style.display = "none";
@@ -38,7 +38,7 @@ export default function validateNewProductForm(event) {
         imageError.style.display = "block";
         image.style.borderColor = "#ac6b63";
         formIsValid = false;
-    }
+    };
 
     if (checkLength(description.value, 19) === true) {
         descriptionError.style.display = "none";
@@ -47,7 +47,7 @@ export default function validateNewProductForm(event) {
         descriptionError.style.display = "block";
         description.style.borderColor = "#ac6b63";
         formIsValid = false;
-    }
+    };
 
     if (validatePrice(price.value)) {
         priceError.style.display = "none";
@@ -56,11 +56,10 @@ export default function validateNewProductForm(event) {
         priceError.style.display = "block";
         price.style.borderColor = "#ac6b63";
         formIsValid = false;
-    }
+    };
 
     if (formIsValid === true) {
         addNewProduct(nameValue, imageValue, descriptionValue, priceValue, featuredValue);
-    }
-
-}
+    };
+};
 

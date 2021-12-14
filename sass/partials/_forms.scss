@@ -102,7 +102,8 @@ textarea:focus-visible {
 }
 .preview-image {
   width: 100%;
-  height: fit-content;
+  height: 100%;
+  object-fit: cover;
   background-position: center;
   background-size: cover;
 }
@@ -141,9 +142,5 @@ textarea:focus-visible {
   }
   .image-container {
     flex-direction: row;
-  }
-  .preview-image {
-    width: 200px;
-    height: 150px;
   }
 }

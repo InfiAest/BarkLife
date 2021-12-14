@@ -11,15 +11,13 @@ export function searchProducts(products) {
 
         if (!searchValue) {
             searchMessage.style.display = "none";
-        }
+        };
 
         const filteredProducts = products.filter(function (product) {
             if (product.name.toLowerCase().includes(searchValue)) {
                 return true;
-            }
+            };
         });
-
         renderAllProducts(filteredProducts);
-
     };
 };

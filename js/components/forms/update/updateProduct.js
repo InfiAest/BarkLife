@@ -1,7 +1,7 @@
-import displayMessage from "../renderMessage/displayMessage.js";
-import previewProductImg from "../renderHtml/renderImagePreview.js";
-import { saveToFavouriteProducts, getExistingFavouriteProducts, getExistingCartProducts, saveToCart, getToken } from "../../utils/storage.js";
-import { baseUrl } from "../../data/URLs.js";
+import displayMessage from "../../renderMessage/displayMessage.js";
+import previewProductImg from "../../renderHtml/renderImagePreview.js";
+import { saveToFavouriteProducts, getExistingFavouriteProducts, getExistingCartProducts, saveToCart, getToken } from "../../../utils/storage.js";
+import { baseUrl } from "../../../data/URLs.js";
 
 
 export async function updateProduct(name, imgValue, description, price, featured, id) {
@@ -52,7 +52,7 @@ export async function updateProduct(name, imgValue, description, price, featured
                 const newFavouriteProducts = getExistingFavouriteProducts();
                 newFavouriteProducts.push(updatedProduct);
                 saveToFavouriteProducts(newFavouriteProducts);
-            }
+            };
 
             //update product if it's in the cart
             const currentCartProducts = getExistingCartProducts();
@@ -70,13 +70,12 @@ export async function updateProduct(name, imgValue, description, price, featured
                 const newCartProducts = getExistingCartProducts();
                 newCartProducts.push(updatedProduct);
                 saveToCart(newCartProducts);
-            }
+            };
         }
         if(json.error) {
             displayMessage("error", json.message, ".message-container");
-        }
-    }
-    catch(error) {
+        };
+    } catch(error) {
         console.log(error);
-    }
-}
+    };
+};

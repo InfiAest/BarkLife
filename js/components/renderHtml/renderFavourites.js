@@ -14,7 +14,7 @@ export default function renderFavouriteProducts() {
     if (favourites.length === 0) {
         favouritesGrid.style.gridTemplateColumns = "1fr";
         displayMessage("empty", EMPTY_RESULTS, ".favourites-grid");
-    }
+    };
 
     favourites.forEach(favourite => {
 
@@ -23,10 +23,9 @@ export default function renderFavouriteProducts() {
         if (token) {
             var productButtons = `<a href="edit.html?id=${favourite.id}" class="cta-button delete"><span>Edit product</span></a>
                                     <a href="details.html?id=${favourite.id}" class="cta-button viewButton"><span>View Product</span></a>`;
-        }
-        else if(!token) {
+        } else if(!token) {
             var productButtons = `<a href="details.html?id=${favourite.id}" class="cta-button viewButton"><span>View Product</span></a>`;
-        }
+        };
 
         favouritesGrid.innerHTML += `<div class="product-card">
                                         <div class="icon-container">
@@ -44,8 +43,7 @@ export default function renderFavouriteProducts() {
                                         <div class="card-button-container">
                                             ${productButtons}
                                         </div>
-                                    </div>`
+                                    </div>`;
     });
-
     removeFromFavourites();
-}
+};

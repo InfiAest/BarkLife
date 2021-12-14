@@ -11,7 +11,7 @@ export default function renderProductDetails(product) {
 
     if (!token) {
         editButton = "";
-    }
+    };
 
     const productContainer = document.querySelector(".product-container");
     const pageTitle = document.querySelector("title");
@@ -29,7 +29,7 @@ export default function renderProductDetails(product) {
 
     if(isProductFavourited) {
         cssClass = "fas";
-    }
+    };
 
     productContainer.innerHTML += `<div class="name-container">
                                         <h1 class="product-name">${product.name}</h1>
@@ -54,13 +54,10 @@ export default function renderProductDetails(product) {
                                         <button type="button" class="add-to-cart-button cta-button" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}">
                                             <span>Add to basket</span>
                                         </button>
-                                    </div>`
+                                    </div>`;
 
-    
     addProductToFavourites();
-
     addProductToCart();
-
     imageModalPopup(product);
 };
 

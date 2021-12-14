@@ -9,8 +9,7 @@ export default async function renderHeaderImage() {
         const result = await response.json();
 
         headerImgContainer.innerHTML = `<div class="header-img" style="background-image: url('${result.hero_banner_image.url}');">`;
-    }
-    catch(error) {
+    } catch(error) {
         console.log(error);
-    }
-}
+    };
+};

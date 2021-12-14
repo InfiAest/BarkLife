@@ -50,9 +50,7 @@ export default function renderCartProducts() {
     
         totalPrice.innerHTML = `£${totalSum}`;
     });
-    
     deleteProductInCart();
-
 
     const minusButtons = document.querySelectorAll(".minus");
     minusButtons.forEach((button) => {
@@ -62,8 +60,7 @@ export default function renderCartProducts() {
     plusButtons.forEach((button) => {
         button.addEventListener("click", plusProduct);
     });
-
-}
+};
 
 
 function minusProduct() {
@@ -84,8 +81,7 @@ function minusProduct() {
             });
             thatProduct.quantity --;
             saveToCart(currentCart);
-    } 
-    else if(doesProductExist.quantity === 1) {
+    } else if(doesProductExist.quantity === 1) {
         modal.style.display = "block";
         modalHeader.innerHTML = `<i class="fas fa-shopping-bag"></i>`;
         modalMessage.innerHTML = `<p>Are you sure you want to delete this ${doesProductExist.name} from your basket?</p>`;
@@ -102,11 +98,9 @@ function minusProduct() {
         cancelButton.addEventListener("click", () => {
             modal.style.display = "none";
         });  
-    }
-
+    };
     renderCartProducts();
-}
-
+};
 
 function plusProduct() {
     const id = this.dataset.id;
@@ -123,7 +117,6 @@ function plusProduct() {
             });
             thatProduct.quantity ++;
             saveToCart(currentCart);
-    }
-
+    };
     renderCartProducts();
-}
+};

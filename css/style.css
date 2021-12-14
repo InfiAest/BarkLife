@@ -373,6 +373,7 @@ nav i,
   background-color: #ffffff;
   border: 3px solid #bb9d88;
   color: #bb9d88;
+  cursor: pointer;
 }
 
 .product-card-link:hover ~ .card-button-container .viewButton span {
@@ -594,6 +595,7 @@ nav i,
   background-color: #ffffff;
   border: 3px solid #bb9d88;
   color: #bb9d88;
+  cursor: pointer;
 }
 
 .formButton {
@@ -1021,9 +1023,9 @@ textarea:focus-visible {
 
 .preview-image {
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   background-position: center;
   background-size: cover;
 }
@@ -1070,10 +1072,6 @@ textarea:focus-visible {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-  }
-  .preview-image {
-    width: 200px;
-    height: 150px;
   }
 }
 

@@ -1,5 +1,4 @@
 import { getExistingFavouriteProducts, saveToFavouriteProducts } from "../../utils/storage.js";
-import renderAllProducts from "../renderHtml/renderAllProducts.js";
 
 export function addProductToFavourites() {
     const favButtons = document.querySelectorAll(".favButton");
@@ -31,6 +30,6 @@ export function addProductToFavourites() {
         else {
             const newFavourites = currentFavourites.filter(product => product.id !== id);
             saveToFavouriteProducts(newFavourites);
-        }
+        };
     };
 };

@@ -4,9 +4,7 @@ import { saveToken , saveUser } from "../../../utils/storage.js";
 
 export default async function completeLogin(username, password) {
     const url = baseUrl + "auth/local";
-
     const data = JSON.stringify({ identifier: username, password: password });
-
     const options = {
         method: "POST",
         body: data,
@@ -18,7 +16,6 @@ export default async function completeLogin(username, password) {
     try {
         const response = await fetch(url, options);
         const json = await response.json();
-
         console.log(json);
 
         if(json.user) {
@@ -26,14 +23,14 @@ export default async function completeLogin(username, password) {
             saveToken(json.jwt);
             saveUser(json.user);
             location.href = "/index.html";
-        }
+        };
         if (json.error) {
             displayMessage("error", json.message[0].messages[0].message, ".message-container");
-        }
+        };
         
     }
     catch(error) {
         console.log(error);
         displayMessage("error", json.error, ".message-container");
-    }
-}
+    };
+};

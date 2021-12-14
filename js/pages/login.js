@@ -1,46 +1,20 @@
-import completeLogin from "../components/forms/loginFunction/completeLogin.js";
+import { getToken } from "../utils/storage.js";
 import createNavBar from "../components/menu/createMenu.js";
-import { validateEmail, validatePassword } from "../components/forms/validation/regexValidations.js";
+import stickyNav from "../components/menu/stickyNav.js";
+import validateLoginForm from "../components/forms/validation/validateLoginForm.js"
 
+//if user logged in don't allow access to page
+const token = getToken();
+if (token) {
+    location.href = "/";
+}
+
+//create menu and sticky nav
 createNavBar();
+window.onscroll = function() {stickyNav()};
 
+//login form - validation
 const form = document.querySelector("form");
-const username = document.querySelector("#username");
-const usernameError = document.querySelector("#username-error");
-const password = document.querySelector("#password");
-const passwordError = document.querySelector("#password-error");
-
 form.addEventListener("submit", validateLoginForm);
 
-function validateLoginForm(event) {
-    event.preventDefault();
 
-    const usernameValue = username.value.trim();
-    const passwordValue = password.value.trim();
-
-    var formIsValid = true;
-
-    if (validateEmail(username.value) === true) {
-        usernameError.style.display = "none";
-        username.style.borderColor = "#698678";
-    } else {
-        usernameError.style.display = "block";
-        username.style.borderColor = "#ac6b63";
-        formIsValid = false;
-    }
-    
-    if (validatePassword(password.value) === true) {
-        passwordError.style.display = "none";
-        password.style.borderColor = "#698678";
-    } else {
-        passwordError.style.display = "block";
-        password.style.borderColor = "#ac6b63";
-        formIsValid = false;
-    }
-    
-    if(formIsValid === true) {
-        completeLogin(usernameValue, passwordValue);
-    }
-
-    
-}

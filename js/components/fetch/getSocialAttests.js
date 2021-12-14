@@ -1,7 +1,6 @@
 import { socialMediaUrl } from "../../data/URLs.js";
 
 //social media attests
-
 export default async function getSocialMediaAttests() {
     try {
         const response = await fetch(socialMediaUrl);
@@ -45,9 +44,8 @@ export default async function getSocialMediaAttests() {
                                                 </div>
                                             </a>
                                         </div>`;
-        }
-    }
-    catch(error) {
+        };
+    } catch(error) {
         console.log(error);
-    }
-}
+    };
+};
