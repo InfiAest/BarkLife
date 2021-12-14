@@ -1,6 +1,6 @@
 import completeLogin from "../components/forms/loginFunction/completeLogin.js";
 import createNavBar from "../components/menu/createMenu.js";
-import { validateEmail, validatePassword } from "../utils/regexValidations.js";
+import { validateEmail, validatePassword } from "../components/forms/validation/regexValidations.js";
 
 createNavBar();
 
@@ -39,7 +39,6 @@ function validateLoginForm(event) {
     }
     
     if(formIsValid === true) {
-        console.log("congrats")
         completeLogin(usernameValue, passwordValue);
     }
 

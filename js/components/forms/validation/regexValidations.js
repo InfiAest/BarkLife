@@ -18,3 +18,10 @@ export function validatePassword(password) {
     const patternMatches = regEx.test(password);
     return patternMatches;
 }
+
+//checks the number is to 2 decimal places
+export function validatePrice(price) {
+    const regEx = /((\d+)(\.\d{2}))$/;
+    const patternMatches = regEx.test(price);
+    return patternMatches;
+}

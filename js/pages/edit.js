@@ -3,10 +3,10 @@ import stickyNav from "../utils/stickyNav.js";
 import { getExistingCartProducts, getExistingFavouriteProducts, getToken, saveToCart, saveToFavouriteProducts } from "../utils/storage.js";
 import { baseUrl } from "../data/URLs.js";
 import displayMessage from "../components/renderMessage/displayMessage.js";
-import renderImagePreview from "../components/renderHtml/renderImagePreview.js";
 import deleteProductButton from "../components/buttons/deleteProductButton.js";
-import { validateURL } from "../utils/regexValidations.js";
+import { validateURL, validatePrice } from "../components/forms/validation/regexValidations.js";
 import loaderAnimation from "../components/loader/loaderAnimation.js";
+import previewProductImg from "../components/renderHtml/renderImagePreview.js";
 
 const token = getToken();
 
@@ -35,22 +35,27 @@ const productUrl = baseUrl + "products/" + id;
 
 const form = document.querySelector(".edit-product-form");
 const loader = document.querySelector(".content-loader-container");
-const messageContainer = document.querySelector(".message-container");
 const nameInput = document.querySelector("#name");
+const nameError = document.querySelector("#product-name-error");
 const imageUrlInput = document.querySelector("#image");
+const imageError = document.querySelector("#product-image-error");
 const imagePreview = document.querySelector(".preview-img-container");
 const descriptionInput = document.querySelector("#description");
+const descriptionError = document.querySelector("#product-description-error");
 const priceInput = document.querySelector("#price");
+const priceError = document.querySelector("#product-price-error");
 const featuredCheckbox = document.querySelector(".featured-checkbox");
 const idInput = document.querySelector("#id");
 const pageTitle = document.querySelector("title");
 
-renderImagePreview();
+previewProductImg();
 
 (async function() {
     try {
         const response = await fetch(productUrl);
         const details = await response.json();
+
+        previewProductImg();
 
         pageTitle.innerHTML += `${details.name}`;
 
@@ -76,12 +81,12 @@ renderImagePreview();
     }
 })();
 
-form.addEventListener("submit", editProduct);
+form.addEventListener("submit", validateEditProductForm);
 
-function editProduct(event) {
+function validateEditProductForm(event) {
     event.preventDefault();
 
-    messageContainer.innerHTML = "";
+    // messageContainer.innerHTML = "";
 
     const nameValue = nameInput.value.trim();
     const imgValue = imageUrlInput.value.trim();
@@ -90,13 +95,58 @@ function editProduct(event) {
     const featuredValue = featuredCheckbox.checked;
     const idValue = idInput.value;
 
-    imagePreview.innerHTML = `<div class="preview-image" style="background-image: url('${imgValue}')"></div>`;
+    var formIsValid = true;
 
-    if (nameValue.length === 0 || imgValue.length === 0 || descriptionValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || validateURL(imgValue) === false) {
-        return displayMessage("warning", "Supply proper values", ".message-container");
+    if (checkLength(nameInput.value, 3) === true) {
+        nameError.style.display = "none";
+        nameInput.style.borderColor = "#698678";
+    } else {
+        nameError.style.display = "block";
+        nameInput.style.borderColor = "#ac6b63";
+        formIsValid = false;
     }
 
-    updateProduct(nameValue, imgValue, descriptionValue, priceValue, featuredValue, idValue);
+    if (validateURL(imageUrlInput.value) === true) {
+        imageError.style.display = "none";
+        imageUrlInput.style.borderColor = "#698678";
+        imagePreview.innerHTML = `<div class="preview-image" style="background-image: url('${imgValue}')"></div>`;
+    } else {
+        imageError.style.display = "block";
+        imageUrlInput.style.borderColor = "#ac6b63";
+        formIsValid = false;
+    }
+
+    if (checkLength(descriptionInput.value, 19) === true) {
+        descriptionError.style.display = "none";
+        descriptionInput.style.borderColor = "#698678";
+    } else {
+        descriptionError.style.display = "block";
+        descriptionInput.style.borderColor = "#ac6b63";
+        formIsValid = false;
+    }
+
+    if (validatePrice(priceInput.value)) {
+        priceError.style.display = "none";
+        priceInput.style.borderColor = "#698678";
+    } else {
+        priceError.style.display = "block";
+        priceInput.style.borderColor = "#ac6b63";
+        formIsValid = false;
+    }
+
+    if (formIsValid === true) {
+        updateProduct(nameValue, imgValue, descriptionValue, priceValue, featuredValue, idValue);
+    }
+
+}
+
+
+function checkLength(value, len) {
+    if (value.trim().length > len) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 async function updateProduct(name, imgValue, description, price, featured, id) {
@@ -119,6 +169,11 @@ async function updateProduct(name, imgValue, description, price, featured, id) {
         if (json.updated_at) {
             console.log(json)
             displayMessage("success", "Product updated", ".message-container");
+            previewProductImg();
+            nameInput.style.borderColor = "#ded6d3";
+            imageUrlInput.style.borderColor = "#ded6d3";
+            descriptionInput.style.borderColor = "#ded6d3";
+            priceInput.style.borderColor = "#ded6d3";
 
             //update product if it's in the favourites
             const currentFavourites = getExistingFavouriteProducts();

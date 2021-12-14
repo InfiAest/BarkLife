@@ -68,18 +68,17 @@
                     <form class="edit-product-form">
                         <a href="products.html" class="back-link"><i class="fas fa-chevron-left"></i>Back to all products</a>
                         <h1>Edit product</h1>
-                        <div class="message-container"></div>
                         <div>
                             <label for="name">Name</label>
                             <input id="name" type="text"/>
-                            <p class="edit-input-instructions edit-name-instructions">Minimum 4 characters</p>
+                            <p class="edit-input-instructions">Minimum 4 characters</p>
                             <div id="product-name-error" class="error">Please enter a valid product name</div>
                         </div>
                         <div class="image-container">
                             <div class="url-container">
                                 <label for="image">Image URL</label>
                                 <input id="image" />
-                                <p class="edit-input-instructions edit-image-instructions">Enter a valid URL</p>
+                                <p class="edit-input-instructions">Enter a valid URL</p>
                                 <div id="product-image-error" class="error">Please enter a valid image url</div>
                             </div>
                             <div class="preview-container">
@@ -92,13 +91,13 @@
                         <div>
                             <label for="description">Description</label>
                             <textarea id="description"></textarea>
-                            <p class="edit-input-instructions edit-description-instructions">Minimum 20 characters</p>
+                            <p class="edit-input-instructions">Minimum 20 characters</p>
                             <div id="product-description-error" class="error">Please enter a valid product description</div>
                         </div>
                         <div>
                             <label for="price">Price</label>
-                            <input id="price" type="number"/>
-                            <p class="edit-input-instructions edit-price-instructions">Use 2 decimal places (eg. 19.99)</p>
+                            <input id="price" type="text"/>
+                            <p class="edit-input-instructions">Use 2 decimal places (eg. 19.99)</p>
                             <div id="product-price-error" class="error">Please enter a valid product price</div>
                         </div>
                         <div>
@@ -108,6 +107,7 @@
                                 <span class="slider"></span>
                             </label> 
                         </div>
+                        <div class="message-container"></div>
                         <input id="id" />
                         <button id="update" class="cta-button formButton"><span>Update Product</span></button>
                         <div class="delete-container"></div>
