@@ -51,8 +51,6 @@ form.addEventListener("submit", validateEditProductForm);
         const response = await fetch(productUrl);
         const details = await response.json();
 
-        previewProductImg();
-
         pageTitle.innerHTML += `${details.name}`;
 
         nameInput.value = details.name;

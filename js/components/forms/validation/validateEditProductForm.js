@@ -1,5 +1,6 @@
 import { validateURL, validatePrice, checkLength } from "./regexValidations.js";
 import { updateProduct } from "../updateProduct.js";
+import previewProductImg from "../../renderHtml/renderImagePreview.js";
 
 
 export default function validateEditProductForm(event) {
@@ -23,6 +24,8 @@ export default function validateEditProductForm(event) {
     const priceValue = priceInput.value.trim();
     const featuredValue = featuredCheckbox.checked;
     const idValue = idInput.value;
+
+    previewProductImg();
 
     var formIsValid = true;
 

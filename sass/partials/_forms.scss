@@ -130,7 +130,7 @@ textarea:focus-visible {
 @media (min-width: 641px) {
   .preview-img-container {
     height: 150px;
-    width: 150px;
+    width: 200px;
   }
   .url-container {
     flex-grow: 2;
@@ -143,7 +143,7 @@ textarea:focus-visible {
     flex-direction: row;
   }
   .preview-image {
-    width: 100%;
+    width: 200px;
     height: 150px;
   }
 }
