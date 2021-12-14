@@ -1,9 +1,17 @@
-import { getExistingFavouriteProducts } from "../../utils/storage.js";
+import { getExistingFavouriteProducts, getToken } from "../../utils/storage.js";
 import { addProductToFavourites } from "../buttons/addToFavourites.js";
 import addProductToCart from "../buttons/addProductToCart.js";
 import imageModalPopup from "../imageModal/imageModal.js";
 
 export default function renderProductDetails(product) {
+
+    const token = getToken();
+
+    var editButton = `<a href="edit.html?id=${product.id}"><i class="fas fa-edit editButton"></i></a>`;
+
+    if (!token) {
+        editButton = "";
+    }
 
     const productContainer = document.querySelector(".product-container");
     const pageTitle = document.querySelector("title");
@@ -23,7 +31,10 @@ export default function renderProductDetails(product) {
         cssClass = "fas";
     }
 
-    productContainer.innerHTML += `<h1 class="product-name">${product.name}</h1>
+    productContainer.innerHTML += `<div class="name-container">
+                                        <h1 class="product-name">${product.name}</h1>
+                                        ${editButton}
+                                    </div>
                                     <div class="img-container">
                                         <div class="icon-container">
                                             <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}"></i>

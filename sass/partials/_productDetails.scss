@@ -29,6 +29,15 @@
   font-size: 1rem;
   margin-right: 0.5rem;
 }
+.name-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.editButton {
+  font-size: 1.5rem;
+  color: map-get($colours, tertiary);
+}
 
 @media (min-width: 768px) {
   .product-container {
@@ -37,7 +46,7 @@
     grid-gap: 2rem;
   }
 
-  .product-name {
+  .name-container {
     grid-column-start: 1;
     grid-column-end: 3;
   }

@@ -834,6 +834,23 @@ footer {
   margin-right: 0.5rem;
 }
 
+.name-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.editButton {
+  font-size: 1.5rem;
+  color: #a89e9d;
+}
+
 @media (min-width: 768px) {
   .product-container {
     display: -ms-grid;
@@ -842,7 +859,7 @@ footer {
         grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
   }
-  .product-name {
+  .name-container {
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 3;
