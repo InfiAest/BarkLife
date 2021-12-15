@@ -1,5 +1,6 @@
 import { productsUrl } from "../../data/URLs.js";
 import { getExistingCartProducts, getExistingFavouriteProducts, getToken, saveToCart, saveToFavouriteProducts } from "../../utils/storage.js";
+import getCartCount from "../menu/getCartCount.js";
 
 export default function deleteProductButton(id) {
     const container = document.querySelector(".delete-container");
@@ -57,6 +58,7 @@ export default function deleteProductButton(id) {
                 if (productExistsInCart) {
                     const newCart = currentCart.filter(product => product.id !== productId);
                     saveToCart(newCart);
+                    getCartCount();
                 };
 
             } 

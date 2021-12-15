@@ -1,5 +1,6 @@
 import { getExistingCartProducts, saveToCart } from "../../utils/storage.js";
-import renderCartProducts from "../renderHtml/renderCartProducts.js"
+import renderCartProducts from "../renderHtml/renderCartProducts.js";
+
 
 export default function deleteProductInCart() {
 
@@ -34,11 +35,13 @@ export default function deleteProductInCart() {
                 const newCartList = currentCartProducts.filter(product => product.id !== id);
                 saveToCart(newCartList);
                 renderCartProducts();
+                location.reload();
             });
 
             cancelButton.addEventListener("click", () => {
                 modal.style.display = "none";
             });
         };
+        
     };
 };

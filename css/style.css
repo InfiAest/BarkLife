@@ -255,6 +255,16 @@ nav i,
   display: none;
 }
 
+.cartCount {
+  font-size: 12px;
+  background: #bb9d88;
+  color: white;
+  vertical-align: top;
+  margin-left: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
 @media (min-width: 768px) {
   .extra-nav {
     display: block;

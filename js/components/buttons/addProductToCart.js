@@ -1,4 +1,5 @@
 import { getExistingCartProducts, saveToCart } from "../../utils/storage.js";
+import getCartCount from "../menu/getCartCount.js";
 
 const modal = document.querySelector(".modal");
 const modalHeader = document.querySelector(".modal-header");
@@ -46,6 +47,7 @@ export default function addProductToCart() {
             modal.style.display = "block";
             modalMessage.innerHTML = `<p>1 x ${product.name} added to cart</p>`;
         };
+        getCartCount();
     };
 };
 

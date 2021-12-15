@@ -2,6 +2,7 @@ import { getExistingCartProducts, saveToCart } from "../../utils/storage.js";
 import { EMPTY_RESULTS } from "../../settings/messages.js";
 import displayMessage from "../renderMessage/displayMessage.js";
 import deleteProductInCart from "../buttons/deleteProductInCart.js"
+import getCartCount from "../menu/getCartCount.js";
 
 export default function renderCartProducts() {
     const products = getExistingCartProducts();
@@ -81,6 +82,7 @@ function minusProduct() {
             });
             thatProduct.quantity --;
             saveToCart(currentCart);
+            getCartCount();
     } else if(doesProductExist.quantity === 1) {
         modal.style.display = "block";
         modalHeader.innerHTML = `<i class="fas fa-shopping-bag"></i>`;
@@ -94,7 +96,10 @@ function minusProduct() {
             const newCartList = currentCart.filter(doesProductExist => doesProductExist.id !== id);
             saveToCart(newCartList);
             renderCartProducts();
+            //reload page to reset the cart counter (can't figure out why it won't update it)
+            location.reload();
         });
+        
         cancelButton.addEventListener("click", () => {
             modal.style.display = "none";
         });  
@@ -117,6 +122,7 @@ function plusProduct() {
             });
             thatProduct.quantity ++;
             saveToCart(currentCart);
+            getCartCount();
     };
     renderCartProducts();
 };
