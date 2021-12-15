@@ -9,7 +9,6 @@
   text-decoration: none;
   color: map-get($colours, secondary);
 }
-
 .product-img-container {
   overflow: hidden;
 }
@@ -42,12 +41,10 @@
   justify-content: space-between;
   align-items: baseline;
 }
-
 .product-name-container h3,
 .product-name-container p {
   margin: 5px 0;
 }
-
 .featured-grid,
 .product-grid,
 .favourites-grid {
@@ -76,14 +73,14 @@
   content: "\f5d7";
 }
 
-@media (min-width: 641px) {
+@include for-large-mobile {
   .featured-grid,
   .product-grid,
   .favourites-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (min-width: 961px) {
+@include for-desktop {
   .featured-grid,
   .product-grid,
   .favourites-grid {

@@ -81,7 +81,7 @@
 .fa-facebook {
   margin-right: 1rem;
 }
-@media (min-width: 768px) {
+@include for-tablet {
   .attest-container {
     display: block;
   }
@@ -89,7 +89,7 @@
     font-size: 1.2rem;
   }
 }
-@media (min-width: 961px) {
+@include for-desktop {
   .instagram-attests-section {
     grid-template-columns: 1fr 1fr;
   }

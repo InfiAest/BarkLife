@@ -1,3 +1,4 @@
+//general modal
 .modal {
   display: none;
   position: fixed;
@@ -34,7 +35,6 @@
   font-size: 2rem;
   font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
   color: map-get($colours, primary);
@@ -95,7 +95,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@include for-tablet {
   .modal {
     padding-top: 300px;
   }

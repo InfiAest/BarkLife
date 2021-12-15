@@ -14,9 +14,9 @@
 .product-image:hover {
   cursor: pointer;
 }
-
 .price-container {
   text-align: right;
+  margin-bottom: 2rem;
 }
 .back-link {
   text-decoration: none;
@@ -39,18 +39,16 @@
   color: map-get($colours, tertiary);
 }
 
-@media (min-width: 768px) {
+@include for-tablet {
   .product-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
   }
-
   .name-container {
     grid-column-start: 1;
     grid-column-end: 3;
   }
-
   .description-header {
     margin-top: 0;
   }

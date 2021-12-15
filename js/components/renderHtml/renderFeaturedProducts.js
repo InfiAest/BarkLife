@@ -41,11 +41,11 @@ export default function renderFeaturedProducts(products) {
 
                 featuredContainer.innerHTML += `<div class="product-card">
                                                     <div class="icon-container">
-                                                        <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}"></i>
+                                                        <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}"></i>
                                                     </div>
                                                     <a href="details.html?id=${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
                                                         <div class="product-img-container">
-                                                            <div class="card-img" style="background-image: url('${product.image_URL}');"></div>
+                                                            <div class="card-img" style="background-image: url('${product.image.url}');"></div>
                                                         </div>
                                                         <div class="product-name-container">
                                                             <h3>${product.name}</h3>

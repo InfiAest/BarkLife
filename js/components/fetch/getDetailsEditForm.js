@@ -1,5 +1,6 @@
 import { baseUrl } from "../../data/URLs.js";
 import deleteProductButton from "../buttons/deleteProductButton.js";
+import previewProductImg from "../renderHtml/renderImagePreview.js";
 
 export default async function getDetailsEditForm() {
 
@@ -16,7 +17,6 @@ export default async function getDetailsEditForm() {
     const form = document.querySelector(".edit-product-form");
     const loader = document.querySelector(".content-loader-container");
     const nameInput = document.querySelector("#name");
-    const imageUrlInput = document.querySelector("#image");
     const descriptionInput = document.querySelector("#description");
     const priceInput = document.querySelector("#price");
     const featuredCheckbox = document.querySelector(".featured-checkbox");
@@ -30,14 +30,12 @@ export default async function getDetailsEditForm() {
         pageTitle.innerHTML += `${details.name}`;
 
         nameInput.value = details.name;
-        imageUrlInput.value = details.image_URL;
         descriptionInput.value = details.description;
         priceInput.value = details.price;
         featuredCheckbox.checked = details.featured;
         idInput.value = details.id;
         
-        previewImg.src = `${details.image_URL}`;
-
+        previewProductImg(details);
         deleteProductButton(details.id);
     } catch(error) {
         console.log(error);

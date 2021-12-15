@@ -1,7 +1,9 @@
+//fonts
 $font-primary: "Karla", sans-serif;
 $font-headings: "Bodoni Moda", serif;
 $font-brand: "Sacramento", cursive;
 
+//colours
 $colours: (
   primary: #bb9d88,
   secondary: #3d3c3c,
@@ -10,6 +12,7 @@ $colours: (
   highlight: #d1c3ba,
 );
 
-@function getColour($colour) {
-  @return map-get($colours, $colour);
-}
+//screen widths
+$large-mobile-width: 641px;
+$tablet-width: 768px;
+$desktop-width: 961px;

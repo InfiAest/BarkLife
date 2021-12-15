@@ -72,15 +72,17 @@
                         <h1>Edit product</h1>
                         <div>
                             <label for="name">Name</label>
-                            <input id="name" type="text"/>
+                            <input id="name" type="text" autocomplete="off"/>
                             <p class="edit-input-instructions">Minimum 4 characters</p>
                             <div id="product-name-error" class="error">Please enter a valid product name</div>
                         </div>
                         <div class="image-container">
                             <div class="url-container">
-                                <label for="image">Image URL</label>
-                                <input id="image" />
-                                <p class="edit-input-instructions">Enter a valid URL</p>
+                                <label for="image">Upload image</label>
+                                <input id="image" type="file">
+                                <p class="input-instructions">Must be a JPG, JPEG or PNG image. Maximum 200MB.</p>
+                                <!-- <input id="image" autocomplete="off"/>
+                                <p class="edit-input-instructions">Enter a valid URL</p> -->
                                 <div id="product-image-error" class="error">Please enter a valid image url</div>
                             </div>
                             <div class="preview-container">
@@ -98,7 +100,7 @@
                         </div>
                         <div>
                             <label for="price">Price</label>
-                            <input id="price" type="text"/>
+                            <input id="price" type="text" autocomplete="off"/>
                             <p class="edit-input-instructions">Use 2 decimal places (eg. 19.99)</p>
                             <div id="product-price-error" class="error">Please enter a valid product price</div>
                         </div>

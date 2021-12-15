@@ -10,7 +10,7 @@
   text-align: right;
 }
 
-@media (min-width: 768px) {
+@include for-tablet {
   .img-text-container {
     display: flex;
   }
@@ -24,7 +24,7 @@
     width: 800px;
   }
 }
-@media (min-width: 961px) {
+@include for-desktop {
   .text-container {
     width: 1600px;
   }

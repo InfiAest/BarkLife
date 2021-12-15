@@ -1,7 +1,7 @@
 import displayMessage from "../../renderMessage/displayMessage.js";
 import { productsUrl } from "../../../data/URLs.js";
-import previewProductImg from "../../renderHtml/renderImagePreview.js";
 import { getToken } from "../../../utils/storage.js";
+import getStrapiSettings from "../../../utils/strapiSettings.js";
 
 export async function addNewProduct(nameValue, imageValue, descriptionValue, priceValue, featuredValue) {
     const form = document.querySelector("form");
@@ -12,16 +12,18 @@ export async function addNewProduct(nameValue, imageValue, descriptionValue, pri
 
     const token = getToken();
 
-    const data = JSON.stringify({ name: nameValue, image_URL: imageValue, description: descriptionValue, price: priceValue, featured: featuredValue });
+    const data = JSON.stringify({ name: nameValue, description: descriptionValue, price: priceValue, featured: featuredValue });
+    
+    //create and append the form data to allow the image to be uploaded to strapi when submitting form
+    const formData = new FormData();
+    formData.append("files.image", imageValue, imageValue.name);
+    formData.append("data", data);
 
-    const options = {
-        method: "POST",
-        body: data,
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
-        },
-    };
+    const method = "POST";
+    const headers = { Authorization: "Bearer " + token };
+
+    //get strapi settings and use the above (data, method and headers) as the options when fetching the api
+    const options = getStrapiSettings(formData, method, headers);
 
     try {
         const response = await fetch(productsUrl, options);
@@ -34,7 +36,6 @@ export async function addNewProduct(nameValue, imageValue, descriptionValue, pri
             image.style.borderColor = "#ded6d3";
             description.style.borderColor = "#ded6d3";
             price.style.borderColor = "#ded6d3";
-            previewProductImg();
         };
         if(json.error) {
             displayMessage("error", json.messageContainer, ".message-container");

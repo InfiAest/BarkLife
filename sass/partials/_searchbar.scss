@@ -28,7 +28,7 @@
   display: none;
 }
 
-@media (min-width: 768px) {
+@include for-tablet {
   .search-bar {
     justify-content: flex-end;
   }

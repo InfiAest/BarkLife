@@ -7,16 +7,13 @@ footer {
   display: flex;
   flex-direction: column;
 }
-
 .footer-logo-container {
   width: 200px;
   margin: 0 auto;
 }
-
 .footer-logo {
   width: 200px;
 }
-
 .fa-instagram,
 .fa-facebook {
   margin-top: 1.5rem;
@@ -32,7 +29,6 @@ footer {
   text-align: center;
   padding: 0.5rem 0;
 }
-
 .customer-links,
 .business-links {
   display: flex;
@@ -47,7 +43,7 @@ footer {
   text-decoration: underline;
 }
 
-@media (min-width: 768px) {
+@include for-tablet {
   .footer {
     flex-direction: row;
     justify-content: space-between;

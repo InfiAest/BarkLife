@@ -16,7 +16,6 @@
   text-align: center;
   text-decoration: none;
 }
-
 .cta-button:hover span,
 .formButton:hover span {
   display: none;
@@ -37,7 +36,6 @@
 .formButton {
   margin: 1.5rem 0 2.5rem 0;
 }
-
 #logout {
   height: 49px;
   width: 100%;
@@ -54,20 +52,17 @@
   height: auto;
   padding: 10px 5px;
 }
-
 #logout:hover {
   text-decoration: underline;
   text-underline-offset: 5px;
   cursor: pointer;
 }
-
 .delete {
   background-color: map-get($colours, input);
   border-color: map-get($colours, input);
   color: map-get($colours, secondary);
   margin-top: 0;
 }
-
 .delete:hover {
   border-color: map-get($colours, input);
   color: map-get($colours, secondary);
@@ -89,7 +84,7 @@
   margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
+@include for-tablet {
   .cart-button-container,
   .modal-button-container {
     grid-template-columns: 1fr 1fr;

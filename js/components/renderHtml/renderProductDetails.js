@@ -37,9 +37,9 @@ export default function renderProductDetails(product) {
                                     </div>
                                     <div class="img-container">
                                         <div class="icon-container">
-                                            <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}"></i>
+                                            <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}"></i>
                                         </div>
-                                        <div class="product-image" style="background-image: url('${product.image_URL}');"></div>
+                                        <div class="product-image" style="background-image: url('${product.image.url}');"></div>
                                     </div>
                                     <div class="description-price-container">
                                         <div class="description-container">
@@ -51,7 +51,7 @@ export default function renderProductDetails(product) {
                                         </div>
                                     </div>
                                     <div class="cta-button-container">
-                                        <button type="button" class="add-to-cart-button cta-button" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image_URL}">
+                                        <button type="button" class="add-to-cart-button cta-button" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}">
                                             <span>Add to basket</span>
                                         </button>
                                     </div>`;

@@ -1,4 +1,4 @@
-import { validateURL, validatePrice, checkLength } from "./smallerValidations.js";
+import { validatePrice, checkLength } from "./smallerValidations.js";
 import { addNewProduct } from "../addNew/addNewProduct.js";
 
 export default function validateNewProductForm(event) {
@@ -15,7 +15,7 @@ export default function validateNewProductForm(event) {
     const featured = document.querySelector(".featured-checkbox");
 
     const nameValue = name.value.trim();
-    const imageValue = image.value.trim();
+    const imageValue = image.files[0];
     const descriptionValue = description.value.trim();
     const priceValue = price.value.trim();
     const featuredValue = featured.checked;
@@ -31,14 +31,18 @@ export default function validateNewProductForm(event) {
         formIsValid = false;
     };
 
-    if (validateURL(image.value) === true) {
-        imageError.style.display = "none";
-        image.style.borderColor = "#698678";
-    } else {
+    //check that the image is the right file type, right size and that something is being selected/entered
+    const imageWrong = image.files.length === 0|| imageValue.size > 200000000 || imageValue.type !== "image/jpeg" && imageValue.type !== "image/jpg" && imageValue.type !== "image/png";
+    
+    if (imageWrong) {
         imageError.style.display = "block";
         image.style.borderColor = "#ac6b63";
         formIsValid = false;
-    };
+    } else {
+        imageError.style.display = "none";
+        image.style.borderColor = "#698678";
+        formIsValid = true;
+    }
 
     if (checkLength(description.value, 19) === true) {
         descriptionError.style.display = "none";

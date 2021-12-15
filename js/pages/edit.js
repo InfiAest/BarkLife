@@ -3,7 +3,6 @@ import stickyNav from "../components/menu/stickyNav.js";
 import { getToken } from "../utils/storage.js";
 import validateEditProductForm from "../components/forms/validation/validateEditProductForm.js";
 import loaderAnimation from "../components/loader/loaderAnimation.js";
-import previewProductImg from "../components/renderHtml/renderImagePreview.js";
 import getDetailsEditForm from "../components/fetch/getDetailsEditForm.js";
 
 //if not logged in don't allow access to page
@@ -19,11 +18,9 @@ window.onload = loaderAnimation();
 createNavBar();
 window.onscroll = function() {stickyNav()};
 
-//edit product form - get details for form, 
-//add image preview and validate the form
+//edit product form - get details for form and validate the form
 const form = document.querySelector(".edit-product-form");
 getDetailsEditForm();
-previewProductImg();
 form.addEventListener("submit", validateEditProductForm);
 
 
