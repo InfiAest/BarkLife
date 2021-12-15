@@ -8,7 +8,7 @@ export default function imageModalPopup(product) {
 
     function showLargeImage() {
         imgModal.style.display = "block";
-        imageContainer.style.backgroundImage = `url("${product.image_URL}")`;
+        imageContainer.style.backgroundImage = `url("${product.image.url}")`;
     };
 
     exitImg.onclick = function() { 
