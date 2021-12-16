@@ -1,5 +1,5 @@
-import { getExistingCartProducts, saveToCart } from "../../utils/storage.js";
-import getCartCount from "../menu/getCartCount.js";
+import { getExistingBasketProducts, saveToBasket } from "../../utils/storage.js";
+import getBasketCount from "../menu/getBasketCount.js";
 
 const modal = document.querySelector(".modal");
 const modalHeader = document.querySelector(".modal-header");
@@ -11,12 +11,12 @@ modalButtonContainer.style.display = "none";
 
 var closeModal = document.getElementsByClassName("close")[0];
 
-export default function addProductToCart() {
-    const addButton = document.querySelector(".add-to-cart-button");
+export default function addProductToBasket() {
+    const addButton = document.querySelector(".add-to-basket-button");
 
-    addButton.addEventListener("click", addToCart);
+    addButton.addEventListener("click", addToBasket);
 
-    function addToCart() {
+    function addToBasket() {
         const modalMessage = document.querySelector(".modal-message");
 
         const id = this.dataset.id;
@@ -25,29 +25,29 @@ export default function addProductToCart() {
         const image = this.dataset.image;
         let itemCount = 1;
 
-        const currentCart = getExistingCartProducts();
+        const currentBasket = getExistingBasketProducts();
 
-        const doesProductExist = currentCart.find(function(product) {
+        const doesProductExist = currentBasket.find(function(product) {
             return product.id === id;
         });
 
-        //If product is already in the cart then up the quantity of that product instead
+        //If product is already in the basket then up the quantity of that product instead
         if(doesProductExist) {
-            const thatProduct = currentCart.find(function(product) {
+            const thatProduct = currentBasket.find(function(product) {
                 return product.id === id;
             });
             thatProduct.quantity ++;
-            saveToCart(currentCart);
+            saveToBasket(currentBasket);
             modal.style.display = "block";
-            modalMessage.innerHTML = `<p>1 x ${doesProductExist.name} added to cart. There is now ${thatProduct.quantity} in the cart.</p>`;
+            modalMessage.innerHTML = `<p>1 x ${doesProductExist.name} added to basket. There is now ${thatProduct.quantity} in the basket.</p>`;
         } else {
             const product = { id: id, name: name, price: price, image: image, quantity: itemCount };
-            currentCart.push(product);
-            saveToCart(currentCart);
+            currentBasket.push(product);
+            saveToBasket(currentBasket);
             modal.style.display = "block";
-            modalMessage.innerHTML = `<p>1 x ${product.name} added to cart</p>`;
+            modalMessage.innerHTML = `<p>1 x ${product.name} added to basket</p>`;
         };
-        getCartCount();
+        getBasketCount();
     };
 };
 

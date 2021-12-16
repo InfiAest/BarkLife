@@ -1,5 +1,4 @@
-.cta-button-container,
-.cart-button-container {
+.cta-button-container {
   width: 100%;
   display: flex;
 }
@@ -73,7 +72,7 @@
   grid-gap: 0.5rem;
   margin: 0.5rem 0;
 }
-.cart-button-container,
+.basket-button-container,
 .modal-button-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -83,9 +82,29 @@
 .modal-button-container {
   margin-bottom: 1rem;
 }
+.all-products-link-container {
+  width: fit-content;
+  margin: 0 auto;
+  background-image: url(../../images/bone-fill.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 30px;
+  transition: all 0.2s ease 0s;
+}
+.all-products-link-container:hover {
+  transform: scale(1.1);
+}
+.productsPage-link {
+  text-decoration: none;
+  font-family: $font-headings;
+  color: map-get($colours, secondary);
+  font-size: 1.3rem;
+  padding: 25px;
+}
 
 @include for-tablet {
-  .cart-button-container,
+  .basket-button-container,
   .modal-button-container {
     grid-template-columns: 1fr 1fr;
   }

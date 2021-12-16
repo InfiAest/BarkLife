@@ -1,6 +1,6 @@
 import { productsUrl } from "../../data/URLs.js";
-import { getExistingCartProducts, getExistingFavouriteProducts, getToken, saveToCart, saveToFavouriteProducts } from "../../utils/storage.js";
-import getCartCount from "../menu/getCartCount.js";
+import { getExistingBasketProducts, getExistingFavouriteProducts, getToken, saveToBasket, saveToFavouriteProducts } from "../../utils/storage.js";
+import getBasketCount from "../menu/getBasketCount.js";
 
 export default function deleteProductButton(id) {
     const container = document.querySelector(".delete-container");
@@ -50,15 +50,15 @@ export default function deleteProductButton(id) {
                     saveToFavouriteProducts(newFavourites);
                 };
 
-                //remove from cart if product exists in cart
-                const currentCart = getExistingCartProducts();
-                const productExistsInCart = currentCart.find(function(product) {
+                //remove from basket if product exists in basket
+                const currentBasket = getExistingBasketProducts();
+                const productExistsInBasket = currentBasket.find(function(product) {
                     return product.id === productId;
                 });
-                if (productExistsInCart) {
-                    const newCart = currentCart.filter(product => product.id !== productId);
-                    saveToCart(newCart);
-                    getCartCount();
+                if (productExistsInBasket) {
+                    const newBasket = currentBasket.filter(product => product.id !== productId);
+                    saveToBasket(newBasket);
+                    getBasketCount();
                 };
 
             } 

@@ -1,7 +1,7 @@
 const tokenKey = "token";
 const userKey = "user";
-export const cartKey = "Cart";
-export const favouritesKey = "Favourite";
+export const basketKey = "Basket";
+export const favouritesKey = "Favourites";
 
 export function getExistingFavouriteProducts() {
     const favourites = localStorage.getItem(favouritesKey);
@@ -17,18 +17,18 @@ export function saveToFavouriteProducts(favourites) {
     localStorage.setItem(favouritesKey, JSON.stringify(favourites));
 };
 
-export function getExistingCartProducts() {
-    const cart = localStorage.getItem(cartKey);
+export function getExistingBasketProducts() {
+    const basket = localStorage.getItem(basketKey);
 
-    if(!cart) {
+    if(!basket) {
         return [];
     } else {
-        return JSON.parse(cart);
+        return JSON.parse(basket);
     };
 };
 
-export function saveToCart(cart) {
-    localStorage.setItem(cartKey, JSON.stringify(cart));
+export function saveToBasket(basket) {
+    localStorage.setItem(basketKey, JSON.stringify(basket));
 };
 
 export function saveToken(token) {

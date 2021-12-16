@@ -1,12 +1,12 @@
 import createMenu from "../components/menu/createMenu.js";
 import stickyNav from "../components/menu/stickyNav.js";
-import renderCartProducts from "../components/renderHtml/renderCartProducts.js";
+import renderBasketProducts from "../components/renderHtml/renderBasketProducts.js";
 
 //create menu and sticky nav
 createMenu();
 window.onscroll = function() {stickyNav()};
-//load cart products
-renderCartProducts();
+//load basket products
+renderBasketProducts();
 
 
 

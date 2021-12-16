@@ -1,8 +1,8 @@
-import { getExistingCartProducts, saveToCart } from "../../utils/storage.js";
-import renderCartProducts from "../renderHtml/renderCartProducts.js";
+import { getExistingBasketProducts, saveToBasket } from "../../utils/storage.js";
+import getBasketCount from "../menu/getBasketCount.js";
+import renderBasketProducts from "../renderHtml/renderBasketProducts.js";
 
-
-export default function deleteProductInCart() {
+export default function deleteProductInBasket() {
 
     const trashButtons = document.querySelectorAll(".trashButton");
     const modal = document.querySelector(".modal");
@@ -10,13 +10,13 @@ export default function deleteProductInCart() {
     const modalMessage = document.querySelector(".modal-message");
 
     trashButtons.forEach((button) => {
-        button.addEventListener("click", removeCartProduct);
+        button.addEventListener("click", removeBasketProduct);
     });
 
-    function removeCartProduct() {
+    function removeBasketProduct() {
         const id = this.dataset.id;
-        const currentCartProducts = getExistingCartProducts();
-        const productExists = currentCartProducts.find(function(product) {
+        const currentBasketProducts = getExistingBasketProducts();
+        const productExists = currentBasketProducts.find(function(product) {
             return product.id === id;
         });
         
@@ -32,16 +32,16 @@ export default function deleteProductInCart() {
 
             confirmButton.addEventListener("click", () => {
                 modal.style.display = "none";
-                const newCartList = currentCartProducts.filter(product => product.id !== id);
-                saveToCart(newCartList);
-                renderCartProducts();
-                location.reload();
+                const newBasketList = currentBasketProducts.filter(product => product.id !== id);
+                saveToBasket(newBasketList);
+                renderBasketProducts();
+                // location.reload();
+                // getBasketCount();
             });
 
             cancelButton.addEventListener("click", () => {
                 modal.style.display = "none";
             });
         };
-        
     };
 };

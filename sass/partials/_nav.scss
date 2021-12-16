@@ -88,13 +88,15 @@ nav i,
 .extra-nav {
   display: none;
 }
-.cartCount {
-  font-size: 12px;
+.basketCount {
+  display: none;
+  font-size: 14px;
+  font-family: $font-primary;
   background: map-get($colours, primary);
   color: white;
   vertical-align: top;
-  margin-left: -10px;
-  padding: 5px 10px;
+  margin-left: -14px;
+  padding: 3px 8px;
   border-radius: 50%;
 }
 

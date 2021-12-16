@@ -1,6 +1,6 @@
 import { getExistingFavouriteProducts, getToken } from "../../utils/storage.js";
 import { addProductToFavourites } from "../buttons/addToFavourites.js";
-import addProductToCart from "../buttons/addProductToCart.js";
+import addProductToBasket from "../buttons/addProductToBasket.js";
 import imageModalPopup from "../imageModal/imageModal.js";
 
 export default function renderProductDetails(product) {
@@ -51,13 +51,13 @@ export default function renderProductDetails(product) {
                                         </div>
                                     </div>
                                     <div class="cta-button-container">
-                                        <button type="button" class="add-to-cart-button cta-button" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}">
+                                        <button type="button" class="add-to-basket-button cta-button" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}">
                                             <span>Add to basket</span>
                                         </button>
                                     </div>`;
 
     addProductToFavourites();
-    addProductToCart();
+    addProductToBasket();
     imageModalPopup(product);
 };
 

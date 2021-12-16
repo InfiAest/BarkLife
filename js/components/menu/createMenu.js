@@ -1,6 +1,6 @@
 import { getUsername } from "../../utils/storage.js";
 import logout from "../buttons/logout.js";
-import getCartCount from "./getCartCount.js";
+import getBasketCount from "./getBasketCount.js";
 
 export default function createNavBar() {
 
@@ -26,16 +26,16 @@ export default function createNavBar() {
                                 <li><a href="/products.html" class="${pathname === "/products.html" ? "current" : ""}">Products</a></li>
                                 <li><a href="/about.html" class="${pathname === "/about.html" ? "current" : ""}">About us</a></li>
                                 <li><a href="/favourites.html" class="${pathname === "/favourites.html" ? "current" : ""}">Favourites<i class="fas fa-heart"></i></a></li>
-                                <li><a href="/basket.html" class="${pathname === "/basket.html" ? "current" : ""}">Basket<i class="fas fa-shopping-bag"></i><span class="cartCount">0</span></a></li>
+                                <li><a href="/basket.html" class="${pathname === "/basket.html" ? "current" : ""}">Basket<i class="fas fa-shopping-bag"></i><span class="basketCount">0</span></a></li>
                                 ${authLink}`;
 
     
     extraNavContainer.innerHTML = `<li><a href="/favourites.html" class="${pathname === "/favourites.html" ? "current" : ""}"><i class="fas fa-heart"></i></a></li>
-                                    <li><a href="/basket.html" class="${pathname === "/basket.html" ? "current" : ""}"><i class="fas fa-shopping-bag"></i><span class="cartCount">0</span></a></li>
+                                    <li><a href="/basket.html" class="${pathname === "/basket.html" ? "current" : ""}"><i class="fas fa-shopping-bag"></i><span class="basketCount">0</span></a></li>
                                     ${extraAuthLink}`;
 
 
     logout();
-    getCartCount();
+    getBasketCount();
 
 };

@@ -29,7 +29,7 @@
   color: map-get($colours, secondary);
 
   .paw {
-    animation: 2500ms pawAnimation ease-in-out infinite;
+    animation: 2500ms walkingAnimation ease-in-out infinite;
     opacity: 0;
     &:nth-child(odd) {
       transform: rotate(-10deg);
@@ -62,7 +62,7 @@
   color: map-get($colours, primary);
 
   .paw {
-    animation: 2500ms pawAnimation ease-in-out infinite;
+    animation: 2500ms walkingAnimation ease-in-out infinite;
     opacity: 0;
     &:nth-child(odd) {
       transform: rotate(-10deg);
@@ -79,7 +79,7 @@
 }
 
 //animation for paws
-@keyframes pawAnimation {
+@keyframes walkingAnimation {
   0% {
     opacity: 1;
   }

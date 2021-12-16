@@ -1,6 +1,6 @@
 import displayMessage from "../../renderMessage/displayMessage.js";
 import previewProductImg from "../../renderHtml/renderImagePreview.js";
-import { saveToFavouriteProducts, getExistingFavouriteProducts, getExistingCartProducts, saveToCart, getToken } from "../../../utils/storage.js";
+import { saveToFavouriteProducts, getExistingFavouriteProducts, getExistingBasketProducts, saveToBasket, getToken } from "../../../utils/storage.js";
 import { baseUrl } from "../../../data/URLs.js";
 import getStrapiSettings from "../../../utils/strapiSettings.js";
 
@@ -77,22 +77,22 @@ export async function updateProduct(name, image, description, price, featured, i
                 saveToFavouriteProducts(newFavouriteProducts);
             };
 
-            //update product if it's in the cart
-            const currentCartProducts = getExistingCartProducts();
-            const productExistsInCart = currentCartProducts.find(function(product) {
+            //update product if it's in the basket
+            const currentBasketProducts = getExistingBasketProducts();
+            const productExistsInBasket = currentBasketProducts.find(function(product) {
                 return product.id === id;
             });
 
-            if (productExistsInCart) {
-                //get quantity of that item in the cart
-                const quantityInCart = productExistsInCart.quantity;
-                const updatedCartProducts = currentCartProducts.filter(product => product.id !== id);
-                saveToCart(updatedCartProducts);
+            if (productExistsInBasket) {
+                //get quantity of that item in the basket
+                const quantityInBasket = productExistsInBasket.quantity;
+                const updatedBasketProducts = currentBasketProducts.filter(product => product.id !== id);
+                saveToBasket(updatedBasketProducts);
 
-                const updatedProduct = { id: id, name: name, image: json.image.url, description: description, price: price, featured: featured, quantity: quantityInCart }
-                const newCartProducts = getExistingCartProducts();
-                newCartProducts.push(updatedProduct);
-                saveToCart(newCartProducts);
+                const updatedProduct = { id: id, name: name, image: json.image.url, description: description, price: price, featured: featured, quantity: quantityInBasket }
+                const newBasketProducts = getExistingBasketProducts();
+                newBasketProducts.push(updatedProduct);
+                saveToBasket(newBasketProducts);
             };
         }
         if(json.error) {
