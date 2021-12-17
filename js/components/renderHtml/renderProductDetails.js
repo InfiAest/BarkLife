@@ -7,7 +7,7 @@ export default function renderProductDetails(product) {
 
     const token = getToken();
 
-    var editButton = `<a href="edit.html?id=${product.id}"><i class="fas fa-edit editButton"></i></a>`;
+    var editButton = `<a href="edit.html?id=${product.id}"><i class="fas fa-edit editButton" aria-label="edit ${product.name}"></i></a>`;
 
     if (!token) {
         editButton = "";
@@ -37,7 +37,7 @@ export default function renderProductDetails(product) {
                                     </div>
                                     <div class="img-container">
                                         <div class="icon-container">
-                                            <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}"></i>
+                                            <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}" aria-label="add/remove ${product.name} from favourites"></i>
                                         </div>
                                         <div class="product-image" style="background-image: url('${product.image.url}');"></div>
                                     </div>
@@ -51,7 +51,7 @@ export default function renderProductDetails(product) {
                                         </div>
                                     </div>
                                     <div class="cta-button-container">
-                                        <button type="button" class="add-to-basket-button cta-button" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}">
+                                        <button type="button" class="add-to-basket-button cta-button" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}" aria-label="add 1 ${product.name} to the basket">
                                             <span>Add to basket</span>
                                         </button>
                                     </div>`;

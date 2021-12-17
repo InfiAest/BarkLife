@@ -34,13 +34,13 @@ export default function renderBasketProducts() {
                                                 <div class="basket-product-name">
                                                     <h3>${product.name}</h3>
                                                     </a>
-                                                <i class="far fa-trash-alt trashButton" data-id="${product.id}"></i>
+                                                <i class="far fa-trash-alt trashButton" data-id="${product.id}" aria-label="delete ${product.quantity} ${product.name} from the basket"></i>
                                                 </div>
                                                 <div class="price-quantity-container">
                                                     <div class="quantity-container">
-                                                        <button class="minus" data-id="${product.id}">-</button>
+                                                        <button class="minus" data-id="${product.id}" aria-label="remove 1 ${product.name} from the basket">-</button>
                                                         <p>${product.quantity} item(s)</p>
-                                                        <button class="plus" data-id="${product.id}">+</button>
+                                                        <button class="plus" data-id="${product.id}" aria-label="add another ${product.name} to the basket">+</button>
                                                     </div>
                                                     <div class="basket-price-container">
                                                         <p>£${totalProductPrice}</p>

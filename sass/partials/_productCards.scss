@@ -60,8 +60,8 @@
 //hover on image and activate hover effect on button
 .product-card-link:hover ~ .card-button-container .viewButton {
   background-color: #ffffff;
-  border: 3px solid map-get($colours, primary);
-  color: map-get($colours, primary);
+  border: 3px solid map-get($colours, secondary);
+  color: map-get($colours, secondary);
   cursor: pointer;
 }
 .product-card-link:hover ~ .card-button-container .viewButton span {

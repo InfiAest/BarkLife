@@ -7,8 +7,8 @@
   width: 100%;
   padding: 1rem;
   text-align: center;
-  border: 3px solid map-get($colours, primary);
-  color: map-get($colours, primary);
+  border: 3px solid map-get($colours, secondary);
+  color: map-get($colours, secondary);
 }
 .empty {
   padding: 2rem 1rem;

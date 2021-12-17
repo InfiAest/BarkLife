@@ -41,7 +41,7 @@ export default function renderFeaturedProducts(products) {
 
                 featuredContainer.innerHTML += `<div class="product-card">
                                                     <div class="icon-container">
-                                                        <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}"></i>
+                                                        <i class="${cssClass} fa-heart favButton" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image.url}" aria-label="add/remove ${product.name} to favourites"></i>
                                                     </div>
                                                     <a href="details.html?id=${product.id}" alt="Link to ${product.name} product page" class="product-card-link">
                                                         <div class="product-img-container">

@@ -29,7 +29,7 @@ export default function renderFavouriteProducts() {
 
         favouritesGrid.innerHTML += `<div class="product-card">
                                         <div class="icon-container">
-                                            <i class="fas fa-heart favButton" data-id="${favourite.id}"></i>
+                                            <i class="fas fa-heart favButton" data-id="${favourite.id}" aria-label="remove ${favourite.name} from favourites"></i>
                                         </div>
                                         <a href="details.html?id=${favourite.id}" alt="Link to ${favourite.name} product page" class="product-card-link">
                                             <div class="product-img-container">

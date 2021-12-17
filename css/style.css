@@ -110,8 +110,8 @@ p {
   width: 100%;
   padding: 1rem;
   text-align: center;
-  border: 3px solid #bb9d88;
-  color: #bb9d88;
+  border: 3px solid #3d3c3c;
+  color: #3d3c3c;
 }
 
 .empty {
@@ -395,8 +395,8 @@ nav i,
 
 .product-card-link:hover ~ .card-button-container .viewButton {
   background-color: #ffffff;
-  border: 3px solid #bb9d88;
-  color: #bb9d88;
+  border: 3px solid #3d3c3c;
+  color: #3d3c3c;
   cursor: pointer;
 }
 
@@ -589,12 +589,11 @@ nav i,
 
 .cta-button,
 .formButton {
-  height: 49px;
   width: 100%;
   font-family: "Karla", sans-serif;
   color: #ffffff;
-  background-color: #bb9d88;
-  border: 3px solid #bb9d88;
+  background-color: #3d3c3c;
+  border: 3px solid #3d3c3c;
   font-size: 1.2rem;
   padding: 10px;
   text-align: center;
@@ -616,8 +615,8 @@ nav i,
 .cta-button:hover,
 .formButton:hover {
   background-color: #ffffff;
-  border: 3px solid #bb9d88;
-  color: #bb9d88;
+  border: 3px solid #3d3c3c;
+  color: #3d3c3c;
   cursor: pointer;
 }
 
@@ -705,7 +704,7 @@ nav i,
 
 .productsPage-link {
   text-decoration: none;
-  font-family: "Bodoni Moda", serif;
+  font-family: "Karla", sans-serif;
   color: #3d3c3c;
   font-size: 1.3rem;
   padding: 25px;

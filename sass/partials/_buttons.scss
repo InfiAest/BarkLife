@@ -4,12 +4,11 @@
 }
 .cta-button,
 .formButton {
-  height: 49px;
   width: 100%;
   font-family: $font-primary;
   color: #ffffff;
-  background-color: map-get($colours, primary);
-  border: 3px solid map-get($colours, primary);
+  background-color: map-get($colours, secondary);
+  border: 3px solid map-get($colours, secondary);
   font-size: 1.2rem;
   padding: 10px;
   text-align: center;
@@ -28,8 +27,8 @@
 .cta-button:hover,
 .formButton:hover {
   background-color: #ffffff;
-  border: 3px solid map-get($colours, primary);
-  color: map-get($colours, primary);
+  border: 3px solid map-get($colours, secondary);
+  color: map-get($colours, secondary);
   cursor: pointer;
 }
 .formButton {
@@ -98,7 +97,7 @@
 }
 .productsPage-link {
   text-decoration: none;
-  font-family: $font-headings;
+  font-family: $font-primary;
   color: map-get($colours, secondary);
   font-size: 1.3rem;
   padding: 25px;
