@@ -1,3 +1,6 @@
+import getBasketCount from "../components/menu/getBasketCount.js";
+import navbarHeartFill from "../components/menu/navbarHeartFill.js";
+
 const tokenKey = "token";
 const userKey = "user";
 export const basketKey = "Basket";
@@ -15,6 +18,7 @@ export function getExistingFavouriteProducts() {
 
 export function saveToFavouriteProducts(favourites) {
     localStorage.setItem(favouritesKey, JSON.stringify(favourites));
+    navbarHeartFill();
 };
 
 export function getExistingBasketProducts() {
@@ -29,6 +33,7 @@ export function getExistingBasketProducts() {
 
 export function saveToBasket(basket) {
     localStorage.setItem(basketKey, JSON.stringify(basket));
+    getBasketCount();
 };
 
 export function saveToken(token) {

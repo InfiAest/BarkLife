@@ -1,5 +1,4 @@
 import { getExistingBasketProducts, saveToBasket } from "../../utils/storage.js";
-import getBasketCount from "../menu/getBasketCount.js";
 import renderBasketProducts from "../renderHtml/renderBasketProducts.js";
 
 export function minusProduct() {
@@ -20,7 +19,6 @@ export function minusProduct() {
             });
             thatProduct.quantity --;
             saveToBasket(currentBasket);
-            getBasketCount();
     } else if(doesProductExist.quantity === 1) {
         modal.style.display = "block";
         modalHeader.innerHTML = `<i class="fas fa-shopping-bag"></i>`;
@@ -34,9 +32,6 @@ export function minusProduct() {
             const newBasketList = currentBasket.filter(doesProductExist => doesProductExist.id !== id);
             saveToBasket(newBasketList);
             renderBasketProducts();
-            // getBasketCount();
-            //reload page to reset the basket counter (can't figure out why it won't update it)
-            // location.reload();
         });
         
         cancelButton.addEventListener("click", () => {
@@ -61,7 +56,6 @@ export function plusProduct() {
             });
             thatProduct.quantity ++;
             saveToBasket(currentBasket);
-            getBasketCount();
     };
     renderBasketProducts();
 };

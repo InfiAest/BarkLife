@@ -1,6 +1,5 @@
 import { productsUrl } from "../../data/URLs.js";
 import { getExistingBasketProducts, getExistingFavouriteProducts, getToken, saveToBasket, saveToFavouriteProducts } from "../../utils/storage.js";
-import getBasketCount from "../menu/getBasketCount.js";
 
 export default function deleteProductButton(id) {
     const container = document.querySelector(".delete-container");
@@ -58,7 +57,6 @@ export default function deleteProductButton(id) {
                 if (productExistsInBasket) {
                     const newBasket = currentBasket.filter(product => product.id !== productId);
                     saveToBasket(newBasket);
-                    getBasketCount();
                 };
 
             } 

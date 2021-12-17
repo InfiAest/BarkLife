@@ -1,5 +1,4 @@
 import { getExistingBasketProducts, saveToBasket } from "../../utils/storage.js";
-import getBasketCount from "../menu/getBasketCount.js";
 import renderBasketProducts from "../renderHtml/renderBasketProducts.js";
 
 export default function deleteProductInBasket() {
@@ -35,8 +34,6 @@ export default function deleteProductInBasket() {
                 const newBasketList = currentBasketProducts.filter(product => product.id !== id);
                 saveToBasket(newBasketList);
                 renderBasketProducts();
-                // location.reload();
-                // getBasketCount();
             });
 
             cancelButton.addEventListener("click", () => {
