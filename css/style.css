@@ -532,11 +532,11 @@ nav i,
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin-bottom: 2rem;
-  font-family: "Bodoni Moda", serif;
+  font-family: "Karla", sans-serif;
   font-size: 1.6rem;
   text-decoration: none;
   text-align: right;
-  color: #a89e9d;
+  color: #3d3c3c;
 }
 
 .instagram-tag:hover,

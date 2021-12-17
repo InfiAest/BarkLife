@@ -67,11 +67,11 @@
   align-items: flex-end;
   justify-content: flex-end;
   margin-bottom: 2rem;
-  font-family: $font-headings;
+  font-family: $font-primary;
   font-size: 1.6rem;
   text-decoration: none;
   text-align: right;
-  color: map-get($colours, tertiary);
+  color: map-get($colours, secondary);
 }
 .instagram-tag:hover,
 .facebook-tag:hover {
