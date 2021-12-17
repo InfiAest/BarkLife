@@ -14,7 +14,13 @@ form {
   max-width: 1000px;
   margin: 2rem auto;
 }
-.edit-product-form {
+.edit-product-form,
+#username-error,
+#password-error,
+#product-name-error,
+#product-image-error,
+#product-description-error,
+#product-price-error {
   display: none;
 }
 form > div,
@@ -105,14 +111,6 @@ textarea:focus-visible {
 }
 .url-container {
   width: 100%;
-}
-#username-error,
-#password-error,
-#product-name-error,
-#product-image-error,
-#product-description-error,
-#product-price-error {
-  display: none;
 }
 .input-instructions,
 .edit-input-instructions {

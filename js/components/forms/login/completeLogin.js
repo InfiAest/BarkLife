@@ -27,7 +27,6 @@ export default async function completeLogin(username, password) {
         if (json.error) {
             displayMessage("error", json.message[0].messages[0].message, ".message-container");
         };
-        
     }
     catch(error) {
         console.log(error);

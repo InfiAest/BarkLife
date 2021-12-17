@@ -28,8 +28,7 @@ export default function logout() {
                 } else {
                     logoutUser();
                     location.href = currentLocation;
-                };
-                
+                }
             });
 
             cancelButton.addEventListener("click", () => {

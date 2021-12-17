@@ -1,4 +1,4 @@
-import { baseUrl } from "../../data/URLs.js";
+import { productsUrl } from "../../data/URLs.js";
 import deleteProductButton from "../buttons/deleteProductButton.js";
 import previewProductImg from "../renderHtml/renderImagePreview.js";
 
@@ -12,7 +12,7 @@ export default async function getDetailsEditForm() {
         document.location.href = "/";
     }
 
-    const productUrl = baseUrl + "products/" + id;
+    const specificProductUrl = productsUrl + id;
     
     const form = document.querySelector(".edit-product-form");
     const loader = document.querySelector(".content-loader-container");
@@ -24,7 +24,7 @@ export default async function getDetailsEditForm() {
     const pageTitle = document.querySelector("title");
 
     try {
-        const response = await fetch(productUrl);
+        const response = await fetch(specificProductUrl);
         const details = await response.json();
 
         pageTitle.innerHTML += `${details.name}`;

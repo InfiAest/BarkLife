@@ -1,7 +1,7 @@
 import displayMessage from "../../renderMessage/displayMessage.js";
 import previewProductImg from "../../renderHtml/renderImagePreview.js";
 import { saveToFavouriteProducts, getExistingFavouriteProducts, getExistingBasketProducts, saveToBasket, getToken } from "../../../utils/storage.js";
-import { baseUrl } from "../../../data/URLs.js";
+import { productsUrl } from "../../../data/URLs.js";
 import getStrapiSettings from "../../../utils/strapiSettings.js";
 
 export async function updateProduct(name, image, description, price, featured, id) {
@@ -14,7 +14,7 @@ export async function updateProduct(name, image, description, price, featured, i
     const imageError = document.querySelector("#product-image-error");
     
     const token = getToken();
-    const url = baseUrl + "products/" + id;
+    const specificProductUrl = productsUrl + id;
 
     //data and headers should be let variables so that it can be changed if an image is uploaded
     let data = JSON.stringify({ name: name, description: description, price: price, featured: featured });
@@ -47,7 +47,7 @@ export async function updateProduct(name, image, description, price, featured, i
     const options = getStrapiSettings(data, method, headers);
 
     try {
-        const response = await fetch(url, options);
+        const response = await fetch(specificProductUrl, options);
         const json = await response.json();
 
         console.log(json.image.url);

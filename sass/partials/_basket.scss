@@ -22,8 +22,12 @@
   align-items: flex-start;
   justify-content: space-between;
 }
-.basket-product-name h3 {
+.basket-product-name h3,
+.quantity-container p,
+.basket-price-container p {
   margin: 0;
+}
+.basket-product-name h3 {
   margin-right: 30px;
 }
 .price-quantity-container {
@@ -36,48 +40,24 @@
 .basket-info-container {
   width: 100%;
 }
-.quantity-container p {
-  margin: 0;
-}
 .basket-price-container p {
   text-align: right;
-  margin: 0;
 }
-.quantity-container {
-  width: 180px;
+.quantity-container,
+.total-price-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
 }
+.quantity-container {
+  width: 180px;
+}
 .total-price-container {
-  display: flex;
   flex-grow: 2;
-  justify-content: space-between;
-  align-items: baseline;
   padding: 1rem 0;
   margin-bottom: 2rem;
   border-top: 3px solid map-get($colours, input);
-}
-.trashButton {
-  font-size: 1.5rem;
-  color: map-get($colours, primary);
-  padding: 0 10px 10px 10px;
-  margin-left: 2rem;
-}
-.trashButton:hover {
-  cursor: pointer;
-}
-.plus,
-.minus {
-  border: 3px solid map-get($colours, input);
-  color: map-get($colours, secondary);
-  background-color: white;
-  font-family: $font-primary;
-  font-size: 1.2rem;
-  padding: 0;
-  width: 50px;
-  height: 50px;
 }
 
 @include for-large-mobile {
@@ -107,8 +87,6 @@
   }
   .price-quantity-container {
     margin-top: 0;
-  }
-  .price-quantity-container {
     margin-left: 4rem;
   }
 }

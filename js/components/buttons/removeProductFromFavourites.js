@@ -13,7 +13,6 @@ export default function removeFromFavourites() {
         this.classList.toggle("fas");
 
         const id = this.dataset.id;
-
         const currentFavourites = getExistingFavouriteProducts();
 
         const productExists = currentFavourites.find(function(product) {

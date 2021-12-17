@@ -3,7 +3,9 @@ footer {
   background-color: map-get($colours, input);
   padding: 1.5rem 0;
 }
-.footer {
+.footerContainer,
+.customer-links,
+.business-links {
   display: flex;
   flex-direction: column;
 }
@@ -29,11 +31,6 @@ footer {
   text-align: center;
   padding: 0.5rem 0;
 }
-.customer-links,
-.business-links {
-  display: flex;
-  flex-direction: column;
-}
 .footer-links {
   text-decoration: none;
   color: map-get($colours, secondary);
@@ -44,7 +41,7 @@ footer {
 }
 
 @include for-tablet {
-  .footer {
+  .footerContainer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

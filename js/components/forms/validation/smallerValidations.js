@@ -1,4 +1,3 @@
-//validate url (ref:https://digitalfortress.tech/tips/top-15-commonly-used-regex/ & https://www.regexpal.com/?fam=104034)
 //regex
 //checks its a valid email format
 export function validateEmail(email) {

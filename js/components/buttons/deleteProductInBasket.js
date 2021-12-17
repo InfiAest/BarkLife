@@ -19,7 +19,6 @@ export default function deleteProductInBasket() {
             return product.id === id;
         });
         
-
         if(productExists) {
 
             modal.style.display = "block";

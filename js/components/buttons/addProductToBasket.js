@@ -2,12 +2,12 @@ import { getExistingBasketProducts, saveToBasket } from "../../utils/storage.js"
 
 const modal = document.querySelector(".modal");
 const modalHeader = document.querySelector(".modal-header");
-const gotToBasketButton = document.querySelector("#confirmButton");
+const goToBasketButton = document.querySelector("#confirmButton");
 const continueShoppingButton = document.querySelector("#cancelButton");
 
 modalHeader.innerHTML = `<i class="fas fa-shopping-bag"></i>
                             <span class="close">&times;</span>`;
-gotToBasketButton.innerHTML = `<span>Go to basket</span>`;
+goToBasketButton.innerHTML = `<span>Go to basket</span>`;
 continueShoppingButton.innerHTML = `<span>Continue shopping</span>`;
 
 var closeModal = document.getElementsByClassName("close")[0];
@@ -51,7 +51,7 @@ export default function addProductToBasket() {
     };
 };
 
-gotToBasketButton.onclick = function() {
+goToBasketButton.onclick = function() {
     location.href = "basket.html";
 };
 continueShoppingButton.onclick = function() {
