@@ -63,7 +63,7 @@ Password: Pass1234
 (Note that you will need to replace uppercase letters when cloning in order for React to run)
 
 ```bash
-git clone git@github.com:InfiAest/BarkLife-semproj2.git
+git clone git@github.com:InfiAest/BarkLife.git
 ```
 
 2. Install the dependencies:
