@@ -51,7 +51,6 @@ Password: Pass1234
 ## Built With
 ![Strapi](https://img.shields.io/badge/-Strapi-white?style=for-the-badge&logo=Strapi&logoColor=4e26e0)
 ![Heroku](https://img.shields.io/badge/-Heroku-white?style=for-the-badge&logo=heroku&logoColor=6762a6)
-![React](https://img.shields.io/badge/-React-white?style=for-the-badge&logo=react)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-white?style=for-the-badge&logo=javascript)
 ![SASS](https://img.shields.io/badge/-Sass-white?style=for-the-badge&logo=sass)
 
@@ -74,11 +73,15 @@ npm install
 
 ### Running
 
-To run the app, run the following commands:
+To run the strapi app:
 
 ```bash
 npm run start
 ```
+
+Using the liveServer extension for VScode:
+
+Right click on the index.html and click view in live server. This will open [http://localhost:3000](http://localhost:3000) in your browser where you can see the result.
 
 ## Contact
 
